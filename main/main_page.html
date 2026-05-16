@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Explore Canada</title>
+    <link rel="stylesheet" type="text/css" href="main_page.css">
+</head>
+
+<body>
+    <nav class="glass-navbar" id="navbar">
+        <a href="#" class="nav-item">Button 1</a>
+        <a href="#" class="nav-item">Button 2</a>
+        <a href="#" class="nav-item">Button 3</a>
+        <a href="#" class="nav-item">Button 4</a>
+        <a href="#" class="nav-item">Button 5</a>
+        <a href="#" class="nav-item">Button 6</a>
+    </nav>
+
+    <div class="hero-section">
+        <header class="header">
+        <div class="title-content">
+            <img src="../asset/img/canada_leaf.png" alt="canada_leaf">
+            <p>CANADA</p>
+        </div>
+
+        <div class="card-container">
+            <div class="card" id="card1">
+                <p class="title"></p>
+                <p class="caption"></p>
+            </div>
+            <div class="card" id="card2">
+                <p class="title"></p>
+                <p class="caption"></p>
+            </div>
+            <div class="card" id="card3">
+                <p class="title"></p>
+                <p class="caption"></p>
+            </div>
+        </div>
+        </header>
+
+        <a href="#about-section" class="scroll-indicator">
+            <span>Show More</span>
+            <svg viewBox="0 0 24 24" class="chevron-down">
+                <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </div>
+
+    <section class="about-section" id="about-section">
+        <h2>Explore More</h2>
+        <p>Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. From east to west it stretches almost 4,700 miles (7,560 kilometers) across six time zones. It is the second largest country in the world, but it has only one-half of one percent of the world's population.</p>
+    </section>
+
+    <script>
+
+        const cardData = [
+            { id: 'card1', title: 'Lake Louise', caption: 'Alberta, Canada', image: '../asset/img/lake_louise.png' },
+            { id: 'card2', title: 'Banff National Park', caption: 'Alberta, Canada', image: '../asset/img/banff.png' },
+            { id: 'card3', title: 'Niagara Falls', caption: 'Ontario, Canada', image: '../asset/img/niagara.png' }
+        ];
+
+        cardData.forEach(data => {
+            const card = document.getElementById(data.id);
+            if (card) {
+                card.querySelector('.title').textContent = data.title;
+                card.querySelector('.caption').textContent = data.caption;
+                card.style.backgroundImage = `url('${data.image}')`;
+            }
+        });
+
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', function() {
+            let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (currentScroll > lastScrollTop) {
+
+                navbar.classList.add('hidden');
+            } else {
+
+                navbar.classList.remove('hidden');
+            }
+
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; 
+        });
+    </script>
+</body>
+
+</html>
