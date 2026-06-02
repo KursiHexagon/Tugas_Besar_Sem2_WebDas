@@ -6,9 +6,18 @@
     <title>A Mari Usque Ad Mare</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" type="text/css" href="main_page.css">
+    <style>
+        @keyframes textIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .text-enter { animation: textIn 0.4s ease forwards; }
+    </style>
 </head>
 <body>
-    <div class="hero" id="#home">
+
+    <!-- HERO -->
+    <div class="hero" id="home">
         <div class="background"></div>
         <nav class="nav">
             <ul>
@@ -23,16 +32,16 @@
         </div>
     </div>
 
+    <!-- ABOUT -->
     <div class="about-section" id="about">
-
         <div class="about-content">
             <img src="../asset/img/main/canada_flag_photo.jpg">
             <div class="about-caption">
-                <p class="caption-title">
-                    Raksasa yang "<span class="highlight">Sepi</span>"
-                </p>
+                <p class="caption-title">Raksasa yang "<span class="highlight">Sepi</span>"</p>
                 <p class="caption-description" id="caption-one">
-                    Kanada adalah negara terbesar kedua di dunia berdasarkan luas wilayah (setelah Rusia). Namun uniknya, jumlah penduduknya tergolong sedikit untuk ukuran wilayah seluas itu hanya sekitar 40 juta jiwa
+                    Kanada adalah negara terbesar kedua di dunia berdasarkan luas wilayah (setelah Rusia).
+                    Namun uniknya, jumlah penduduknya tergolong sedikit untuk ukuran wilayah seluas itu
+                    hanya sekitar 40 juta jiwa
                 </p>
             </div>
         </div>
@@ -40,11 +49,323 @@
             <div class="about-caption">
                 <p class="caption-title" id="caption-title-two">Budaya <span class="highlight">Multikulturalisme</span></p>
                 <p class="caption-description" id="caption-two">
-                    Kanada adalah negara terbesar kedua di dunia berdasarkan luas wilayah (setelah Rusia). Namun uniknya, jumlah penduduknya tergolong sedikit untuk ukuran wilayah seluas itu hanya sekitar 40 juta jiwa
+                    Kanada adalah negara terbesar kedua di dunia berdasarkan luas wilayah (setelah Rusia).
+                    Namun uniknya, jumlah penduduknya tergolong sedikit untuk ukuran wilayah seluas itu
+                    hanya sekitar 40 juta jiwa
                 </p>
             </div>
             <img src="../asset/img/main/multicultural_canada.png">
         </div>
     </div>
+
+    <!-- Section card -->
+
+    <section id="culture" class="relative min-h-screen flex items-center overflow-hidden">
+
+        <div id="cultureBg1"
+             class="absolute inset-0 bg-cover bg-center"
+             style="background-image: url('../asset/img/culture/maple_background.jpg'); opacity: 0; transition: opacity 0.7s ease;">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20"></div>
+        </div>
+
+        <div id="cultureBg2"
+             class="absolute inset-0 bg-cover bg-center"
+             style="opacity: 0; transition: opacity 0.7s ease;">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20"></div>
+        </div>
+
+        <div class="relative z-10 flex items-center w-full px-16 py-20 gap-12">
+
+            <!-- Bagian kiri -->
+            <div class="flex-none w-96 text-white">
+                <p class="text-xs tracking-[3.5px] uppercase text-white/50 mb-4">Budaya &amp; Tradisi</p>
+                <div class="w-10 h-0.5 bg-[#C8102E] mb-5"></div>
+                <h2 id="cultureTitle" class="text-5xl font-bold leading-tight mb-5">
+                    Maple Syrup Festival
+                </h2>
+                <p id="cultureDesc" class="text-base font-light leading-relaxed text-white/70">
+                    Setiap musim semi, desa-desa Quebec menggelar festival panen sirup maple.
+                    Pohon maple disadap, dan keluarga berkumpul menikmati hangatnya tradisi
+                    yang sudah berjalan ratusan tahun.
+                </p>
+            </div>
+
+            <!-- Bagian kanan: Carousel cards -->
+            <div class="flex-1 min-w-0">
+
+                <!-- Track wrapper -->
+                <div class="overflow-hidden py-6">
+                    <div id="cardsTrack" class="flex gap-4 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
+
+                        <!-- Card 1 -->
+                        <div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer
+                                    transition-all duration-500 opacity-[0.18] scale-[0.92]"
+                             data-index="0">
+                            <img src="../asset/img/culture/maple_background.jpg"
+                                 alt="Maple Festival"
+                                 class="w-full h-full object-cover pointer-events-none">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 text-white">
+                                <p class="text-sm font-medium">Maple Festival</p>
+                                <p class="text-xs font-light text-white/60 mt-0.5">Quebec</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer
+                                    transition-all duration-500 opacity-[0.18] scale-[0.92]"
+                             data-index="1">
+                            <img src="../asset/img/culture/ice_hockey.jpg"
+                                 alt="Ice Hockey"
+                                 class="w-full h-full object-cover pointer-events-none">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 text-white">
+                                <p class="text-sm font-medium">Ice Hockey</p>
+                                <p class="text-xs font-light text-white/60 mt-0.5">Nationwide</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer
+                                    transition-all duration-500 opacity-[0.18] scale-[0.92]"
+                             data-index="2">
+                            <img src="../asset/img/culture/winter_carnival_person.jpg"
+                                 alt="Winter Carnival"
+                                 class="w-full h-full object-cover pointer-events-none">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 text-white">
+                                <p class="text-sm font-medium">Winter Carnival</p>
+                                <p class="text-xs font-light text-white/60 mt-0.5">Québec City</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer
+                                    transition-all duration-500 opacity-[0.18] scale-[0.92]"
+                             data-index="3">
+                            <img src="../asset/img/culture/ice_canoe_racing_person.jpg"
+                                 alt="Ice Canoe Racing"
+                                 class="w-full h-full object-cover pointer-events-none">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 text-white">
+                                <p class="text-sm font-medium">Ice Canoe Racing</p>
+                                <p class="text-xs font-light text-white/60 mt-0.5">Alberta</p>
+                            </div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer
+                                    transition-all duration-500 opacity-[0.18] scale-[0.92]"
+                             data-index="4">
+                            <img src="../asset/img/culture/nuit_blanche.jpg"
+                                 alt="Nuit Blanche"
+                                 class="w-full h-full object-cover pointer-events-none">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                            <div class="absolute bottom-3 left-3 text-white">
+                                <p class="text-sm font-medium">Nuit Blanche</p>
+                                <p class="text-xs font-light text-white/60 mt-0.5">Toronto &amp; Montréal</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Navigation  -->
+                <div class="flex items-center gap-3 mt-2">
+
+                    <button id="culturePrev"
+                            class="w-10 h-10 rounded-full border border-white/30 bg-white/10 text-white
+                                   flex items-center justify-center text-lg backdrop-blur
+                                   hover:bg-[#C8102E]/60 hover:border-[#C8102E] transition-all duration-200"
+                            aria-label="Previous">
+                        &#8592;
+                    </button>
+
+                    <div id="cultureNavDots" class="flex items-center gap-1.5"></div>
+
+                    <button id="cultureNext"
+                            class="w-10 h-10 rounded-full border border-white/30 bg-white/10 text-white
+                                   flex items-center justify-center text-lg backdrop-blur
+                                   hover:bg-[#C8102E]/60 hover:border-[#C8102E] transition-all duration-200"
+                            aria-label="Next">
+                        &#8594;
+                    </button>
+
+                    <a id="cultureMoreInfo" href="#"
+                       class="ml-1 px-4 h-10 rounded-full text-white text-sm font-medium
+                              flex items-center gap-1.5 backdrop-blur border border-transparent
+                              transition-all duration-300"
+                       style="background-color: #C8102E;"
+                       aria-label="More Info">
+                        More Info <span class="text-base leading-none">↗</span>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    (function () {
+        // Penjelasan culture cards (judul, deskripsi, gambar, warna untuk tombol, dan link)
+        const cultures = [
+            {
+                title:  "Maple Syrup Festival",
+                desc:   "Setiap musim semi, desa-desa Quebec menggelar festival panen sirup maple. Pohon maple disadap, dan keluarga berkumpul menikmati hangatnya tradisi yang sudah berjalan ratusan tahun.",
+                bg:     "../asset/img/culture/maple_background.jpg",
+                color:  "#C8102E",
+                link:   "/culture/maple-festival"
+            },
+            {
+                title:  "Powwow Suku Asli",
+                desc:   "Powwow adalah perayaan budaya masyarakat Pribumi Kanada — dengan tarian upacara, pakaian tradisional bermotif kaya, dan lagu-lagu yang merayakan identitas serta leluhur.",
+                bg:     "../asset/img/culture/ice_hockey.jpg",
+                color:  "#8B4513",
+                link:   "/culture/powwow"
+            },
+            {
+                title:  "Winter Carnival",
+                desc:   "Karnaval musim dingin terbesar di dunia. Parade meriah, patung es raksasa, dan lomba kano di tengah Sungai St. Lawrence yang beku — merayakan keindahan musim dingin Kanada.",
+                bg:     "../asset/img/culture/winter_carnival.jpg",
+                color:  "#4A90C4",
+                link:   "/culture/winter-carnival"
+            },
+            {
+                title:  "Ice Canoe Racing",
+                desc:   "Dijuluki 'Greatest Outdoor Show on Earth', Calgary Stampede adalah festival rodeo dan budaya koboi terbesar dunia — dengan kompetisi, konser, dan parade yang berlangsung 10 hari.",
+                bg:     "../asset/img/culture/ice_canoe_racing.jpg",
+                color:  "#2E7D32",
+                link:   "/culture/ice-canoe"
+            },
+            {
+                title:  "Nuit Blanche",
+                desc:   "Malam seni kontemporer yang mengubah kota menjadi galeri terbuka sepanjang malam. Instalasi cahaya, pertunjukan, dan karya interaktif memenuhi jalanan kota hingga fajar.",
+                bg:     "../asset/img/culture/nuit_blanche.jpg",
+                color:  "#6A0DAD",
+                link:   "/culture/nuit-blanche"
+            }
+        ];
+
+        // Opacity class per jarak dari active 
+        const DIST_CLASS = [
+            ['opacity-100', 'scale-105', 'shadow-[0_16px_48px_rgba(0,0,0,0.5)]'],
+            ['opacity-65',  'scale-[0.98]'],
+            ['opacity-35',  'scale-[0.95]'],
+        ];
+        const FAR_CLASS = ['opacity-[0.18]', 'scale-[0.92]'];
+
+        let active   = 0;
+        let activeBg = 1;
+
+        const bg1      = document.getElementById('cultureBg1');
+        const bg2      = document.getElementById('cultureBg2');
+        const track    = document.getElementById('cardsTrack');
+        const titleEl  = document.getElementById('cultureTitle');
+        const descEl   = document.getElementById('cultureDesc');
+        const dotsEl   = document.getElementById('cultureNavDots');
+        const moreBtn  = document.getElementById('cultureMoreInfo');
+        const cards    = [...track.querySelectorAll('.culture-card')];
+
+        // Background crossfade 
+        function setBg(url) {
+            const next = activeBg === 1 ? bg2 : bg1;
+            const prev = activeBg === 1 ? bg1 : bg2;
+            next.style.backgroundImage = `url('${url}')`;
+            next.style.opacity = '1';
+            prev.style.opacity = '0';
+            activeBg = activeBg === 1 ? 2 : 1;
+        }
+
+        // Card positions & opacity
+        function updateCards(idx) {
+            const CARD_W   = 176 + 16;
+            const wrapperW = track.parentElement.offsetWidth;
+            const offset   = (wrapperW / 2) - 88 - idx * CARD_W;
+            track.style.transform = `translateX(${offset}px)`;
+
+            cards.forEach((card, i) => {
+                card.className = card.className
+                    .replace(/opacity-\S+/g, '')
+                    .replace(/scale-\S+/g, '')
+                    .replace(/shadow-\S+/g, '')
+                    .trim();
+
+                const dist    = Math.abs(i - idx);
+                const classes = dist < DIST_CLASS.length ? DIST_CLASS[dist] : FAR_CLASS;
+                card.classList.add(...classes);
+            });
+        }
+
+        // Dots 
+        function buildDots() {
+            cultures.forEach((_, i) => {
+                const d = document.createElement('button');
+                d.dataset.i = i;
+                d.className = i === 0
+                    ? 'w-5 h-1.5 rounded bg-[#C8102E] transition-all duration-300'
+                    : 'w-1.5 h-1.5 rounded-full bg-white/30 transition-all duration-300';
+                d.setAttribute('aria-label', `Slide ${i + 1}`);
+                d.addEventListener('click', () => goTo(i));
+                dotsEl.appendChild(d);
+            });
+        }
+
+        function updateDots(idx) {
+            [...dotsEl.children].forEach((d, i) => {
+                if (i === idx) {
+                    d.className = 'w-5 h-1.5 rounded bg-[#C8102E] transition-all duration-300';
+                } else {
+                    d.className = 'w-1.5 h-1.5 rounded-full bg-white/30 transition-all duration-300';
+                }
+            });
+        }
+
+        // Teks 
+        function updateText(idx) {
+            [titleEl, descEl].forEach(el => {
+                el.classList.remove('text-enter');
+                void el.offsetWidth;
+                el.classList.add('text-enter');
+            });
+            titleEl.textContent = cultures[idx].title;
+            descEl.textContent  = cultures[idx].desc;
+        }
+
+        // More Info button 
+        function updateMoreInfo(idx) {
+            const { color, link } = cultures[idx];
+            moreBtn.href = link;
+            moreBtn.style.backgroundColor = color;
+            moreBtn.style.boxShadow = `0 0 18px ${color}55`;
+        }
+
+        // Go to 
+        function goTo(idx) {
+            if (idx === active) return;
+            active = idx;
+            setBg(cultures[idx].bg);
+            updateCards(idx);
+            updateDots(idx);
+            updateText(idx);
+            updateMoreInfo(idx);
+        }
+
+        cards.forEach(card => {
+            card.addEventListener('click', () => goTo(+card.dataset.index));
+        });
+        document.getElementById('culturePrev').addEventListener('click', () =>
+            goTo((active - 1 + cultures.length) % cultures.length));
+        document.getElementById('cultureNext').addEventListener('click', () =>
+            goTo((active + 1) % cultures.length));
+
+        // Initizlize
+        bg1.style.opacity = '1';
+        bg1.style.backgroundImage = `url('${cultures[0].bg}')`;
+        buildDots();
+        updateMoreInfo(0);
+        setTimeout(() => updateCards(0), 50);
+    })();
+    </script>
+
 </body>
 </html>
