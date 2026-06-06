@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ice Hockey - Culture & Legacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'glory-blue': '#0E1E42',
+                        'glory-red': '#AF143C',
+                        'pure-white': '#FFFFFF',
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="ih.js"></script>
+    <link rel="stylesheet" href="ih.css">
+</head>
+<body class="bg-pure-white text-glory-blue ">
+
+    <!-- preloader: nutupin semua konten dulu sebelum user klik -->
+    <div id="preloader" class="fixed inset-0 bg-glory-blue z-50 flex flex-col items-center justify-center transition-all duration-1000 ease-in-out">
+        <!-- teks judul sama tombol dikumpulin di sini biar gampang dianimasiin -->
+        <div id="opening-box" class="text-center transition-all duration-1000 ease-in-out transform">
+            <h1 id="opening-title" class="text-5xl md:text-8xl font-black tracking-tighter text-pure-white uppercase mb-6 transition-all duration-1000 ease-in-out">
+                ICE HOCKEY
+            </h1>
+            <button id="click-me-btn" class="px-6 py-3 bg-glory-red text-pure-white font-bold tracking-widest text-xs uppercase rounded-sm shadow-md hover:bg-glory-red/90 transition-colors">
+                Click Me!
+            </button>
+        </div>
+    </div>
+
+    <!-- hero section h-screen biar pas satu layar penuh setelah preloader hilang -->
+    <section id="hero-section" class="w-full h-screen bg-glory-blue text-pure-white relative flex items-center overflow-hidden">
+        
+        <!-- foto latar belakang, opacity dikecilkan biar gak terlalu dominan -->
+        <div class="absolute inset-0 z-0 opacity-40">
+            <img src="../../asset/img/culture/iceHockey/playerHand.jpg" 
+                 alt="Canada Ice Hockey Backdrop" 
+                 class="w-full h-full object-cover">
+        </div>
+
+        <!-- tekstur es tipis di atas foto biar ada kedalaman visual -->
+        <div class="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center z-0" 
+             style="background-image: url('../../asset/img/culture/iceHockey/ice_texture_close_up.jpg');">
+        </div>
+
+        <!-- konten hero utama -->
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10 w-full">
+            <div class="max-w-3xl">
+                
+                <!-- label kecil di atas judul -->
+                <span class="text-xs md:text-sm font-bold tracking-widest text-glory-red uppercase block mb-4 animate-fade-in">
+                    The Pulse of a Nation
+                </span>
+
+                <!-- tempat teks "ICE HOCKEY" dari preloader akan dipindah ke sini oleh JS -->
+                <!-- min-h sebagai placeholder biar layout gak lompat-lompat saat elemen masuk -->
+                <div id="hero-title-container" class="w-full min-h-[50px] md:min-h-[90px] flex items-center mb-6">
+                    <!-- h1#opening-title digeser ke sini secara fisik pas animasi selesai -->
+                </div>
+
+                <!-- deskripsi singkat di bawah judul -->
+                <p id="hero-description" class="text-base md:text-lg text-pure-white/80 leading-relaxed font-light mb-8 max-w-2xl">
+                    Lebih dari sekadar cabang olahraga, hoki es adalah identitas, detak jantung, dan agama kedua bagi masyarakat Kanada. Dari danau beku di halaman belakang hingga panggung megah kejuaraan dunia.
+                </p>
+
+                <!-- tombol CTA buat scroll ke section konten -->
+                <div class="flex flex-wrap">
+                    <a href="#culture-section" class="bg-glory-red text-pure-white text-xs font-bold tracking-widest uppercase px-6 py-4 rounded-sm shadow-md hover:bg-glory-red/90 transition-colors duration-300">
+                        Mulai Menjelajah
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>  
+
+    <!-- section 1: sejarah & akar budaya -->
+    <section id="culture-section" class="relative w-full min-h-screen bg-pure-white text-glory-blue overflow-hidden py-16 md:py-24">
+        
+        <!-- tekstur es di pojok kanan bawah, samar aja buat ornamen -->
+        <div class="absolute right-0 bottom-0 w-full md:w-1/3 h-64 md:h-full opacity-10 pointer-events-none bg-cover bg-left md:bg-center z-0" 
+             style="background-image: url('../../asset/img/culture/iceHockey/ice_texture_close_up.jpg');">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
+            
+            <!-- grid 2 kolom di layar besar, 1 kolom di mobile -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+                
+                <!-- kolom kiri: teks narasi + gambar pond hockey -->
+                <div class="lg:col-span-5 flex flex-col justify-center">
+                    <span class="text-xs md:text-sm font-bold tracking-widest text-glory-red uppercase mb-3">
+                        01 / Roots & Origin
+                    </span>
+                    <h2 class="text-3xl md:text-5xl font-black tracking-tight leading-tight uppercase mb-6">
+                        The Birth <br class="hidden md:block">of The Game
+                    </h2>
+                    <p class="text-sm md:text-base text-glory-blue/80 leading-relaxed font-light mb-8">
+                        Bukan sekadar olahraga, ice hockey lahir dari insting bertahan hidup dan adaptasi para imigran Eropa menghadapi musim dingin ekstrem di Kanada. Ketika danau-danau mulai membeku menjadi lantai kaca raksasa, lahirlah sebuah tradisi yang kelak menyatukan seluruh identitas bangsa.
+                    </p>
+
+                    <!-- frame gambar dengan hover scale + grayscale -->
+                    <div class="group relative w-full h-64 md:h-80 rounded-sm overflow-hidden shadow-xl transition-all duration-500 hover:shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-t from-glory-blue/40 to-transparent z-10 mix-blend-multiply"></div>
+                        
+                        <!-- grayscale by default, warna muncul pas di-hover -->
+                        <img src="../../asset/img/culture/iceHockey/pond_hockey_canada.jpg" 
+                            alt="Ice Hockey Match Action" 
+                            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transform transition-all duration-700 group-hover:scale-105">
+                        
+                        <div class="absolute bottom-4 left-4 z-20 text-pure-white bg-glory-red/90 px-3 py-1 text-xs uppercase tracking-wider font-semibold">
+                            Montreal, 1875
+                        </div>
+                    </div>
+                </div>
+
+                <!-- kolom kanan: 3 kartu timeline sejarah -->
+                <div class="lg:col-span-7 space-y-6 md:space-y-8">
+                    
+                    <!-- kartu 1: akar tradisional -->
+                    <div class="group flex flex-col md:flex-row gap-4 md:gap-6 p-6 bg-glory-blue/[0.02] border border-glory-blue/5 rounded-sm transition-all duration-300 hover:bg-pure-white hover:border-glory-red/30 hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-sm bg-glory-blue text-pure-white flex items-center justify-center font-bold text-lg group-hover:bg-glory-red transition-colors duration-300">
+                                I
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold mb-2 group-hover:text-glory-red transition-colors duration-300">
+                                Akar Tradisional & Adaptasi Es
+                            </h3>
+                            <p class="text-xs md:text-sm text-glory-blue/70 leading-relaxed font-light">
+                                Permainan ini berakar dari adaptasi olahraga lapangan seperti *hurling* dan *shinny* oleh suku asli Mi'kmaq serta tentara imigran Inggris yang memodifikasinya agar bisa dimainkan di atas permukaan es alami.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- kartu 2: pertandingan resmi pertama -->
+                    <div class="group flex flex-col md:flex-row gap-4 md:gap-6 p-6 bg-glory-blue/[0.02] border border-glory-blue/5 rounded-sm transition-all duration-300 hover:bg-pure-white hover:border-glory-red/30 hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-sm bg-glory-blue text-pure-white flex items-center justify-center font-bold text-lg group-hover:bg-glory-red transition-colors duration-300">
+                                II
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold mb-2 group-hover:text-glory-red transition-colors duration-300">
+                                Laga Resmi Pertama (1875)
+                            </h3>
+                            <p class="text-xs md:text-sm text-glory-blue/70 leading-relaxed font-light">
+                                Transisi dari permainan jalanan liar menjadi olahraga teratur ditandai dengan pertandingan ice hockey dalam ruangan (*indoor*) pertama yang terorganisasi secara resmi di Victoria Skating Rink, Montreal.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- kartu 3: aturan mcgill -->
+                    <div class="group flex flex-col md:flex-row gap-4 md:gap-6 p-6 bg-glory-blue/[0.02] border border-glory-blue/5 rounded-sm transition-all duration-300 hover:bg-pure-white hover:border-glory-red/30 hover:shadow-xl hover:-translate-y-1">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-sm bg-glory-blue text-pure-white flex items-center justify-center font-bold text-lg group-hover:bg-glory-red transition-colors duration-300">
+                                III
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg md:text-xl font-bold mb-2 group-hover:text-glory-red transition-colors duration-300">
+                                Peletakan Regulasi McGill (1877)
+                            </h3>
+                            <p class="text-xs md:text-sm text-glory-blue/70 leading-relaxed font-light">
+                                Mahasiswa dari Universitas McGill menyusun sembilan aturan tertulis pertama. Mereka membatasi jumlah pemain menjadi 9 orang per tim dan mengganti bola karet bulat menjadi piringan karet datar (*puck*) kotak kayu agar tidak mudah memantul keluar es.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- section 2: filosofi & nilai karakter -->
+    <section id="philosophy-section" class="w-full min-h-screen bg-glory-blue text-pure-white py-20 md:py-28 flex items-center relative overflow-hidden">
+        
+        <!-- efek cahaya merah samar di background, murni dekoratif -->
+        <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[500px] h-[500px] bg-glory-red/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10 w-full">
+            
+            <!-- header section -->
+            <div class="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+                <span class="text-xs md:text-sm font-bold tracking-widest text-glory-red uppercase block mb-3">
+                    02 / The Hockey Code
+                </span>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight uppercase mb-6">
+                    Filosofi & Nilai Karakter
+                </h2>
+                <div class="w-24 h-1 bg-glory-red mx-auto mb-6"></div>
+                <p class="text-sm md:text-base text-pure-white/70 leading-relaxed font-light">
+                    Bagi masyarakat Kanada, ice hockey bukan sekadar permainan mencetak angka. Di atas lantai es yang licin, setiap detiknya mengajarkan filosofi hidup tentang mentalitas, kehormatan, dan persatuan.
+                </p>
+            </div>
+
+            <!-- grid 3 kolom di laptop, 1 kolom di mobile -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- pilar 1: grit -->
+                <div class="group flex flex-col bg-pure-white/[0.03] border border-pure-white/10 p-6 md:p-8 rounded-sm transition-all duration-300 hover:bg-pure-white/[0.06] hover:border-glory-red/40 flex-1">
+                    <!-- gambar grayscale, warna muncul saat hover -->
+                    <div class="w-full h-48 rounded-sm overflow-hidden mb-6 relative">
+                        <img src="../../asset/img/culture/iceHockey/hockey_helmet_close_up.jpg" 
+                             alt="Grit and Character" 
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                    </div>
+                    <h3 class="text-xl font-bold tracking-wide uppercase mb-3 text-pure-white group-hover:text-glory-red transition-colors duration-300">
+                        1. Grit & Resilience
+                    </h3>
+                    <p class="text-sm text-pure-white/70 leading-relaxed font-light flex-grow">
+                        Hoki mengajarkan ketangguhan fisik dan mental yang luar biasa. Berdiri tegak setelah benturan keras dan terus meluncur di tengah dinginnya atmosfer lapangan melambangkan kegigihan hidup orang Kanada.
+                    </p>
+                </div>
+
+                <!-- pilar 2: speed & precision -->
+                <div class="group flex flex-col bg-pure-white/[0.03] border border-pure-white/10 p-6 md:p-8 rounded-sm transition-all duration-300 hover:bg-pure-white/[0.06] hover:border-glory-red/40 flex-1">
+                    <!-- gambar grayscale, warna muncul saat hover -->
+                    <div class="w-full h-48 rounded-sm overflow-hidden mb-6 relative">
+                        <img src="../../asset/img/culture/iceHockey/hockey_puck_ice.jpg" 
+                             alt="Speed and Precision" 
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                    </div>
+                    <h3 class="text-xl font-bold tracking-wide uppercase mb-3 text-pure-white group-hover:text-glory-red transition-colors duration-300">
+                        2. Speed & Precision
+                    </h3>
+                    <p class="text-sm text-pure-white/70 leading-relaxed font-light flex-grow">
+                        Bergerak dengan kecepatan tinggi di atas pisau skate tipis menuntut fokus mutlak. Karakter ini mendidik pemain untuk mengambil keputusan krusial secara tepat dan taktis dalam hitungan milidetik.
+                    </p>
+                </div>
+
+                <!-- pilar 3: inclusivity -->
+                <div class="group flex flex-col bg-pure-white/[0.03] border border-pure-white/10 p-6 md:p-8 rounded-sm transition-all duration-300 hover:bg-pure-white/[0.06] hover:border-glory-red/40 flex-1">
+                    <!-- gambar grayscale, warna muncul saat hover -->
+                    <div class="w-full h-48 rounded-sm overflow-hidden mb-6 relative">
+                        <img src="../../asset/img/culture/iceHockey/canada_hockey_team_IIHF_2023.jpg" 
+                             alt="Inclusivity and Community" 
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                    </div>
+                    <h3 class="text-xl font-bold tracking-wide uppercase mb-3 text-pure-white group-hover:text-glory-red transition-colors duration-300">
+                        3. Community & Inclusion
+                    </h3>
+                    <p class="text-sm text-pure-white/70 leading-relaxed font-light flex-grow">
+                        Di Kanada, ice hockey meruntuhkan batasan sosial. Nilai utama dari kode ini adalah kerja sama tim tanpa ego, di mana komunitas berkumpul, mendukung satu sama lain, dan merayakan keberagaman di dalam maupun luar arena.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- section 3: tradisi saturday night -->
+    <section id="tradition-section" class="w-full min-h-screen bg-pure-white text-glory-blue py-20 md:py-28 flex items-center relative overflow-hidden">
+        
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10 w-full">
+            
+            <!-- header section -->
+            <div class="text-center max-w-2xl mx-auto mb-16 md:mb-20">
+                <span class="text-xs md:text-sm font-bold tracking-widest text-glory-red uppercase block mb-3">
+                    03 / Cultural Rituals
+                </span>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight uppercase mb-6">
+                    Tradisi "Saturday Night"
+                </h2>
+                <div class="w-24 h-1 bg-glory-red mx-auto mb-6"></div>
+                <p class="text-sm md:text-base text-glory-blue/80 leading-relaxed font-light">
+                    Ice hockey tidak berhenti ketika peluit akhir pertandingan berbunyi. Di Kanada, olahraga ini mendikte ritme akhir pekan dan menjadi bagian dari memori masa kecil setiap generasi.
+                </p>
+            </div>
+
+            <!-- 2 blok konten kiri-kanan di laptop, 1 kolom di mobile -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                
+                <!-- blok kiri: hockey night in canada -->
+                <div class="group flex flex-col md:flex-row lg:flex-col gap-6 items-start">
+                    <!-- frame gambar grayscale, hover jadi berwarna -->
+                    <div class="w-full md:w-1/2 lg:w-full h-64 rounded-sm overflow-hidden shadow-md relative flex-shrink-0">
+                        <img src="../../asset/img/culture/iceHockey/cozy_living_room_tv.jpg" 
+                             alt="Hockey Night in Canada" 
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                        <div class="absolute top-4 left-4 bg-glory-blue text-pure-white px-3 py-1 text-xs uppercase tracking-wider font-semibold">
+                            The Indoor Ritual
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold tracking-wide uppercase mb-3 text-glory-blue group-hover:text-glory-red transition-colors duration-300">
+                            Hockey Night in Canada
+                        </h3>
+                        <p class="text-sm text-glory-blue/70 leading-relaxed font-light">
+                            Sejak tahun 1930-an, hari Sabtu malam di Kanada telah bertransformasi menjadi waktu yang sakral. Jutaan keluarga memiliki ritual wajib berkumpul di ruang tamu di depan layar televisi untuk mendukung tim nasional mereka. Ini bukan sekadar siaran pertandingan, melainkan momen kebersamaan keluarga yang diwariskan turun-temurun.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- blok kanan: pond hockey -->
+                <div class="group flex flex-col md:flex-row-reverse lg:flex-col gap-6 items-start">
+                    <!-- frame gambar grayscale, hover jadi berwarna -->
+                    <div class="w-full md:w-1/2 lg:w-full h-64 rounded-sm overflow-hidden shadow-md relative flex-shrink-0">
+                        <img src="../../asset/img/culture/iceHockey/pond_hockey_kids.jpg" 
+                             alt="Pond Hockey Tradition" 
+                             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 transform group-hover:scale-105">
+                        <div class="absolute top-4 left-4 bg-glory-red text-pure-white px-3 py-1 text-xs uppercase tracking-wider font-semibold">
+                            The Outdoor Soul
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl md:text-2xl font-bold tracking-wide uppercase mb-3 text-glory-blue group-hover:text-glory-red transition-colors duration-300">
+                            The Backyard Pond Hockey
+                        </h3>
+                        <p class="text-sm text-glory-blue/70 leading-relaxed font-light">
+                            Saat musim membekukan halaman belakang dan danau sekitar lingkungan rumah, masyarakat Kanada baik tua maupun muda akan keluar mengenakan sepatu skate mereka. Tanpa aturan ketat, tanpa peluit wasit, mereka bermain ice hockey kasual di atas es murni. Di sinilah ikatan komunitas dan kecintaan tulus pada permainan ini dipupuk sejak dini.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- section 4: stanley cup & kompetisi global -->
+    <section id="competitions-section" class="w-full min-h-screen bg-glory-blue text-pure-white py-20 md:py-28 flex items-center relative overflow-hidden">
+        
+        <!-- tekstur es tipis di background, opacity rendah -->
+        <div class="absolute inset-0 opacity-5 pointer-events-none bg-cover bg-center z-0" 
+             style="background-image: url('../../asset/img/culture/iceHockey/ice_texture_close_up.jpg');">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 relative z-10 w-full">
+            
+            <!-- header section -->
+            <div class="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+                <span class="text-xs md:text-sm font-bold tracking-widest text-glory-red uppercase block mb-3">
+                    04 / Champions & Glory
+                </span>
+                <h2 class="text-3xl md:text-5xl font-black tracking-tight uppercase mb-6">
+                    Legacy of Champions
+                </h2>
+                <div class="w-24 h-1 bg-glory-red mx-auto mb-6"></div>
+                <p class="text-sm md:text-base text-pure-white/70 leading-relaxed font-light">
+                    Ice hockey adalah panggung di mana Kanada mengukir dominasi globalnya. Dari kejayaan Stanley Cup hingga podium emas internasional, setiap generasi terus meneruskan tongkat estafet sebagai penguasa es dunia.
+                </p>
+            </div>
+
+            <!-- kolase foto polaroid-style, 3 kolom di laptop -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-12 items-center pt-6 mb-20 md:mb-24">
+                
+                <!-- foto 1: tim wanita (kiri, sedikit miring ke kiri) -->
+                <div class="relative bg-pure-white p-3 pb-8 shadow-2xl transform lg:-translate-y-6 lg:-rotate-2">
+                    <div class="w-full h-64 md:h-72 overflow-hidden bg-glory-blue/10">
+                        <img src="../../asset/img/culture/iceHockey/national_womens_team.jpg" 
+                             alt="Hockey Canada National Women's Team" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-4 text-center text-glory-blue font-bold tracking-wide text-xs md:text-sm uppercase font-mono">
+                        🍁 National Women's Team
+                    </div>
+                </div>
+
+                <!-- foto 2: selebrasi juara dunia (tengah, sedikit naik & miring kanan) -->
+                <div class="relative bg-pure-white p-3 pb-8 shadow-2xl transform lg:translate-y-4 lg:rotate-3">
+                    <div class="w-full h-64 md:h-72 overflow-hidden bg-glory-blue/10">
+                        <img src="../../asset/img/culture/iceHockey/canada_hockey_team_IIHF_2023.jpg" 
+                             alt="IIHF World Champion Hockey Canada" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-4 text-center text-glory-blue font-bold tracking-wide text-xs md:text-sm uppercase font-mono">
+                        🏆 IIHF World Champions
+                    </div>
+                </div>
+
+                <!-- foto 3: tim junior (kanan, paling naik & miring kiri) -->
+                <div class="relative bg-pure-white p-3 pb-8 shadow-2xl transform md:col-span-2 lg:col-span-1 lg:-translate-y-12 lg:-rotate-3">
+                    <div class="w-full h-64 md:h-72 overflow-hidden bg-glory-blue/10">
+                        <img src="../../asset/img/culture/iceHockey/national_junior_team.jpg" 
+                             alt="Hockey Canada National Men's Team" 
+                             class="w-full h-full object-cover">
+                    </div>
+                    <div class="mt-4 text-center text-glory-blue font-bold tracking-wide text-xs md:text-sm uppercase font-mono">
+                        🦅 National Junior Team
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- link penghantar ke situs resmi Hockey Canada -->
+            <div class="text-center max-w-xl mx-auto border-t border-pure-white/10 pt-10">
+                <p class="text-sm md:text-base text-pure-white/80 font-light leading-relaxed mb-6">
+                    Ingin mengenal lebih dekat para atlet, jadwal pertandingan, dan sejarah panjang di balik kejayaan tim nasional hoki Kanada?
+                </p>
+                <a href="https://www.hockeycanada.ca/en-ca/team-canada" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="inline-block bg-glory-red text-pure-white text-xs md:text-sm font-bold tracking-widest uppercase px-8 py-4 rounded-sm shadow-md hover:bg-glory-red/90 transition-colors duration-300">
+                    Jelajahi Team Canada Resmi
+                </a>
+            </div>
+
+        </div>
+    </section>
+</body>
+</html>
