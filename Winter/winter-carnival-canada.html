@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Winter Carnival — Karnaval Musim Dingin Kanada</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+  :root {
+    --ice:      #E8F4FF;
+    --frost:    #B8D8F0;
+    --sky:      #4A90C4;
+    --deep:     #0D2B45;
+    --navy:     #0A1F33;
+    --snow:     #F5FAFF;
+    --red:      #D42B2B;
+    --gold:     #E8C84A;
+    --muted:    #7AAAC8;
+    --text:     #0D2B45;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--snow);
+    color: var(--text);
+    font-family: 'Lora', serif;
+    overflow-x: hidden;
+  }
+
+  /* ── SNOWFALL ── */
+  #snowCanvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── BREADCRUMB ── */
+  .breadcrumb-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(13,43,69,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(184,216,240,0.15);
+    padding: 0.9rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .bc-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    color: var(--ice);
+    text-decoration: none;
+  }
+  .bc-logo span { color: var(--red); }
+  .bc-trail {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    display: flex; gap: 0.8rem; align-items: center;
+  }
+  .bc-trail .cur { color: var(--frost); }
+  .bc-trail .sep { opacity: 0.35; }
+  .bc-home {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .bc-home:hover { color: var(--frost); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 52px;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-left {
+    background: var(--navy);
+    padding: 7rem 5rem 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  /* diagonal ice crack */
+  .hero-left::before {
+    content: '';
+    position: absolute;
+    top: -10%; right: -5%;
+    width: 2px; height: 130%;
+    background: linear-gradient(to bottom, transparent, rgba(184,216,240,0.3), transparent);
+    transform: rotate(-12deg);
+  }
+
+  .chapter-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s ease forwards;
+  }
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(4rem, 7vw, 8rem);
+    line-height: 0.88;
+    letter-spacing: 0.03em;
+    color: var(--ice);
+    margin-bottom: 0.5rem;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.35s ease forwards;
+  }
+  .hero-title .accent { color: var(--sky); display: block; }
+  .hero-title .year {
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    color: var(--gold);
+    letter-spacing: 0.3em;
+    display: block;
+    margin-top: 0.5rem;
+  }
+  .hero-lead {
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(232,244,255,0.65);
+    line-height: 1.8;
+    border-left: 2px solid var(--sky);
+    padding-left: 1.2rem;
+    margin: 2rem 0;
+    max-width: 420px;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.55s ease forwards;
+  }
+  .hero-meta {
+    display: flex; gap: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.7s ease forwards;
+  }
+  .meta-item { text-align: center; }
+  .meta-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .meta-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
+
+  /* Hero right — ice sculpture visual */
+  .hero-right {
+    background: linear-gradient(160deg, #1A3F60 0%, #0D2B45 50%, #050F1A 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 40%, rgba(74,144,196,0.25) 0%, transparent 65%);
+  }
+
+  /* Ice palace SVG */
+  .ice-palace { position: relative; z-index: 2; }
+
+  /* Floating flag */
+  .hero-flag {
+    position: absolute;
+    top: 2.5rem; right: 2.5rem;
+    z-index: 3;
+    opacity: 0;
+    animation: fadeUp 1s 1s ease forwards;
+  }
+  .flag-box {
+    background: rgba(13,43,69,0.7);
+    border: 1px solid rgba(184,216,240,0.2);
+    padding: 1.2rem 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(6px);
+  }
+  .flag-emoji { font-size: 2rem; display: block; margin-bottom: 0.4rem; }
+  .flag-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── STRIP ── */
+  .info-strip {
+    background: var(--red);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0.75rem 0;
+    position: relative; z-index: 1;
+  }
+  .strip-inner {
+    display: inline-flex; gap: 3rem;
+    animation: marquee 20s linear infinite;
+  }
+  .strip-item {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 0.15em;
+    color: white;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .strip-dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.5); }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  /* ── MAIN CONTENT ── */
+  .page-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 6rem 2rem 3rem;
+    position: relative; z-index: 1;
+  }
+
+  .s-tag {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-bottom: 0.8rem;
+  }
+  h2 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0.04em;
+    color: var(--deep);
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+  h2 em {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--sky);
+  }
+  p {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: #1A3A55;
+    margin-bottom: 1.3rem;
+  }
+
+  /* pull quote */
+  .pull-quote {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--deep);
+    border-top: 2px solid var(--frost);
+    border-bottom: 2px solid var(--frost);
+    padding: 1.8rem 0;
+    margin: 3rem 0;
+    line-height: 1.5;
+  }
+  .pull-quote span { color: var(--sky); }
+
+  /* divider */
+  .divider {
+    display: flex; align-items: center; gap: 1rem;
+    margin: 3.5rem 0; color: var(--frost);
+  }
+  .divider::before, .divider::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(to right, transparent, var(--frost), transparent);
+  }
+
+  /* ── ACTIVITIES GRID ── */
+  .activities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin: 3rem 0;
+  }
+  .act-card {
+    background: var(--deep);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+    cursor: default;
+  }
+  .act-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--sky);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+    transform-origin: left;
+  }
+  .act-card:hover { transform: translateY(-4px); }
+  .act-card:hover::before { transform: scaleX(1); }
+  .act-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  .act-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+    color: var(--ice);
+    margin-bottom: 0.6rem;
+  }
+  .act-desc {
+    font-size: 0.88rem;
+    color: rgba(184,216,240,0.7);
+    line-height: 1.65;
+    margin: 0;
+  }
+  .act-tag {
+    position: absolute;
+    top: 1.2rem; right: 1.2rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.5rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.8;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    margin: 2rem 0 3rem;
+    padding-left: 2.5rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0; left: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--sky), var(--frost), transparent);
+  }
+  .tl-item {
+    position: relative;
+    padding: 0 0 2.5rem 2rem;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -5px; top: 6px;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--sky);
+    border: 2px solid var(--snow);
+    transition: background 0.3s;
+  }
+  .tl-item:hover::before { background: var(--gold); }
+  .tl-year {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    color: var(--sky);
+    margin-bottom: 0.3rem;
+  }
+  .tl-title {
+    font-family: 'Lora', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--deep);
+    margin-bottom: 0.4rem;
+  }
+  .tl-desc {
+    font-size: 0.92rem;
+    color: #4A6880;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ── BONHOMME FEATURE ── */
+  .bonhomme-block {
+    background: var(--deep);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    margin: 3rem -2rem;
+  }
+  .bh-text {
+    padding: 4rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .bh-text .s-tag { color: var(--gold); }
+  .bh-text h2 { color: var(--ice); }
+  .bh-text p { color: rgba(232,244,255,0.7); }
+  .bh-visual {
+    background: linear-gradient(135deg, #1A3F60, #0A1F33);
+    display: flex; align-items: center; justify-content: center;
+    padding: 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .bh-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(74,144,196,0.2) 0%, transparent 70%);
+  }
+
+  /* ── FACT BAND ── */
+  .fact-band {
+    background: var(--sky);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: rgba(255,255,255,0.2);
+    margin: 3rem 0;
+  }
+  .fact-cell {
+    background: var(--sky);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  .fact-cell:hover { background: var(--deep); }
+  .fact-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: white;
+    line-height: 1;
+  }
+  .fact-label {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.75);
+    margin-top: 0.4rem;
+  }
+
+  /* ── PRACTICAL INFO ── */
+  .info-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 2rem 0;
+  }
+  .info-card {
+    border: 1px solid var(--frost);
+    padding: 2rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .info-card:hover {
+    border-color: var(--sky);
+    transform: translateY(-3px);
+  }
+  .ic-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .ic-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 0.08em;
+    color: var(--deep);
+    margin-bottom: 0.5rem;
+  }
+  .ic-body {
+    font-size: 0.88rem;
+    color: #4A6880;
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  /* ── SCROLL REVEAL ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in { opacity: 1; transform: none; }
+
+  /* ── BOTTOM NAV ── */
+  .page-nav {
+    border-top: 1px solid var(--frost);
+    padding: 2.5rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; z-index: 1;
+  }
+  .pn-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .pn-link:hover { color: var(--sky); }
+  .pn-chapter {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--sky);
+    display: block;
+    margin-top: 0.2rem;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<canvas id="snowCanvas"></canvas>
+
+<nav class="breadcrumb-bar">
+  <a class="bc-logo" href="#">Golden<span>Grove</span></a>
+  <div class="bc-trail">
+    <span>Kanada</span><span class="sep">/</span>
+    <span>Budaya</span><span class="sep">/</span>
+    <span class="cur">Winter Carnival</span>
+  </div>
+  <a class="bc-home" href="#">← Beranda</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <p class="chapter-tag">Bab 03 · Budaya & Tradisi</p>
+    <h1 class="hero-title">
+      WINTER
+      <span class="accent">CARNIVAL</span>
+      <span class="year">· KANADA ·</span>
+    </h1>
+    <p class="hero-lead">
+      Selama dua minggu setiap Februari, kota Quebec berubah menjadi kerajaan es terbesar di dunia — festival musim dingin tertua dan terbesar di Amerika Utara.
+    </p>
+    <div class="hero-meta">
+      <div class="meta-item">
+        <div class="meta-num">1894</div>
+        <div class="meta-label">Tahun Pertama</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-num">400K+</div>
+        <div class="meta-label">Pengunjung/Tahun</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-num">17</div>
+        <div class="meta-label">Hari Festival</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="ice-palace">
+      <svg width="340" height="400" viewBox="0 0 340 400" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 40px rgba(74,144,196,0.4))">
+        <!-- Ground -->
+        <rect x="0" y="370" width="340" height="30" fill="rgba(184,216,240,0.15)" rx="2"/>
+        <!-- Main castle body -->
+        <rect x="80" y="200" width="180" height="170" fill="rgba(74,144,196,0.2)" stroke="rgba(184,216,240,0.5)" stroke-width="1"/>
+        <!-- Door -->
+        <rect x="145" y="290" width="50" height="80" fill="rgba(10,31,51,0.8)" rx="25 25 0 0"/>
+        <!-- Windows -->
+        <rect x="95" y="220" width="35" height="40" fill="rgba(232,244,255,0.15)" stroke="rgba(184,216,240,0.4)" stroke-width="1" rx="17 17 0 0"/>
+        <rect x="210" y="220" width="35" height="40" fill="rgba(232,244,255,0.15)" stroke="rgba(184,216,240,0.4)" stroke-width="1" rx="17 17 0 0"/>
+        <!-- Center tower -->
+        <rect x="130" y="120" width="80" height="110" fill="rgba(74,144,196,0.25)" stroke="rgba(184,216,240,0.5)" stroke-width="1"/>
+        <!-- Center tower roof -->
+        <polygon points="170,50 110,130 230,130" fill="rgba(100,170,220,0.4)" stroke="rgba(184,216,240,0.7)" stroke-width="1.5"/>
+        <!-- Side towers -->
+        <rect x="55" y="240" width="50" height="130" fill="rgba(74,144,196,0.15)" stroke="rgba(184,216,240,0.35)" stroke-width="1"/>
+        <rect x="235" y="240" width="50" height="130" fill="rgba(74,144,196,0.15)" stroke="rgba(184,216,240,0.35)" stroke-width="1"/>
+        <!-- Side tower roofs -->
+        <polygon points="80,180 55,245 105,245" fill="rgba(100,170,220,0.35)" stroke="rgba(184,216,240,0.6)" stroke-width="1"/>
+        <polygon points="260,180 235,245 285,245" fill="rgba(100,170,220,0.35)" stroke="rgba(184,216,240,0.6)" stroke-width="1"/>
+        <!-- Flag on center -->
+        <line x1="170" y1="50" x2="170" y2="15" stroke="rgba(184,216,240,0.8)" stroke-width="1.5"/>
+        <rect x="170" y="15" width="22" height="14" fill="rgba(212,43,43,0.8)" rx="1"/>
+        <!-- Ice sparkles -->
+        <circle cx="113" cy="240" r="3" fill="rgba(232,244,255,0.6)"/>
+        <circle cx="227" cy="240" r="3" fill="rgba(232,244,255,0.6)"/>
+        <circle cx="170" cy="165" r="3" fill="rgba(232,244,255,0.6)"/>
+        <!-- Icicles from main roof -->
+        <line x1="95" y1="200" x2="95" y2="215" stroke="rgba(184,216,240,0.6)" stroke-width="2"/>
+        <line x1="110" y1="200" x2="110" y2="222" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
+        <line x1="125" y1="200" x2="125" y2="210" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
+        <line x1="215" y1="200" x2="215" y2="218" stroke="rgba(184,216,240,0.6)" stroke-width="2"/>
+        <line x1="230" y1="200" x2="230" y2="212" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
+        <line x1="245" y1="200" x2="245" y2="220" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
+        <!-- Light glow inside -->
+        <ellipse cx="170" cy="310" rx="20" ry="10" fill="rgba(232,200,74,0.15)"/>
+      </svg>
+    </div>
+
+    <div class="hero-flag">
+      <div class="flag-box">
+        <span class="flag-emoji">🇨🇦</span>
+        <div class="flag-label">Quebec City</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="info-strip">
+  <div class="strip-inner" id="strip"></div>
+</div>
+
+<article class="page-content">
+
+  <div class="reveal">
+    <p class="s-tag">Pengenalan</p>
+    <h2>Festival Es <em>Terbesar di Dunia</em></h2>
+  </div>
+  <p class="reveal">Carnaval de Québec — atau Quebec Winter Carnival — adalah perayaan musim dingin terbesar dan tertua di Amerika Utara yang diadakan setiap tahun di Quebec City, Kanada. Festival ini berlangsung selama 17 hari pada akhir Januari hingga pertengahan Februari, bertepatan dengan puncak musim dingin yang paling dingin di kota tersebut.</p>
+  <p class="reveal">Apa yang membuat festival ini unik adalah semangat warganya: alih-alih bersembunyi dari suhu yang bisa mencapai -20°C, masyarakat Quebec justru merayakannya dengan penuh sukacita. Festival ini merupakan bukti filosofi hidup orang Kanada — khususnya Quebec — bahwa musim dingin bukan halangan, melainkan undangan untuk bersenang-senang.</p>
+
+  <blockquote class="pull-quote reveal">
+    "Di Quebec, musim dingin bukan sesuatu yang <span>ditahan</span> — melainkan sesuatu yang <span>dirayakan</span>."
+  </blockquote>
+
+  <div class="divider reveal">❄</div>
+
+  <div class="reveal">
+    <p class="s-tag">Sejarah</p>
+    <h2>Lebih dari <em>130 Tahun</em> Tradisi</h2>
+  </div>
+  <p class="reveal">Winter Carnival lahir dari kebutuhan warga Quebec untuk mengangkat semangat di tengah musim dingin yang panjang dan keras. Festival ini pertama kali diadakan secara resmi pada 1894, menjadikannya salah satu festival musim dingin paling tua di dunia.</p>
+
+  <div class="timeline reveal">
+    <div class="tl-item">
+      <div class="tl-year">1894</div>
+      <div class="tl-title">Festival Pertama</div>
+      <p class="tl-desc">Quebec menggelar festival musim dingin pertama untuk menarik wisatawan di bulan Februari. Diisi dengan pertandingan olahraga musim dingin dan parade.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1955</div>
+      <div class="tl-title">Kelahiran Bonhomme</div>
+      <p class="tl-desc">Maskot ikonik festival — Bonhomme Carnaval, manusia salju bertopi merah — resmi diperkenalkan dan langsung menjadi simbol yang dicintai jutaan orang.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">1980-an</div>
+      <div class="tl-title">Ekspansi Global</div>
+      <p class="tl-desc">Festival mulai menarik perhatian internasional. Istana es mulai dibangun dengan skala yang semakin megah, menggunakan ribuan ton es dari Sungai St. Lawrence.</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-year">Hari Ini</div>
+      <div class="tl-title">Warisan Dunia</div>
+      <p class="tl-desc">Dengan 400.000+ pengunjung per tahun dari seluruh penjuru dunia, Winter Carnival kini menjadi salah satu festival paling terkenal di planet ini.</p>
+    </div>
+  </div>
+
+  <div class="divider reveal">❄</div>
+
+  <div class="reveal">
+    <p class="s-tag">Aktivitas Utama</p>
+    <h2>Apa yang Bisa <em>Dilakukan?</em></h2>
+  </div>
+  <p class="reveal">Festival ini menawarkan puluhan aktivitas yang tersebar di seluruh kota tua Quebec. Dari kompetisi internasional hingga pertunjukan seni, ada sesuatu untuk semua usia.</p>
+
+  <div class="activities-grid reveal">
+    <div class="act-card">
+      <span class="act-tag">Ikonik</span>
+      <span class="act-icon">🏰</span>
+      <div class="act-title">Istana Es</div>
+      <p class="act-desc">Dibangun dari 6.000+ balok es seberat 300 ton. Buka malam hari dengan pencahayaan berwarna yang spektakuler. Pusat festival setiap tahun.</p>
+    </div>
+    <div class="act-card">
+      <span class="act-tag">Olahraga</span>
+      <span class="act-icon">🛷</span>
+      <div class="act-title">Balapan Kanoe Es</div>
+      <p class="act-desc">Kompetisi paling ekstrem: tim mendayung dan berlari melewati Sungai St. Lawrence yang setengah beku. Tradisi unik sejak 1894.</p>
+    </div>
+    <div class="act-card">
+      <span class="act-tag">Seni</span>
+      <span class="act-icon">🗿</span>
+      <div class="act-title">Ukiran Salju</div>
+      <p class="act-desc">Seniman dari seluruh dunia berkompetisi menciptakan patung salju raksasa di Plains of Abraham. Karya yang menakjubkan dan sementara.</p>
+    </div>
+    <div class="act-card">
+      <span class="act-tag">Kuliner</span>
+      <span class="act-icon">🍺</span>
+      <div class="act-title">Caribou & Cidre</div>
+      <p class="act-desc">Minuman khas festival — Caribou — campuran anggur merah, whisky, dan rempah hangat. Disajikan di "cabane" kecil sepanjang Old Quebec.</p>
+    </div>
+    <div class="act-card">
+      <span class="act-tag">Anak-anak</span>
+      <span class="act-icon">⛷</span>
+      <div class="act-title">Seluncur & Ski</div>
+      <p class="act-desc">Jalur seluncur es (glissades) sepanjang 270 meter, skating di luar ruangan, dan area ski khusus anak-anak di jantung kota tua.</p>
+    </div>
+    <div class="act-card">
+      <span class="act-tag">Malam</span>
+      <span class="act-icon">🎆</span>
+      <div class="act-title">Parade & Kembang Api</div>
+      <p class="act-desc">Parade malam yang megah dengan floats bercahaya, kostum warna-warni, dan pesta kembang api yang menerangi langit Quebec yang gelap.</p>
+    </div>
+  </div>
+
+</article>
+
+<div class="bonhomme-block reveal">
+  <div class="bh-text">
+    <p class="s-tag">Maskot Festival</p>
+    <h2>BONHOMME CARNAVAL</h2>
+    <p>Bonhomme adalah maskot resmi festival sejak 1955 — manusia salju raksasa berbadan bulat dengan syal merah, topi kulit, dan senyum abadi. Ia adalah "raja" festival yang menyambut tamu, memimpin parade, dan tinggal di Istana Es.</p>
+    <p>Nama "Bonhomme" berasal dari bahasa Prancis yang berarti "pria baik" atau "pria sederhana". Setiap tahun ia membagikan Effigie-nya — sejenis lencana kecil — yang menjadi simbol keberuntungan bagi pemegangnya.</p>
+  </div>
+  <div class="bh-visual">
+    <svg width="220" height="280" viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 20px rgba(74,144,196,0.3))">
+      <!-- Hat -->
+      <ellipse cx="110" cy="52" rx="42" ry="8" fill="#8B1A1A"/>
+      <rect x="75" y="20" width="70" height="35" rx="4" fill="#B22222"/>
+      <ellipse cx="110" cy="20" rx="35" ry="7" fill="#CC2222"/>
+      <!-- Head -->
+      <circle cx="110" cy="90" r="45" fill="white" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
+      <!-- Eyes -->
+      <circle cx="96" cy="82" r="6" fill="#0D2B45"/>
+      <circle cx="124" cy="82" r="6" fill="#0D2B45"/>
+      <circle cx="98" cy="80" r="2" fill="white"/>
+      <circle cx="126" cy="80" r="2" fill="white"/>
+      <!-- Carrot nose -->
+      <ellipse cx="110" cy="93" rx="5" ry="8" fill="#E8A030" transform="rotate(10,110,93)"/>
+      <!-- Smile -->
+      <path d="M94 103 Q110 115 126 103" stroke="#0D2B45" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- Scarf -->
+      <path d="M68 125 Q110 140 152 125" stroke="#CC2222" stroke-width="12" fill="none" stroke-linecap="round"/>
+      <path d="M130 130 Q140 155 125 170" stroke="#CC2222" stroke-width="10" fill="none" stroke-linecap="round"/>
+      <!-- Body -->
+      <ellipse cx="110" cy="195" rx="55" ry="55" fill="white" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
+      <!-- Buttons -->
+      <circle cx="110" cy="173" r="5" fill="#0D2B45"/>
+      <circle cx="110" cy="193" r="5" fill="#0D2B45"/>
+      <circle cx="110" cy="213" r="5" fill="#0D2B45"/>
+      <!-- Belt -->
+      <rect x="65" y="228" width="90" height="12" rx="2" fill="#8B1A1A"/>
+      <rect x="103" y="226" width="14" height="16" rx="1" fill="#E8C84A"/>
+    </svg>
+  </div>
+</div>
+
+<article class="page-content">
+
+  <div class="fact-band reveal">
+    <div class="fact-cell">
+      <div class="fact-num">-20°C</div>
+      <div class="fact-label">Suhu Rata-rata</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">6000</div>
+      <div class="fact-label">Balok Es Istana</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">17</div>
+      <div class="fact-label">Hari Festival</div>
+    </div>
+    <div class="fact-cell">
+      <div class="fact-num">70+</div>
+      <div class="fact-label">Aktivitas Berbeda</div>
+    </div>
+  </div>
+
+  <div class="divider reveal">❄</div>
+
+  <div class="reveal">
+    <p class="s-tag">Info Praktis</p>
+    <h2>Cara <em>Mengunjungi</em></h2>
+  </div>
+  <p class="reveal">Ingin merasakan sendiri keajaiban Winter Carnival? Berikut yang perlu kamu ketahui sebelum berangkat ke Quebec City.</p>
+
+  <div class="info-cards reveal">
+    <div class="info-card">
+      <div class="ic-icon">📅</div>
+      <div class="ic-title">Kapan</div>
+      <p class="ic-body">Akhir Januari – pertengahan Februari setiap tahunnya. Biasanya 17 hari penuh. Cek situs resmi untuk tanggal pasti karena berubah tiap tahun.</p>
+    </div>
+    <div class="info-card">
+      <div class="ic-icon">📍</div>
+      <div class="ic-title">Di Mana</div>
+      <p class="ic-body">Quebec City, Quebec, Kanada. Sebagian besar aktivitas berlangsung di Vieux-Québec (Old Quebec) dan Plains of Abraham yang ikonik.</p>
+    </div>
+    <div class="info-card">
+      <div class="ic-icon">🎟</div>
+      <div class="ic-title">Tiket</div>
+      <p class="ic-body">Banyak aktivitas gratis. Tiket "Effigie" (lencana resmi) memberikan akses ke Istana Es, glissades, dan acara berbayar lainnya. Harga sekitar CAD $20–30.</p>
+    </div>
+    <div class="info-card">
+      <div class="ic-icon">🧥</div>
+      <div class="ic-title">Persiapan</div>
+      <p class="ic-body">Lapisan pakaian sangat penting. Bawa jaket thermal, sarung tangan tebal, sepatu tahan air, dan kaos kaki wol. Suhu bisa mencapai -25°C di malam hari.</p>
+    </div>
+  </div>
+
+  <div class="divider reveal">❄</div>
+
+  <div class="reveal">
+    <p class="s-tag">Kesimpulan</p>
+    <h2>Lebih dari Sekadar <em>Festival</em></h2>
+  </div>
+  <p class="reveal">Winter Carnival bukan hanya perayaan musim dingin — ia adalah cerminan jiwa masyarakat Quebec. Dalam setiap istana es yang dibangun, setiap balap kanoe di atas sungai yang beku, dan setiap senyum Bonhomme yang menyambut pengunjung, ada pesan yang jelas: hidup adalah untuk dirayakan, bukan ditakuti — bahkan di tengah dingin yang menggigit sekalipun.</p>
+  <p class="reveal">Bagi siapa pun yang berkesempatan mengunjungi Kanada di bulan Februari, Winter Carnival adalah pengalaman yang tidak akan pernah terlupakan — sebuah perpaduan unik antara budaya, seni, olahraga, dan kehangatan manusia di tengah lautan salju.</p>
+
+</article>
+
+<div class="page-nav">
+  <a class="pn-link" href="#">← Sebelumnya<br><span class="pn-chapter">Apa Itu Maple Syrup</span></a>
+  <svg width="28" height="28" viewBox="0 0 60 60" fill="#4A90C4" opacity="0.35" xmlns="http://www.w3.org/2000/svg">
+    <path d="M30 2 L36 19 L54 12 L44 27 L58 32 L45 42 L50 57 L30 47 L10 57 L15 42 L2 32 L16 27 L6 12 L24 19 Z"/>
+  </svg>
+  <a class="pn-link" href="#" style="text-align:right">Selanjutnya →<br><span class="pn-chapter">Makanan Khas Kanada</span></a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  const canvas = document.getElementById('snowCanvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  const flakes = Array.from({ length: 120 }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: 1 + Math.random() * 3,
+    speed: 0.4 + Math.random() * 1.2,
+    drift: (Math.random() - 0.5) * 0.5,
+    opacity: 0.3 + Math.random() * 0.7
+  }));
+
+  function drawSnow() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    flakes.forEach(f => {
+      ctx.beginPath();
+      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(232,244,255,${f.opacity})`;
+      ctx.fill();
+      f.y += f.speed;
+      f.x += f.drift;
+      if (f.y > canvas.height) { f.y = -5; f.x = Math.random() * canvas.width; }
+      if (f.x > canvas.width)  { f.x = 0; }
+      if (f.x < 0)             { f.x = canvas.width; }
+    });
+    requestAnimationFrame(drawSnow);
+  }
+  drawSnow();
+
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  // ── MARQUEE STRIP ──
+  const stripItems = [
+    'Quebec City 🇨🇦', 'Sejak 1894', 'Istana Es', 'Bonhomme Carnaval',
+    'Balapan Kanoe', 'Ukiran Salju', '400.000 Pengunjung', '17 Hari Penuh',
+    'Quebec City 🇨🇦', 'Sejak 1894', 'Istana Es', 'Bonhomme Carnaval',
+    'Balapan Kanoe', 'Ukiran Salju', '400.000 Pengunjung', '17 Hari Penuh'
+  ];
+  const strip = document.getElementById('strip');
+  stripItems.forEach(t => {
+    const el = document.createElement('span');
+    el.className = 'strip-item';
+    el.innerHTML = `<span class="strip-dot"></span>${t}`;
+    strip.appendChild(el);
+  });
+
+  // ── SCROLL REVEAL ──
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i % 3) * 0.1 + 's';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+</script>
+</body>
+</html>
