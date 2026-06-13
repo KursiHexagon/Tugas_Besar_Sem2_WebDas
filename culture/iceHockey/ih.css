@@ -8,9 +8,81 @@ html {
     scrollbar-width: none;
     -ms-overflow-style: none;
     scroll-behavior: smooth;
+    scroll-padding-top: 80px;
 }
 
 /* khusus chrome/safari */
 html::-webkit-scrollbar {
     display: none;
+}
+
+/* Efek Hover Teks ICE HOCKEY */
+.hover-luxury {
+    position: relative;
+    display: inline-block;
+    /* Ubah ini agar tidak bentrok dengan transisi opacity yang diatur oleh JS */
+    transition: color 0.5s cubic-bezier(0.25, 1, 0.5, 1), letter-spacing 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.hover-luxury:hover {
+    color: #AF143C; 
+    letter-spacing: 0.05em; 
+}
+
+/* Animasi untuk menutup div preloader */
+.cubic-bezier-frame {
+    transition: all 1000s cubic-bezier(0.25, 1, 0.3, 1);
+}
+
+.slide-down-out {
+    transform: translateY(100%);
+}
+
+.slide-up-out {
+    transform: translateY(-100%);
+}
+
+.frame-explode {
+    top: -50px !important;
+    bottom: -50px !important;
+    left: -50px !important;
+    right: -50px !important;
+    opacity: 0 !important;
+}
+
+/* Animasi Fade-In Hero Section */
+.fade-in {
+    animation: fadeInPage 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes fadeInPage {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/*  SCROLL REVEAL EFFECT (Sama dengan Maple Syrup)  */
+.reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+/* Ketika elemen sudah masuk ke area layar */
+.reveal.in { 
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+#main-navbar {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    transition: opacity 1s ease-in-out, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#main-navbar.nav-hidden {
+    transform: translateY(-100%);
 }
