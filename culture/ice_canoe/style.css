@@ -1,0 +1,499 @@
+/* ============================================================
+   style.css — Ice Canoe Slide 4
+   ============================================================ */
+
+/* ---------- RESET & BASE ---------- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue:        #185FA5;
+  --blue-dark:   #0C447C;
+  --blue-light:  #E6F1FB;
+  --text:        #1a1a1a;
+  --text-muted:  #6b7280;
+  --border:      rgba(0, 0, 0, 0.10);
+  --border-mid:  rgba(0, 0, 0, 0.18);
+  --bg:          #f4f5f7;
+  --white:       #ffffff;
+  --surface:     #f9fafb;
+  --radius-sm:   6px;
+  --radius-md:   8px;
+  --radius-lg:   14px;
+  --shadow-sm:   0 1px 4px rgba(0,0,0,0.06);
+  --transition:  0.18s ease;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- PAGE WRAPPER ---------- */
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  box-shadow: 0 0 48px rgba(0,0,0,0.09);
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 340px;
+  overflow: hidden;
+  background: #1a3a5c;
+  flex-shrink: 0;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.72;
+  display: block;
+  transition: opacity 0.4s ease, transform 6s ease;
+}
+
+.hero img.loaded {
+  transform: scale(1.04);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 30, 60, 0.20) 0%,
+    rgba(10, 30, 60, 0.82) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2rem 2rem 1.75rem;
+}
+
+.slide-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 0.45rem;
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeUp 0.5s 0.2s ease forwards;
+}
+
+.hero-title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.15;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.55s 0.35s ease forwards;
+}
+
+.hero-sub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.68);
+  margin-top: 6px;
+  line-height: 1.5;
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeUp 0.55s 0.5s ease forwards;
+}
+
+/* ============================================================
+   CONTENT AREA
+   ============================================================ */
+.content {
+  flex: 1;
+  padding: 1.75rem 1.75rem 1.25rem;
+}
+
+/* Section label */
+.section-label {
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 0.5px solid var(--border);
+}
+
+/* Intro card */
+.intro-card {
+  background: var(--surface);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.intro-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-card p {
+  font-size: 14.5px;
+  color: var(--text);
+  line-height: 1.82;
+}
+
+/* ============================================================
+   FACT CARDS GRID
+   ============================================================ */
+.facts-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-bottom: 1.6rem;
+}
+
+.fact-card {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 0.75rem;
+  text-align: center;
+  cursor: default;
+  opacity: 0;
+  transform: translateY(16px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    box-shadow var(--transition),
+    border-color var(--transition);
+}
+
+.fact-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fact-card:hover {
+  box-shadow: var(--shadow-sm);
+  border-color: var(--blue-light);
+}
+
+.fact-card i {
+  font-size: 20px;
+  color: var(--blue);
+  display: block;
+  margin-bottom: 6px;
+}
+
+.fact-value {
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text);
+  display: block;
+}
+
+.fact-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 3px;
+  display: block;
+  line-height: 1.4;
+}
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+.timeline {
+  margin-bottom: 1.6rem;
+}
+
+.tl-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  opacity: 0;
+  transform: translateX(-14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.tl-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tl-spine {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 30px;
+}
+
+.tl-dot {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--blue-light);
+  border: 2px solid var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.tl-item:hover .tl-dot {
+  background: var(--blue);
+  transform: scale(1.12);
+}
+
+.tl-item:hover .tl-dot i {
+  color: #fff;
+}
+
+.tl-dot i {
+  font-size: 14px;
+  color: var(--blue);
+  transition: color var(--transition);
+}
+
+.tl-connector {
+  width: 2px;
+  flex: 1;
+  min-height: 16px;
+  background: var(--border);
+  margin: 3px 0;
+}
+
+.tl-body {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1rem;
+  flex: 1;
+  margin-bottom: 10px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+.tl-item:hover .tl-body {
+  border-color: var(--blue-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.tl-year {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--blue);
+  letter-spacing: 0.05em;
+}
+
+.tl-text {
+  font-size: 13px;
+  color: var(--text);
+  margin-top: 3px;
+  line-height: 1.65;
+}
+
+/* ============================================================
+   INFO CARD
+   ============================================================ */
+.info-card {
+  background: var(--white);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.info-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.info-card h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.65rem;
+}
+
+.info-card h3 i {
+  font-size: 18px;
+  color: var(--blue);
+}
+
+.info-card p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.78;
+}
+
+/* ============================================================
+   NAV BAR
+   ============================================================ */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.75rem;
+  border-top: 0.5px solid var(--border);
+  background: var(--white);
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+}
+
+/* shared btn base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 20px;
+  border-radius: var(--radius-md);
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform 0.12s ease,
+    box-shadow var(--transition);
+  user-select: none;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Back button */
+.btn-back {
+  border: 0.5px solid var(--border-mid);
+  background: transparent;
+  color: var(--text);
+}
+
+.btn-back i {
+  font-size: 16px;
+  color: var(--text-muted);
+  transition: transform var(--transition);
+}
+
+.btn-back:hover {
+  background: var(--surface);
+  border-color: rgba(0,0,0,0.28);
+}
+
+.btn-back:hover i {
+  transform: translateX(-3px);
+}
+
+/* Home button */
+.btn-home {
+  border: none;
+  background: var(--blue);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(24, 95, 165, 0.28);
+}
+
+.btn-home i {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.btn-home:hover {
+  background: var(--blue-dark);
+  box-shadow: 0 3px 12px rgba(24, 95, 165, 0.38);
+}
+
+/* Slide dots */
+.slide-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #d1d5db;
+  transition: all 0.25s ease;
+}
+
+.dot.active {
+  width: 22px;
+  border-radius: 4px;
+  background: var(--blue);
+}
+
+/* ============================================================
+   TOOLTIP
+   ============================================================ */
+.tooltip {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  background: rgba(15, 25, 40, 0.88);
+  color: #fff;
+  font-size: 12px;
+  padding: 6px 14px;
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.tooltip.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ============================================================
+   KEYFRAMES
+   ============================================================ */
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 520px) {
+  .hero { height: 260px; }
+  .hero-title { font-size: 22px; }
+  .facts-grid { grid-template-columns: repeat(2, 1fr); }
+  .content { padding: 1.25rem 1.25rem 1rem; }
+  .nav-bar { padding: 0.85rem 1.25rem; }
+}
