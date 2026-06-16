@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dwibahasa Kanada | Explore Canada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" type="text/css" href="bilingual.css">
+</head>
+<body class="text-[#EDEBDD] antialiased min-h-screen bg-[#1B1717] font-['IBM_Plex_Sans_Devanagari',sans-serif] overflow-x-hidden">
+
+    <nav id="main-nav" class="fixed top-0 left-0 w-full z-50 h-16 border-b border-[#EDEBDD]/[0.08] transition-all duration-300 bg-transparent flex items-center">
+        <div class="max-w-7xl w-full mx-auto px-6 flex items-center justify-between">
+            <a href="#" class="font-bold tracking-widest text-[#EDEBDD] text-base uppercase">EXPLORE CANADA</a>
+            
+            <div class="hidden lg:flex space-x-10 text-[11px] font-light uppercase tracking-[0.2em] text-[#EDEBDD]/60">
+                <a href="#sejarah" class="hover:text-[#810100] transition-colors">Sejarah</a>
+                <a href="#undang-undang" class="hover:text-[#810100] transition-colors">Undang-Undang</a>
+                <a href="#data" class="hover:text-[#810100] transition-colors">Data</a>
+                <a href="#dampak-positif" class="hover:text-[#810100] transition-colors">Dampak</a>
+                <a href="#tantangan" class="hover:text-[#810100] transition-colors">Tantangan</a>
+                <a href="#kehidupan-modern" class="hover:text-[#810100] transition-colors">Kehidupan Modern</a>
+            </div>
+            
+            <div>
+                <a href="../../main/main_page.html" class="px-5 py-2 rounded-full border border-[#EDEBDD]/30 text-[11px] uppercase tracking-wider text-[#EDEBDD] hover:bg-[#EDEBDD]/10 transition-all font-medium">
+                    ← Beranda
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="min-h-screen w-full flex items-center relative px-6 md:px-12 pt-16 overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(27,23,23,0.92) 40%, rgba(27,23,23,0.75) 100%), url('https://images.unsplash.com/photo-1507992781348-310259076fe0?auto=format&fit=crop&w=1200&q=80');">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full max-w-7xl mx-auto items-center relative z-10">
+            
+            <div class="lg:col-span-7 space-y-8 text-left reveal">
+                <div class="text-[11px] font-light tracking-[0.3em] uppercase text-[#EDEBDD]/50">
+                    ANGLAIS <span class="text-[#810100] mx-1">✦</span> FRANÇAIS
+                </div>
+                
+                <h1 class="hero-title font-bold tracking-tighter text-[#EDEBDD] leading-[0.95]">
+                    Dua Bahasa.<br><span class="opacity-40">Satu Negara.</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg md:text-xl text-[#EDEBDD]/60 font-light max-w-xl leading-relaxed">
+                    Dua warisan budaya berpadu dalam satu keputusan bersejarah yang mengubah cara sebuah negara mendefinisikan dirinya sendiri secara total.
+                </p>
+
+                <div class="pt-8 flex items-center space-x-3 text-[11px] font-light tracking-widest uppercase text-[#EDEBDD]/40">
+                    <div class="w-[1px] h-10 bg-[#810100] animate-bounce-custom"></div>
+                    <span>Canada</span>
+                </div>
+            </div>
+            
+            <div class="hidden lg:flex lg:col-span-5 h-[420px] gap-6 reveal" style="transition-delay: 200ms;">
+                <div class="flex-1 bg-[#810100]/20 border border-[#810100]/30 rounded-none p-8 flex flex-col justify-between relative overflow-hidden group">
+                    <span class="absolute -bottom-6 -right-4 font-bold text-9xl text-[#EDEBDD]/5 select-none transition-transform group-hover:scale-105">EN</span>
+                    <div class="w-2 h-2 bg-[#810100]"></div>
+                    <div>
+                        <span class="block text-2xl font-bold tracking-wider text-[#EDEBDD] uppercase mb-1">English</span>
+                        <span class="text-[10px] tracking-widest text-[#EDEBDD]/40 uppercase block">Warisan Britania</span>
+                    </div>
+                </div>
+                <div class="flex-1 border border-[#EDEBDD]/10 rounded-none p-8 flex flex-col justify-between relative overflow-hidden group mt-16">
+                    <span class="absolute -bottom-6 -right-4 font-bold text-9xl text-[#EDEBDD]/5 select-none transition-transform group-hover:scale-105">FR</span>
+                    <div class="flex space-x-1">
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#EDEBDD]/30"></div>
+                        <div class="w-1.5 h-1.5 rounded-full bg-[#810100]"></div>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-bold tracking-wider text-[#EDEBDD] uppercase mb-1">Français</span>
+                        <span class="text-[10px] tracking-widest text-[#EDEBDD]/40 uppercase block">Warisan Prancis</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sejarah" class="py-32 max-w-7xl mx-auto px-6 relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+            
+            <div class="lg:col-span-7">
+                <div class="mb-16 text-left">
+                    <span class="text-[11px] font-light tracking-[0.3em] uppercase text-[#810100] block mb-3">Latar Belakang</span>
+                    <h2 class="section-title font-bold tracking-tight text-[#EDEBDD]">
+                        Dari Benturan Kolonial Menuju Akar Kompromi
+                    </h2>
+                </div>
+
+                <div class="relative pl-8 border-l border-[#810100] space-y-16 reveal">
+                    
+                    <div class="relative group">
+                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-none bg-[#1B1717] border-2 border-[#810100] z-10 transition-transform group-hover:rotate-45"></div>
+                        <div>
+                            <span class="font-bold text-3xl text-[#EDEBDD] block tracking-tight mb-2">1608</span>
+                            <h3 class="text-lg font-bold mb-3 text-[#EDEBDD]">Berdirinya New France</h3>
+                            <p class="text-[#EDEBDD]/60 leading-relaxed text-sm font-light">
+                                Samuel de Champlain membangun pemukiman di kota Quebec pada tahun 1608. Langkah ini menandai lahirnya pusat kekuasaan Prancis di benua Amerika Utara. Selama lebih dari satu abad, masyarakat Frankofon membangun peradaban yang kuat di sepanjang Sungai St. Lawrence. Budaya dan bahasa Prancis tertanam kuat sebagai urat nadi kehidupan sehari-hari di wilayah tersebut.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-none bg-[#1B1717] border-2 border-[#810100] z-10 transition-transform group-hover:rotate-45"></div>
+                        <div>
+                            <span class="font-bold text-3xl text-[#EDEBDD] block tracking-tight mb-2">1759 – 1763</span>
+                            <h3 class="text-lg font-bold mb-3 text-[#EDEBDD]">Kejatuhan Koloni dan Peralihan Kuasa</h3>
+                            <p class="text-[#EDEBDD]/60 leading-relaxed text-sm font-light">
+                                September 1759 menjadi titik balik besar saat pasukan Inggris di bawah pimpinan Jenderal Wolfe merebut Quebec City melalui Pertempuran Plains of Abraham. Konfrontasi singkat ini menentukan jalannya sejarah Kanada. Melalui Perjanjian Paris pada tahun 1763, Prancis menyerahkan seluruh wilayah kekuasaannya di Kanada kepada Britania Raya. Kondisi ini memaksa puluhan ribu warga berbahasa Prancis hidup di bawah kendali monarki Inggris.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-none bg-[#1B1717] border-2 border-[#810100] z-10 transition-transform group-hover:rotate-45"></div>
+                        <div>
+                            <span class="font-bold text-3xl text-[#EDEBDD] block tracking-tight mb-2">1774</span>
+                            <h3 class="text-lg font-bold mb-3 text-[#EDEBDD]">Quebec Act dan Langkah Toleransi</h3>
+                            <p class="text-[#EDEBDD]/60 leading-relaxed text-sm font-light">
+                                Pemerintah Britania Raya mengambil jalur diplomasi yang cerdas dengan menerbitkan Quebec Act pada tahun 1774. Kebijakan ini mengembalikan sistem hukum sipil Prancis dan menjamin kebebasan beragama bagi umat Katolik. Langkah strategis ini terbukti berhasil menjaga stabilitas wilayah serta mempertahankan kesetiaan komunitas Frankofon ketika revolusi Amerika meletus.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-none bg-[#1B1717] border-2 border-[#810100] z-10 transition-transform group-hover:rotate-45"></div>
+                        <div>
+                            <span class="font-bold text-3xl text-[#EDEBDD] block tracking-tight mb-2">1867</span>
+                            <h3 class="text-lg font-bold mb-3 text-[#EDEBDD]">Era Konfederasi Kanada</h3>
+                            <p class="text-[#EDEBDD]/60 leading-relaxed text-sm font-light">
+                                Pembentukan Konfederasi Kanada pada tahun 1867 mulai memberikan ruang legal bagi bahasa Prancis meskipun cakupannya masih sangat terbatas. Penggunaannya hanya diizinkan dalam forum parlemen tertentu dan proses persidangan di pengadilan federal. Pengakuan simbolis berjalan sangat lambat, terlihat dari dokumen resmi seperti perangko yang baru menggunakan dua bahasa pada tahun 1927 dan uang kertas pada tahun 1936.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="relative group">
+                        <div class="absolute -left-[37px] top-1.5 w-4 h-4 rounded-none bg-[#1B1717] border-2 border-[#810100] z-10 transition-transform group-hover:rotate-45"></div>
+                        <div>
+                            <span class="font-bold text-3xl text-[#EDEBDD] block tracking-tight mb-2">1963</span>
+                            <h3 class="text-lg font-bold mb-3 text-[#EDEBDD]">Komisi Penyelaras Budaya</h3>
+                            <p class="text-[#EDEBDD]/60 leading-relaxed text-sm font-light">
+                                Guna meredam gejolak sosial dan kebangkitan nasionalisme di Quebec, Perdana Menteri Lester B. Pearson mendirikan sebuah komisi khusus untuk menyelidiki isu dwibahasa dan dwibudaya. Hasil investigasi resmi menunjukkan ketimpangan yang masif dalam penggunaan bahasa Prancis pada instansi pemerintahan. Temuan krusial inilah yang mendasari lahirnya reformasi hukum besar di kemudian hari.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 lg:sticky lg:top-28 w-full order-first lg:order-last mb-8 lg:mb-0">
+                <div class="border border-[#810100] p-2 bg-[#1B1717]">
+                    <img src=".././../asset/img/culture/bilingual/parliament_building.jpg" 
+                         alt="Gedung Parlemen di Ottawa" 
+                         class="w-full h-[250px] lg:h-[400px] object-cover filter grayscale contrast-125 hover:grayscale-0 transition-all duration-700"
+                         onerror="this.style.display='none'">
+                    </div>
+                <span class="text-[10px] font-light tracking-widest text-[#EDEBDD]/40 uppercase mt-3 block text-right">Gedung Parlemen Ottawa, Pusat Kebijakan Nasional</span>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="undang-undang" class="py-32 bg-[#630000] w-full text-[#1B1717]">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-left mb-16">
+                <span class="text-[11px] font-bold tracking-[0.3em] uppercase text-[#EDEBDD] block mb-3">Pilar Hukum</span>
+                <h2 class="section-title font-bold tracking-tight text-[#EDEBDD]">Official Languages Act 1969</h2>
+                <div class="w-16 h-[2px] bg-[#1B1717] mt-4"></div>
+            </div>
+
+            <div class="bg-[#EDEBDD] rounded-none p-8 md:p-16 space-y-10 reveal relative overflow-hidden">
+                <p class="text-base font-light leading-relaxed">
+                    Perdana Menteri Pierre Elliott Trudeau mengesahkan sebuah undang-undang fundamental pada tanggal 7 September 1969. Aturan baru tersebut menetapkan bahasa Inggris dan bahasa Prancis sebagai bahasa resmi administrasi negara dengan derajat yang sepenuhnya setara. Langkah berani ini diambil demi menyatukan persepsi nasional serta menjamin keadilan kultural bagi seluruh elemen masyarakat Kanada.
+                </p>
+
+                <div class="border-l-2 border-[#810100] pl-6 my-8">
+                    <blockquote class="italic font-light text-lg md:text-2xl leading-normal text-[#810100] mb-4">
+                        "The English and French languages are the official languages of Canada... and possess and enjoy equality of status and equal rights and privileges as to their use in all the institutions of the Parliament and Government of Canada."
+                    </blockquote>
+                    <cite class="text-[11px] tracking-wider text-[#1B1717]/50 font-mono block not-italic uppercase font-bold">Official Languages Act, 1969</cite>
+                </div>
+
+                <p class="text-base font-light leading-relaxed">
+                    Kebijakan federal ini mewajibkan seluruh lembaga pemerintah pusat untuk memberikan pelayanan prima dalam bahasa yang dipilih oleh masyarakat. Demi mengawal implementasi aturan di lapangan, pemerintah juga membentuk posisi lembaga independen baru yang bertugas mengawasi jalannya regulasi secara transparan.
+                </p>
+
+                <div class="pt-10 border-t border-[#1B1717]/10 grid grid-cols-1 md:grid-cols-3 gap-6 text-sm font-light">
+                    <div class="border border-[#1B1717]/20 p-6 bg-[#1B1717]/5">
+                        <span class="font-bold block text-base mb-1">1982</span>
+                        <p class="text-[#1B1717]/70 text-xs">Jaminan kesetaraan bahasa diperkuat kedudukannya di dalam Piagam Hak dan Kebebasan Kanada.</p>
+                    </div>
+                    <div class="border border-[#1B1717]/20 p-6 bg-[#1B1717]/5">
+                        <span class="font-bold block text-base mb-1">1988</span>
+                        <p class="text-[#1B1717]/70 text-xs">Regulasi diperbarui guna mengoptimalkan penyediaan fasilitas serta hak pelayanan di sektor publik.</p>
+                    </div>
+                    <div class="border border-[#1B1717]/20 p-6 bg-[#1B1717]/5">
+                        <span class="font-bold block text-base mb-1">2023</span>
+                        <p class="text-[#1B1717]/70 text-xs">Amandemen RUU C-13 disahkan untuk memperkuat perlindungan eksistensi komunitas minoritas berbahasa Prancis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="data" class="py-32 max-w-7xl mx-auto px-6">
+        <div class="text-left mb-20">
+            <span class="text-[11px] font-light tracking-[0.3em] uppercase text-[#810100] block mb-3">Statistik</span>
+            <h2 class="section-title font-bold tracking-tight text-[#EDEBDD]">Potret Demografi Linguistik Saat Ini</h2>
+        </div>
+
+        <div class="bento-grid reveal">
+            
+            <div class="bento-card card-large bg-[#EDEBDD]/[0.05] border border-[#EDEBDD]/10 p-10 flex flex-col justify-between border-t-2 border-t-[#810100]">
+                <div>
+                    <span class="text-[10px] tracking-widest font-light text-[#EDEBDD]/40 uppercase block mb-2">Persentase Nasional</span>
+                    <div class="text-7xl font-bold text-[#EDEBDD] tracking-tighter mb-4">18%</div>
+                    <p class="text-sm text-[#EDEBDD]/60 leading-relaxed font-light">
+                        Proporsi total penduduk yang memiliki kemampuan aktif untuk berkomunikasi dengan lancar dalam kedua bahasa resmi negara.
+                    </p>
+                </div>
+                <div class="text-[10px] font-mono text-[#EDEBDD]/35 mt-8 uppercase tracking-widest">Sekitar 6,6 Juta Jiwa berdasarkan Sensus 2021</div>
+            </div>
+
+            <div class="bento-card card-medium bg-[#EDEBDD]/[0.03] border border-[#EDEBDD]/5 p-8 flex flex-col justify-between hover:border-[#EDEBDD]/20 transition-colors">
+                <div>
+                    <div class="text-4xl font-bold text-[#EDEBDD] mb-2 tracking-tight">46,4%</div>
+                    <p class="text-xs text-[#EDEBDD]/60 leading-relaxed font-light">
+                        Rasio kecakapan komunikasi dwibahasa masyarakat di Provinsi Quebec, mencatatkan rekor wilayah tertinggi di seluruh kawasan federal.
+                    </p>
+                </div>
+                <div class="text-[10px] font-mono text-[#EDEBDD]/35 mt-6 uppercase">Pusat Budaya Frankofon</div>
+            </div>
+
+            <div class="bento-card card-medium bg-[#EDEBDD]/[0.03] border border-[#EDEBDD]/5 p-8 flex flex-col justify-between hover:border-[#EDEBDD]/20 transition-colors">
+                <div>
+                    <div class="text-4xl font-bold text-[#EDEBDD] mb-2 tracking-tight">95%</div>
+                    <p class="text-xs text-[#EDEBDD]/60 leading-relaxed font-light">
+                        Mayoritas penduduk di luar Quebec menggunakan bahasa Inggris sebagai sarana komunikasi utama mereka di lingkungan kerja dan sosial.
+                    </p>
+                </div>
+                <div class="text-[10px] font-mono text-[#EDEBDD]/35 mt-6 uppercase">Dominasi Anglofon Regional</div>
+            </div>
+
+            <div class="bento-card card-medium bg-[#810100]/10 border border-[#810100]/30 p-8 flex flex-col justify-between">
+                <div>
+                    <div class="text-4xl font-bold text-[#EDEBDD] mb-2 tracking-tight">75,4%</div>
+                    <p class="text-xs text-[#EDEBDD]/70 leading-relaxed font-light">
+                        Persentase warga setempat yang menuturkan bahasa Inggris sebagai bahasa ibu utama mereka di dalam lingkup rumah tangga.
+                    </p>
+                </div>
+                <div class="text-[10px] font-mono text-[#EDEBDD]/40 mt-6 uppercase">Data Agregat Domestik</div>
+            </div>
+
+            <div class="bento-card card-medium bg-[#EDEBDD]/[0.03] border border-[#EDEBDD]/5 p-8 flex flex-col justify-between hover:border-[#EDEBDD]/20 transition-colors">
+                <div>
+                    <div class="text-4xl font-bold text-[#EDEBDD] mb-2 tracking-tight">22,8%</div>
+                    <p class="text-xs text-[#EDEBDD]/60 leading-relaxed font-light">
+                        Kelompok masyarakat yang menggunakan bahasa Prancis sebagai bahasa pertama yang mereka pelajari sejak masa kanak-kanak.
+                    </p>
+                </div>
+                <div class="text-[10px] font-mono text-[#EDEBDD]/35 mt-6 uppercase">Komunitas Penutur Asli</div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="dampak-positif" class="py-32 bg-[#630000] w-full text-[#EDEBDD]">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-left mb-20">
+                <span class="text-[11px] font-bold tracking-[0.3em] uppercase text-[#EDEBDD]/60 block mb-3">Manfaat Integrasi</span>
+                <h2 class="section-title font-bold tracking-tight">Dampak Nyata Kebijakan Dua Bahasa</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-6 gap-6 reveal">
+                
+                <div class="lg:col-span-3 bg-[#EDEBDD]/5 border border-[#EDEBDD]/10 p-10 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-mono uppercase tracking-widest text-[#EDEBDD]/40 mb-6">01 / Fleksibilitas Otak</div>
+                        <h3 class="text-xl font-bold mb-4">Stimulasi Kognitif Unggul</h3>
+                        <p class="text-sm text-[#EDEBDD]/70 leading-relaxed font-light">
+                            Otak yang terbiasa berpindah antara dua bahasa punya cara kerja yang berbeda. Beberapa studi menemukan bahwa orang yang tumbuh bilingual cenderung lebih baik dalam memilah fokus, dan gejalanya juga bisa menunjukkan keterlambatan dalam kondisi penurunan kognitif hingga 4 sampai 5 tahun.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-3 bg-[#EDEBDD]/5 border border-[#EDEBDD]/10 p-10 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-mono uppercase tracking-widest text-[#EDEBDD]/40 mb-6">02 / Diplomasi Global</div>
+                        <h3 class="text-xl font-bold mb-4">Akses Pasar Internasional</h3>
+                        <p class="text-sm text-[#EDEBDD]/70 leading-relaxed font-light">
+                            Menguasai bahasa Inggris dan Prancis membuka jaringan kemitraan ekonomi yang luar biasa luas di kancah internasional. Keunggulan kultural ini mempermudah para pelaku usaha domestik menembus pasar Uni Eropa, jaringan Persemakmuran, hingga blok negara-negara Frankofon di berbagai belahan dunia.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-2 bg-[#EDEBDD]/[0.02] border border-[#EDEBDD]/5 p-8">
+                    <div class="text-xs font-mono uppercase text-[#EDEBDD]/40 mb-4">03 / Sosial</div>
+                    <h4 class="text-base font-bold mb-2">Toleransi Multikultural</h4>
+                    <p class="text-xs text-[#EDEBDD]/60 leading-relaxed font-light">
+                        Kebijakan ini berhasil menanamkan rasa hormat mendalam terhadap segala bentuk perbedaan budaya sejak usia dini di sekolah.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-2 bg-[#EDEBDD]/[0.02] border border-[#EDEBDD]/5 p-8">
+                    <div class="text-xs font-mono uppercase text-[#EDEBDD]/40 mb-4">04 / Layanan Publik</div>
+                    <h4 class="text-base font-bold mb-2">Keadilan Sipil</h4>
+                    <p class="text-xs text-[#EDEBDD]/60 leading-relaxed font-light">
+                        Masyarakat bisa berinteraksi secara nyaman dengan lembaga peradilan, fasilitas kesehatan, serta administrasi militer memakai bahasa ibu mereka.
+                    </p>
+                </div>
+
+                <div class="lg:col-span-2 bg-[#EDEBDD]/[0.02] border border-[#EDEBDD]/5 p-8">
+                    <div class="text-xs font-mono uppercase text-[#EDEBDD]/40 mb-4">05 / Sektor Kerja</div>
+                    <h4 class="text-base font-bold mb-2">Karir Publik Luas</h4>
+                    <p class="text-xs text-[#EDEBDD]/60 leading-relaxed font-light">
+                        Kemampuan dwibahasa membuka pintu peluang yang luas untuk menduduki posisi strategis di lembaga korporasi multinasional dan birokrasi federal.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="tantangan" class="py-32 max-w-5xl mx-auto px-6">
+        <div class="text-left mb-16">
+            <span class="text-[11px] font-light tracking-[0.3em] uppercase text-[#810100] block mb-3">Analisis Kritis</span>
+            <h2 class="section-title font-bold tracking-tight text-[#EDEBDD]">Dinamika Sosial dan Tantangan Riil</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 reveal font-light text-sm text-[#EDEBDD]/60 leading-relaxed">
+            <div class="space-y-6">
+                <p>
+                    Menerapkan sistem administrasi dwibahasa secara merata di seluruh wilayah bukan tanpa hambatan. Proses penerjemahan dokumen resmi serta penyediaan staf pelayanan publik yang fasih dalam dua bahasa menuntut alokasi anggaran federal yang sangat besar setiap tahunnya. Efisiensi pembagian dana ini sering kali menjadi topik perdebatan hangat di parlemen.
+                </p>
+                <p>
+                    Di samping masalah finansial, muncul ketimpangan regional yang memicu kecemburuan sosial. Warga di kawasan barat Kanada, yang mayoritas hanya berbicara bahasa Inggris, kerap merasa terbebani oleh aturan wajib ini. Mereka menganggap kebijakan pusat kurang mencerminkan realitas kebutuhan lokal di lapangan.
+                </p>
+            </div>
+            <div class="space-y-6">
+                <p>
+                    Data dari Statistics Canada mencerminkan adanya pergeseran pola bahasa yang nyata di tengah masyarakat. Meski status hukumnya sama, posisi bahasa Prancis menghadapi tekanan besar dari dominasi bahasa Inggris di era digital global saat ini. Kondisi tersebut memicu kekhawatiran tersendiri bagi kelestarian budaya Frankofon jangka panjang.
+                </p>
+                <p>
+                    Keseimbangan politik juga sempat diuji dalam sejarah modern melalui gelombang ketidakpuasan sosial. Referendum pemisahan wilayah Quebec yang digelar pada tahun 1995 akhirnya ditolak dengan selisih angka yang sangat tipis, yaitu 50,6% suara menolak kemerdekaan berbanding 49,4% suara pro-kemerdekaan. Peristiwa krusial ini menunjukkan betapa sensitifnya persatuan kultural bangsa.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kehidupan-modern" class="py-32 bg-[#630000] text-[#EDEBDD] w-full">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-left mb-20">
+                <span class="text-[11px] font-bold tracking-[0.3em] uppercase text-[#EDEBDD]/60 block mb-3">Realitas Urban</span>
+                <h2 class="section-title font-bold tracking-tight">Harmoni Dua Budaya di Kota Modern</h2>
+            </div>
+
+            <div class="magazine-grid reveal">
+                
+                <div class="mag-card-left min-h-[400px] p-8 md:p-12 flex flex-col justify-end relative bg-cover bg-center" style="background-image: linear-gradient(to top, rgba(99,0,0,0.95) 20%, rgba(27,23,23,0.4) 100%), url('https://images.unsplash.com/photo-1576430000726-c6bf8c1c2153?auto=format&fit=crop&w=1200&q=80');">
+                    <div class="relative z-10 space-y-4 max-w-xl">
+                        <span class="text-[10px] font-mono uppercase tracking-widest text-[#EDEBDD]/50 block">Pusat Asimilasi Kontemporer</span>
+                        <h3 class="text-2xl md:text-3xl font-bold tracking-tight">Esensi Dwibahasa di Kota Montreal</h3>
+                        <p class="text-sm text-[#EDEBDD]/80 leading-relaxed font-light">
+                            Montreal merupakan potret nyata dari keberhasilan peleburan dua budaya besar. Di sini, peralihan antarbahasa terjadi secara alami di ruang publik, kafe, hingga perkantoran. Fenomena urban unik bernama "Bonjour-Hi" lazim digunakan para pekerja toko sebagai sapaan ramah sekaligus penanda kesiapan melayani konsumen dalam kedua bahasa resmi.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mag-card-right-top bg-[#EDEBDD] text-[#1B1717] p-8 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold mb-3 tracking-tight">Sistem Pendidikan Berkelanjutan</h4>
+                        <p class="text-xs text-[#1B1717]/80 leading-relaxed font-light">
+                            Program kelas imersi bahasa Prancis di berbagai sekolah wilayah mayoritas Inggris terus diminati secara masif oleh para orang tua. Tren positif ini mencerminkan tingginya kesadaran generasi muda untuk menguasai identitas ganda sebagai modal penting di era modern.
+                        </p>
+                    </div>
+                    <div class="w-8 h-[1px] bg-[#810100] mt-6"></div>
+                </div>
+
+                <div class="mag-card-right-bottom bg-[#EDEBDD]/5 border border-[#EDEBDD]/10 p-8 flex flex-col justify-between">
+                    <div>
+                        <h4 class="text-lg font-bold mb-3 tracking-tight">Lanskap Industri Kreatif</h4>
+                        <p class="text-xs text-[#EDEBDD]/70 leading-relaxed font-light">
+                            Dukungan finansial dari dewan kesenian federal mendorong pertumbuhan ekosistem media, sastra, dan industri perfilman lokal yang kaya. Karya seni hibrida ini mampu dinikmati secara luas oleh komunitas global tanpa terhalang sekat perbedaan bahasa.
+                        </p>
+                    </div>
+                    <div class="text-[10px] text-[#EDEBDD]/30 font-mono uppercase tracking-wider">Ekspresi Seni Multikultural</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-40 max-w-5xl mx-auto px-6 text-center relative overflow-hidden">
+        <div class="absolute inset-0 flex items-center justify-center opacity-[0.02] text-[#EDEBDD] font-bold text-[25vw] pointer-events-none select-none font-serif">
+            “
+        </div>
+        
+        <div class="space-y-8 relative z-10 max-w-3xl mx-auto reveal">
+            <span class="text-[11px] font-light tracking-[0.4em] uppercase text-[#810100] block">Kesimpulan Editorial</span>
+            
+            <blockquote class="text-2xl md:text-4xl font-light italic text-[#EDEBDD] leading-relaxed tracking-tight">
+                "Keragaman linguistik kami bukanlah kelemahan yang memisahkan masyarakat, melainkan sebuah identitas mendasar yang mendefinisikan jati diri seluruh bangsa."
+            </blockquote>
+            
+            <div class="flex flex-col items-center space-y-2 pt-4">
+                <div class="w-6 h-[1px] bg-[#810100] mb-2"></div>
+                <cite class="text-[11px] tracking-widest text-[#EDEBDD]/60 uppercase font-bold not-italic block">Refleksi Kebijakan Kebudayaan Kanada</cite>
+                <span class="text-[10px] font-light text-[#EDEBDD]/30 uppercase tracking-widest">Est. 1969 — Present</span>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-[#EDEBDD]/5 text-center text-xs font-light text-[#EDEBDD]/30 tracking-wider bg-[#1B1717]">
+        <div class="max-w-7xl w-full mx-auto px-6">
+            <p>&copy; 2026 Explore Canada Project. Semua data diverifikasi melalui badan resmi Statistics Canada.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Navbar show/hide saat scroll 
+            const mainNav = document.getElementById('main-nav');
+            let lastScrollY = window.scrollY;
+            window.addEventListener("scroll", function() {
+                const currentScrollY = window.scrollY;
+                if (Math.abs(currentScrollY - lastScrollY) < 5) return;
+                if (currentScrollY > lastScrollY && currentScrollY > 80) {
+                    mainNav.classList.add('nav-hidden');
+                } else {
+                    mainNav.classList.remove('nav-hidden');
+                }
+                lastScrollY = currentScrollY;
+            });
+
+            // Scroll Reveal — satu selector universal, tanpa opacity-0 Tailwind
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.10 });
+
+            // Ambil smeua elemen dengan class 'reveal' sekaligus
+            document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        });
+    </script>
+</body>
+</html>
