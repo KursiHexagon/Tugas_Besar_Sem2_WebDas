@@ -1,8 +1,3 @@
-/* ============================================================
-   style.css — Ice Canoe Slide 4
-   ============================================================ */
-
-/* ---------- RESET & BASE ---------- */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -35,7 +30,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---------- PAGE WRAPPER ---------- */
+/* PAGE WRAPPER */
 .page {
   max-width: 720px;
   margin: 0 auto;
@@ -46,9 +41,7 @@ html, body {
   box-shadow: 0 0 48px rgba(0,0,0,0.09);
 }
 
-/* ============================================================
-   HERO
-   ============================================================ */
+/* HERO SECTION */
 .hero {
   position: relative;
   width: 100%;
@@ -117,9 +110,7 @@ html, body {
   animation: fadeUp 0.55s 0.5s ease forwards;
 }
 
-/* ============================================================
-   CONTENT AREA
-   ============================================================ */
+/* CONTENT */
 .content {
   flex: 1;
   padding: 1.75rem 1.75rem 1.25rem;
@@ -160,9 +151,7 @@ html, body {
   line-height: 1.82;
 }
 
-/* ============================================================
-   FACT CARDS GRID
-   ============================================================ */
+/* FACTS CARD GRID */
 .facts-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -218,9 +207,7 @@ html, body {
   line-height: 1.4;
 }
 
-/* ============================================================
-   TIMELINE
-   ============================================================ */
+/* TIMELINE */
 .timeline {
   margin-bottom: 1.6rem;
 }
@@ -312,9 +299,7 @@ html, body {
   line-height: 1.65;
 }
 
-/* ============================================================
-   INFO CARD
-   ============================================================ */
+/* INFO CARD */
 .info-card {
   background: var(--white);
   border: 0.5px solid var(--border);
@@ -352,9 +337,7 @@ html, body {
   line-height: 1.78;
 }
 
-/* ============================================================
-   NAV BAR
-   ============================================================ */
+/* NAVBAR */
 .nav-bar {
   display: flex;
   align-items: center;
@@ -452,9 +435,7 @@ html, body {
   background: var(--blue);
 }
 
-/* ============================================================
-   TOOLTIP
-   ============================================================ */
+/* TOOLTIP */
 .tooltip {
   position: fixed;
   bottom: 80px;
@@ -477,9 +458,7 @@ html, body {
   transform: translateX(-50%) translateY(0);
 }
 
-/* ============================================================
-   KEYFRAMES
-   ============================================================ */
+/* ANIMATION KEYFRAMES */
 @keyframes fadeUp {
   to {
     opacity: 1;
@@ -487,9 +466,7 @@ html, body {
   }
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
+/* RESPONSIVE */
 @media (max-width: 520px) {
   .hero { height: 260px; }
   .hero-title { font-size: 22px; }

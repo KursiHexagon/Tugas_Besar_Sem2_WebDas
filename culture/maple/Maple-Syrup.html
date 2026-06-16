@@ -5,613 +5,237 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apa Itu Maple Syrup? — Golden Grove</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-  :root {
-    --font-serif:  Georgia, 'Times New Roman', serif;
-    --font-sans:   'Segoe UI', Arial, sans-serif;
-    --font-mono:   'Courier New', Courier, monospace;
-  }
-  :root {
-    --bark:    #2A1200;
-    --amber:   #B8621A;
-    --gold:    #D4921E;
-    --honey:   #E8B84B;
-    --pale:    #F7E8C8;
-    --cream:   #FDF6E8;
-    --text:    #1C0900;
-    --muted:   #7A4B25;
-  }
-
-  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--cream);
-    color: var(--text);
-    font-family: var(--font-serif);
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 1.75;
-    overflow-x: hidden;
-  }
-
-  /* ── TOP NAV BREADCRUMB ── */
-  .breadcrumb {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 50;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.1rem 3rem;
-    background: rgba(253,246,232,0.88);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(184,98,26,0.12);
-  }
-  .bc-logo {
-    font-family: var(--font-sans);
-    font-weight: 800;
-    font-size: 1rem;
-    letter-spacing: -0.02em;
-    color: var(--bark);
-    text-decoration: none;
-  }
-  .bc-logo span { color: var(--amber); }
-  .bc-path {
-    font-family: var(--font-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-  .bc-path .sep { opacity: 0.4; }
-  .bc-path .current { color: var(--amber); }
-  .bc-back {
-    font-family: var(--font-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    transition: color 0.2s;
-  }
-  .bc-back:hover { color: var(--amber); }
-
-  /* ── HERO BAND ── */
-  .page-hero {
-    margin-top: 56px;
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    min-height: 88vh;
-  }
-
-  .hero-text {
-    padding: 7rem 5rem 5rem 5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .chapter-tag {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 1.8rem;
-    opacity: 0;
-    animation: up 0.9s 0.2s ease forwards;
-  }
-
-  .page-title {
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-size: clamp(3.8rem, 6vw, 6.5rem);
-    line-height: 0.92;
-    letter-spacing: -0.02em;
-    color: var(--bark);
-    margin-bottom: 2.2rem;
-    opacity: 0;
-    animation: up 1s 0.4s ease forwards;
-  }
-  .page-title em {
-    font-style: italic;
-    font-weight: 300;
-    color: var(--amber);
-    display: block;
-  }
-
-  .hero-lead {
-    font-size: 1.25rem;
-    font-weight: 300;
-    color: var(--muted);
-    line-height: 1.8;
-    max-width: 500px;
-    border-left: 2px solid var(--honey);
-    padding-left: 1.5rem;
-    opacity: 0;
-    animation: up 1s 0.6s ease forwards;
-  }
-
-  /* Right panel — amber sap visual */
-  .hero-panel {
-    background: var(--bark);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0;
-  }
-
-  /* Flowing sap SVG lines */
-  .sap-flow {
-    position: absolute;
-    inset: 0;
-    opacity: 0.25;
-  }
-
-  .panel-number {
-    font-family: var(--font-sans);
-    font-size: 10rem;
-    font-weight: 800;
-    color: var(--honey);
-    opacity: 0.12;
-    position: absolute;
-    bottom: -2rem;
-    right: 1rem;
-    line-height: 1;
-    pointer-events: none;
-  }
-
-  .panel-fact {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    padding: 3rem;
-  }
-  .fact-big {
-    font-family: var(--font-serif);
-    font-weight: 700;
-    font-size: 5.5rem;
-    color: var(--honey);
-    line-height: 1;
-  }
-  .fact-unit {
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: rgba(232,184,75,0.6);
-    margin-top: 0.6rem;
-  }
-  .fact-caption {
-    font-family: var(--font-serif);
-    font-size: 1.05rem;
-    font-style: italic;
-    color: rgba(253,246,232,0.55);
-    margin-top: 0.8rem;
-    line-height: 1.5;
-  }
-
-  /* decorative leaf in panel */
-  .panel-leaf {
-    position: absolute;
-    top: 2.5rem; left: 2.5rem;
-    opacity: 0.08;
-  }
-
-  /* ── BODY CONTENT ── */
-  .content {
-    max-width: 820px;
-    margin: 0 auto;
-    padding: 6rem 2rem 4rem;
-  }
-
-  /* Section label */
-  .s-label {
-    font-family: var(--font-mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--amber);
-    margin-bottom: 1rem;
-  }
-
-  h2 {
-    font-family: var(--font-serif);
-    font-weight: 600;
-    font-size: 2.4rem;
-    letter-spacing: -0.01em;
-    line-height: 1.15;
-    color: var(--bark);
-    margin-bottom: 1.2rem;
-  }
-  h2 em { font-style: italic; font-weight: 300; color: var(--amber); }
-
-  p {
-    font-size: 1.08rem;
-    font-weight: 300;
-    color: #3D1F00;
-    line-height: 1.85;
-    margin-bottom: 1.4rem;
-  }
-
-  /* pull quote */
-  .pull-quote {
-    font-family: var(--font-serif);
-    font-size: 1.8rem;
-    font-weight: 300;
-    font-style: italic;
-    color: var(--amber);
-    line-height: 1.45;
-    border-top: 1px solid var(--honey);
-    border-bottom: 1px solid var(--honey);
-    padding: 2rem 0;
-    margin: 3.5rem 0;
-    letter-spacing: -0.01em;
-  }
-
-  /* Divider */
-  .divider {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    margin: 4rem 0;
-    color: var(--honey);
-    font-size: 1.3rem;
-  }
-  .divider::before, .divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--honey), transparent);
-  }
-
-  /* ── GRADES TABLE ── */
-  .grades-block {
-    background: var(--pale);
-    border-left: 3px solid var(--amber);
-    padding: 3rem 3.5rem;
-    margin: 3rem 0;
-  }
-  .grade-row {
-    display: grid;
-    grid-template-columns: 48px 1fr 120px;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.1rem 0;
-    border-bottom: 1px solid rgba(184,98,26,0.12);
-    transition: background 0.2s;
-  }
-  .grade-row:last-child { border-bottom: none; }
-  .grade-swatch {
-    width: 48px; height: 48px;
-    border-radius: 50%;
-    flex-shrink: 0;
-    box-shadow: inset 0 2px 6px rgba(0,0,0,0.15);
-  }
-  .grade-info strong {
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    font-weight: 700;
-    color: var(--bark);
-    display: block;
-    margin-bottom: 0.2rem;
-  }
-  .grade-info span {
-    font-size: 0.9rem;
-    font-weight: 300;
-    color: var(--muted);
-  }
-  .grade-use {
-    font-family: var(--font-mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--amber);
-    text-align: right;
-  }
-
-  /* ── NUTRITION CALLOUT ── */
-  .nutrition-strip {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--amber);
-    margin: 3rem 0;
-    overflow: hidden;
-  }
-  .nutr-cell {
-    background: var(--cream);
-    padding: 1.8rem 1.5rem;
-    text-align: center;
-    transition: background 0.3s;
-  }
-  .nutr-cell:hover { background: var(--pale); }
-  .nutr-val {
-    font-family: var(--font-serif);
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: var(--amber);
-    line-height: 1;
-  }
-  .nutr-name {
-    font-family: var(--font-mono);
-    font-size: 0.58rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-top: 0.4rem;
-  }
-  .nutr-sub {
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-top: 0.2rem;
-    opacity: 0.7;
-  }
-
-  /* ── CANADA FACT ── */
-  .canada-bar {
-    background: var(--bark);
-    color: var(--pale);
-    padding: 4rem 5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-    margin: 4rem -2rem;
-  }
-  .canada-num {
-    font-family: var(--font-serif);
-    font-size: 5rem;
-    font-weight: 700;
-    color: var(--honey);
-    line-height: 1;
-    margin-bottom: 0.5rem;
-  }
-  .canada-label {
-    font-family: var(--font-mono);
-    font-size: 0.6rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: rgba(232,184,75,0.7);
-  }
-  .canada-text {
-    font-size: 1rem;
-    font-weight: 300;
-    color: rgba(247,232,200,0.75);
-    line-height: 1.8;
-  }
-
-  /* ── SCROLL REVEAL ── */
-  .reveal {
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.75s ease, transform 0.75s ease;
-  }
-  .reveal.in { opacity: 1; transform: none; }
-
-  /* ── BOTTOM NAV ── */
-  .page-nav {
-    border-top: 1px solid rgba(184,98,26,0.2);
-    padding: 3rem 5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .nav-prev, .nav-next {
-    font-family: var(--font-mono);
-    font-size: 0.62rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    transition: color 0.2s;
-  }
-  .nav-prev:hover, .nav-next:hover { color: var(--amber); }
-  .nav-chapter {
-    font-family: var(--font-serif);
-    font-style: italic;
-    font-size: 1rem;
-    color: var(--amber);
-  }
-
-  @keyframes up {
-    from { opacity:0; transform: translateY(24px); }
-    to   { opacity:1; transform: translateY(0); }
-  }
-</style>
+<link rel="stylesheet" href="ms.css">
 </head>
 <body>
 
 <nav class="breadcrumb">
-  <a class="bc-logo" href="#">Golden<span>Grove</span></a>
-  <div class="bc-path">
-    <span>Pelajari</span>
-    <span class="sep">/</span>
-    <span class="current">Apa Itu Maple Syrup</span>
-  </div>
-  <a class="bc-back" href="#">← Kembali ke Beranda</a>
+<a class="bc-logo" href="#">Golden<span>Grove</span></a>
+	<div class="bc-path">
+		<span>Pelajari</span>
+		<span class="sep">/</span>
+		<span class="current">Apa Itu Maple Syrup</span>
+	</div>
+	<a class="bc-back" href="#">← Kembali ke Beranda</a>
 </nav>
 
 <section class="page-hero">
-  <div class="hero-text">
-    <p class="chapter-tag">Bab 01 · Dasar-Dasar</p>
-    <h1 class="page-title">
-      Apa itu<br>
-      <em>Maple<br>Syrup?</em>
-    </h1>
-    <p class="hero-lead">
-      Cairan yang lahir dari musim dingin yang membeku dan musim semi yang hangat — maple syrup adalah salah satu pemanis alami tertua dan paling murni di dunia, dipanen langsung dari pohon yang masih hidup.
-    </p>
-  </div>
+	<div class="hero-text">
+		<p class="chapter-tag">Bab 01 · Dasar-Dasar</p>
+		<h1 class="page-title">
+			Apa itu<br>
+			<em>Maple<br>Syrup?</em>
+		</h1>
+		<p class="hero-lead">
+			Cairan yang lahir dari musim dingin yang membeku dan musim semi yang hangat — maple syrup adalah salah satu pemanis alami tertua dan paling murni di dunia, dipanen langsung dari pohon yang masih hidup.
+		</p>
+	</div>
 
-  <div class="hero-panel">
-    <svg class="sap-flow" viewBox="0 0 420 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M80 0 Q120 150 60 300 Q20 450 100 600" stroke="#D4921E" stroke-width="1.5" fill="none">
-        <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="4s" repeatCount="indefinite"/>
-        <animate attributeName="stroke-dasharray" values="0,1000;600,400;0,1000" dur="4s" repeatCount="indefinite"/>
-      </path>
-      <path d="M200 0 Q240 200 180 400 Q140 500 220 600" stroke="#B8621A" stroke-width="1" fill="none">
-        <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="5s" begin="1s" repeatCount="indefinite"/>
-        <animate attributeName="stroke-dasharray" values="0,1000;500,500;0,1000" dur="5s" begin="1s" repeatCount="indefinite"/>
-      </path>
-      <path d="M340 0 Q360 180 300 360 Q260 480 360 600" stroke="#E8B84B" stroke-width="1.2" fill="none">
-        <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
-        <animate attributeName="stroke-dasharray" values="0,1000;700,300;0,1000" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
-      </path>
-    </svg>
+	<div class="hero-panel">
+		<svg class="sap-flow" viewBox="0 0 420 600" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M80 0 Q120 150 60 300 Q20 450 100 600" stroke="#D4921E" stroke-width="1.5" fill="none">
+				<animate attributeName="stroke-dashoffset" from="1000" to="0" dur="4s" repeatCount="indefinite"/>
+				<animate attributeName="stroke-dasharray" values="0,1000;600,400;0,1000" dur="4s" repeatCount="indefinite"/>
+			</path>
+			<path d="M200 0 Q240 200 180 400 Q140 500 220 600" stroke="#B8621A" stroke-width="1" fill="none">
+				<animate attributeName="stroke-dashoffset" from="1000" to="0" dur="5s" begin="1s" repeatCount="indefinite"/>
+				<animate attributeName="stroke-dasharray" values="0,1000;500,500;0,1000" dur="5s" begin="1s" repeatCount="indefinite"/>
+			</path>
+			<path d="M340 0 Q360 180 300 360 Q260 480 360 600" stroke="#E8B84B" stroke-width="1.2" fill="none">
+				<animate attributeName="stroke-dashoffset" from="1000" to="0" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+				<animate attributeName="stroke-dasharray" values="0,1000;700,300;0,1000" dur="3.5s" begin="0.5s" repeatCount="indefinite"/>
+			</path>
+		</svg>
 
-    <svg class="panel-leaf" width="200" height="200" viewBox="0 0 60 60" fill="white" xmlns="http://www.w3.org/2000/svg">
-      <path d="M30 2 L36 19 L54 12 L44 27 L58 32 L45 42 L50 57 L30 47 L10 57 L15 42 L2 32 L16 27 L6 12 L24 19 Z"/>
-    </svg>
+		<svg class="panel-leaf" width="200" height="200" viewBox="0 0 60 60" fill="white" xmlns="http://www.w3.org/2000/svg">
+			<path d="M30 2 L36 19 L54 12 L44 27 L58 32 L45 42 L50 57 L30 47 L10 57 L15 42 L2 32 L16 27 L6 12 L24 19 Z"/>
+		</svg>
 
-    <div class="panel-fact">
-      <div class="fact-big">40<span style="font-size:2.5rem">L</span></div>
-      <div class="fact-unit">getah → 1 L sirup</div>
-      <p class="fact-caption">Dibutuhkan empat puluh liter<br>getah mentah pohon untuk<br>menghasilkan satu liter maple syrup.</p>
-    </div>
+		<div class="panel-fact">
+			<div class="fact-big">40<span style="font-size:2.5rem">L</span></div>
+			<div class="fact-unit">getah → 1 L sirup</div>
+			<p class="fact-caption">Dibutuhkan empat puluh liter<br>getah mentah pohon untuk<br>menghasilkan satu liter maple syrup.</p>
+		</div>
 
-    <div class="panel-number">02</div>
-  </div>
+		<div class="panel-number">02</div>
+	</div>
 </section>
 
 <article class="content">
 
-  <div class="reveal">
-    <p class="s-label">Definisi</p>
-    <h2>Pemanis <em>alami</em> dari alam</h2>
-  </div>
-  <p class="reveal">Maple syrup adalah pemanis alami yang dibuat dengan mengumpulkan dan merebus getah pohon maple gula (<em>Acer saccharum</em>). Berbeda dengan gula rafinasi, maple syrup hampir tidak melalui proses kimia apapun — getah mentahnya cukup kehilangan air melalui penguapan, memadatkan gula alami dan ratusan senyawa rasa unik menjadi cairan amber kental yang kita kenal.</p>
-  <p class="reveal">Hasilnya adalah pemanis dengan rasa berlapis yang kompleks — karamel, vanila, asap kayu, dan sedikit nuansa tanah — yang tidak bisa ditiru oleh pabrik manapun. Pada intinya, ini adalah darah pohon yang diubah oleh api dan waktu.</p>
+	<div class="reveal">
+		<p class="s-label">Definisi</p>
+		<h2>Pemanis <em>alami</em> dari alam</h2>
+	</div>
+	<p class="reveal">Maple syrup adalah pemanis alami yang dibuat dengan mengumpulkan dan merebus getah pohon maple gula (<em>Acer saccharum</em>). Berbeda dengan gula rafinasi, maple syrup hampir tidak melalui proses kimia apapun — getah mentahnya cukup kehilangan air melalui penguapan, memadatkan gula alami dan ratusan senyawa rasa unik menjadi cairan amber kental yang kita kenal.</p>
+	<p class="reveal">Hasilnya adalah pemanis dengan rasa berlapis yang kompleks — karamel, vanila, asap kayu, dan sedikit nuansa tanah — yang tidak bisa ditiru oleh pabrik manapun. Pada intinya, ini adalah darah pohon yang diubah oleh api dan waktu.</p>
 
-  <blockquote class="pull-quote reveal">
-    "Maple syrup bukan rasa yang ditambahkan ke sesuatu. Ia adalah sesuatu itu sendiri — kuno, hidup, dan mustahil untuk dipalsukan."
-  </blockquote>
+	<blockquote class="pull-quote reveal">
+		"Maple syrup bukan rasa yang ditambahkan ke sesuatu. Ia adalah sesuatu itu sendiri — kuno, hidup, dan mustahil untuk dipalsukan."
+	</blockquote>
 
-  <div class="divider reveal">🍁</div>
+	<div class="divider reveal">🍁</div>
 
-  <div class="reveal">
-    <p class="s-label">Bagaimana Terbentuknya</p>
-    <h2>Keajaiban <em>beku dan cair</em></h2>
-  </div>
-  <p class="reveal">Maple syrup ada berkat tarian meteorologi yang sangat spesifik. Di penghujung musim dingin dan awal musim semi — biasanya Februari hingga April — malam hari harus turun di bawah titik beku sementara siang hari menghangat di atasnya. Siklus harian ini menciptakan perubahan tekanan di dalam pohon maple yang secara harfiah memompa getah naik dari akar-akarnya.</p>
-  <p class="reveal">Pohon maple gula menyimpan pati di dalam kayunya sepanjang musim dingin. Ketika suhu berfluktuasi, pati itu berubah menjadi sukrosa dan larut dalam air yang diserap oleh akar — menciptakan getah. Buat lubang, gantung ember, dan pohon akan mengisinya. Ketika cuaca tetap hangat dan pohon mulai bertunas, musim panen pun berakhir. Jendelanya hanya 4–6 minggu setiap tahun.</p>
+	<div class="reveal">
+		<p class="s-label">Bagaimana Terbentuknya</p>
+		<h2>Keajaiban <em>beku dan cair</em></h2>
+	</div>
+	<p class="reveal">Maple syrup ada berkat tarian meteorologi yang sangat spesifik. Di penghujung musim dingin dan awal musim semi — biasanya Februari hingga April — malam hari harus turun di bawah titik beku sementara siang hari menghangat di atasnya. Siklus harian ini menciptakan perubahan tekanan di dalam pohon maple yang secara harfiah memompa getah naik dari akar-akarnya.</p>
+	<p class="reveal">Pohon maple gula menyimpan pati di dalam kayunya sepanjang musim dingin. Ketika suhu berfluktuasi, pati itu berubah menjadi sukrosa dan larut dalam air yang diserap oleh akar — menciptakan getah. Buat lubang, gantung ember, dan pohon akan mengisinya. Ketika cuaca tetap hangat dan pohon mulai bertunas, musim panen pun berakhir. Jendelanya hanya 4–6 minggu setiap tahun.</p>
 
-  <div class="divider reveal">🍁</div>
-  <div class="reveal">
-    <p class="s-label">Empat Tingkatan</p>
-    <h2>Terang hingga gelap — <em>semua Grade A</em></h2>
-  </div>
-  <p class="reveal">Sejak 2015, Kanada dan Amerika Serikat menggunakan satu sistem penilaian yang sama. Semua maple syrup yang dijual untuk dikonsumsi adalah Grade A — tingkatannya hanya berbeda dalam warna dan intensitas rasa, yang berubah seiring berjalannya musim panen.</p>
+	<div class="divider reveal">🍁</div>
+	<div class="reveal">
+		<p class="s-label">Empat Tingkatan</p>
+		<h2>Terang hingga gelap — <em>semua Grade A</em></h2>
+	</div>
+	<p class="reveal">Sejak 2015, Kanada dan Amerika Serikat menggunakan satu sistem penilaian yang sama. Semua maple syrup yang dijual untuk dikonsumsi adalah Grade A — tingkatannya hanya berbeda dalam warna dan intensitas rasa, yang berubah seiring berjalannya musim panen.</p>
 
-  <div class="grades-block reveal">
-    <div class="grade-row">
-      <div class="grade-swatch" style="background: linear-gradient(135deg,#F5D98A,#E8C05A);"></div>
-      <div class="grade-info">
-        <strong>Golden — Rasa Lembut</strong>
-        <span>Getah pertama musim ini. Ringan, floral, dan mild. Amber hampir transparan.</span>
-      </div>
-      <div class="grade-use">Siram · Saus Salad</div>
-    </div>
-    <div class="grade-row">
-      <div class="grade-swatch" style="background: linear-gradient(135deg,#E8A93A,#C8791A);"></div>
-      <div class="grade-info">
-        <strong>Amber — Rasa Kaya</strong>
-        <span>Yang klasik. Manis seimbang dengan nuansa karamel hangat. Paling populer.</span>
-      </div>
-      <div class="grade-use">Pancake · Kue</div>
-    </div>
-    <div class="grade-row">
-      <div class="grade-swatch" style="background: linear-gradient(135deg,#A05020,#7B3F00);"></div>
-      <div class="grade-info">
-        <strong>Dark — Rasa Kuat</strong>
-        <span>Karakter maple yang tegas. Berani dan kompleks. Favorit para koki.</span>
-      </div>
-      <div class="grade-use">Glazur · Masakan</div>
-    </div>
-    <div class="grade-row">
-      <div class="grade-swatch" style="background: linear-gradient(135deg,#5C2A00,#2A1000);"></div>
-      <div class="grade-info">
-        <strong>Very Dark — Rasa Intens</strong>
-        <span>Getah akhir musim. Intens, hampir berasap. Luar biasa untuk marinasi.</span>
-      </div>
-      <div class="grade-use">BBQ · Marinasi</div>
-    </div>
-  </div>
+	<div class="grades-block reveal">
+		<div class="grade-row">
+			<div class="grade-swatch" style="background: linear-gradient(135deg,#F5D98A,#E8C05A);"></div>
+			<div class="grade-info">
+				<strong>Golden — Rasa Lembut</strong>
+				<span>Getah pertama musim ini. Ringan, floral, dan mild. Amber hampir transparan.</span>
+			</div>
+			<div class="grade-use">Siram · Saus Salad</div>
+		</div>
+		<div class="grade-row">
+			<div class="grade-swatch" style="background: linear-gradient(135deg,#E8A93A,#C8791A);"></div>
+			<div class="grade-info">
+				<strong>Amber — Rasa Kaya</strong>
+				<span>Yang klasik. Manis seimbang dengan nuansa karamel hangat. Paling populer.</span>
+			</div>
+			<div class="grade-use">Pancake · Kue</div>
+		</div>
+		<div class="grade-row">
+			<div class="grade-swatch" style="background: linear-gradient(135deg,#A05020,#7B3F00);"></div>
+			<div class="grade-info">
+				<strong>Dark — Rasa Kuat</strong>
+				<span>Karakter maple yang tegas. Berani dan kompleks. Favorit para koki.</span>
+			</div>
+			<div class="grade-use">Glazur · Masakan</div>
+		</div>
+		<div class="grade-row">
+			<div class="grade-swatch" style="background: linear-gradient(135deg,#5C2A00,#2A1000);"></div>
+			<div class="grade-info">
+				<strong>Very Dark — Rasa Intens</strong>
+				<span>Getah akhir musim. Intens, hampir berasap. Luar biasa untuk marinasi.</span>
+			</div>
+			<div class="grade-use">BBQ · Marinasi</div>
+		</div>
+	</div>
 
-  <div class="divider reveal">🍁</div>
-  <div class="reveal">
-    <p class="s-label">Nutrisi (per 2 sdm · 40ml)</p>
-    <h2>Lebih dari sekadar <em>rasa manis</em></h2>
-  </div>
-  <p class="reveal">Maple syrup bukan makanan kesehatan — ini adalah gula, dan harus dinikmati secukupnya. Namun tidak seperti gula putih rafinasi, maple syrup membawa mineral jejak dan lebih dari 60 senyawa antioksidan yang bermanfaat bagi tubuh.</p>
+	<div class="divider reveal">🍁</div>
+	<div class="reveal">
+		<p class="s-label">Nutrisi (per 2 sdm · 40ml)</p>
+		<h2>Lebih dari sekadar <em>rasa manis</em></h2>
+	</div>
+	<p class="reveal">Maple syrup bukan makanan kesehatan — ini adalah gula, dan harus dinikmati secukupnya. Namun tidak seperti gula putih rafinasi, maple syrup membawa mineral jejak dan lebih dari 60 senyawa antioksidan yang bermanfaat bagi tubuh.</p>
 
-  <div class="nutrition-strip reveal">
-    <div class="nutr-cell">
-      <div class="nutr-val">100</div>
-      <div class="nutr-name">Kalori</div>
-      <div class="nutr-sub">per 2 sdm</div>
-    </div>
-    <div class="nutr-cell">
-      <div class="nutr-val">67%</div>
-      <div class="nutr-name">Sukrosa</div>
-      <div class="nutr-sub">gula alami</div>
-    </div>
-    <div class="nutr-cell">
-      <div class="nutr-val">54</div>
-      <div class="nutr-name">Indeks Glikemik</div>
-      <div class="nutr-sub">vs. 65 gula biasa</div>
-    </div>
-    <div class="nutr-cell">
-      <div class="nutr-val">60+</div>
-      <div class="nutr-name">Antioksidan</div>
-      <div class="nutr-sub">senyawa unik</div>
-    </div>
-  </div>
+	<div class="nutrition-strip reveal">
+		<div class="nutr-cell">
+			<div class="nutr-val">100</div>
+			<div class="nutr-name">Kalori</div>
+			<div class="nutr-sub">per 2 sdm</div>
+		</div>
+		<div class="nutr-cell">
+			<div class="nutr-val">67%</div>
+			<div class="nutr-name">Sukrosa</div>
+			<div class="nutr-sub">gula alami</div>
+		</div>
+		<div class="nutr-cell">
+			<div class="nutr-val">54</div>
+			<div class="nutr-name">Indeks Glikemik</div>
+			<div class="nutr-sub">vs. 65 gula biasa</div>
+		</div>
+		<div class="nutr-cell">
+			<div class="nutr-val">60+</div>
+			<div class="nutr-name">Antioksidan</div>
+			<div class="nutr-sub">senyawa unik</div>
+		</div>
+	</div>
 
-  <div class="canada-bar reveal">
-    <div>
-      <div class="canada-num">71%</div>
-      <div class="canada-label">maple syrup dunia dari Kanada</div>
-    </div>
-    <p class="canada-text">Kanada — terutama provinsi Quebec — memproduksi hampir tiga perempat seluruh maple syrup di bumi. Industri ini menghasilkan lebih dari CAD $500 juta per tahun. Quebec saja memiliki lebih dari 13.000 kebun maple dan 13 juta titik sadap di seluruh hutannya.</p>
-  </div>
+	<div class="canada-bar reveal">
+		<div>
+			<div class="canada-num">71%</div>
+			<div class="canada-label">maple syrup dunia dari Kanada</div>
+		</div>
+		<p class="canada-text">Kanada — terutama provinsi Quebec — memproduksi hampir tiga perempat seluruh maple syrup di bumi. Industri ini menghasilkan lebih dari CAD $500 juta per tahun. Quebec saja memiliki lebih dari 13.000 kebun maple dan 13 juta titik sadap di seluruh hutannya.</p>
+	</div>
 
-  <div class="reveal" style="margin-top:2rem;">
-    <p class="s-label">Kesimpulan</p>
-    <h2>Murni, kuno, <em>tak tergantikan</em></h2>
-  </div>
-  <p class="reveal">Maple syrup adalah banyak hal sekaligus: makanan, tradisi, ritual musiman, dan penghubung hidup antara biologi pohon dan dapur sebuah keluarga. Ia tidak bisa dipanen sepanjang tahun, tidak bisa terburu-buru, dan tidak bisa disintesis secara industri tanpa kehilangan apa yang membuatnya luar biasa.</p>
-  <p class="reveal">Itulah mengapa Kanada melindunginya — dan mengapa dunia begitu menginginkannya.</p>
+	<div class="reveal" style="margin-top:2rem;">
+		<p class="s-label">Kesimpulan</p>
+		<h2>Murni, kuno, <em>tak tergantikan</em></h2>
+	</div>
+	<p class="reveal">Maple syrup adalah banyak hal sekaligus: makanan, tradisi, ritual musiman, dan penghubung hidup antara biologi pohon dan dapur sebuah keluarga. Ia tidak bisa dipanen sepanjang tahun, tidak bisa terburu-buru, dan tidak bisa disintesis secara industri tanpa kehilangan apa yang membuatnya luar biasa.</p>
+	<p class="reveal">Itulah mengapa Kanada melindunginya — dan mengapa dunia begitu menginginkannya.</p>
 
 </article>
 
-<div class="page-nav">
-  <a class="nav-prev" href="#">← Sebelumnya<br><span class="nav-chapter">Kisah Kami</span></a>
-  <svg width="32" height="32" viewBox="0 0 60 60" fill="#D4921E" opacity="0.4" xmlns="http://www.w3.org/2000/svg">
-    <path d="M30 2 L36 19 L54 12 L44 27 L58 32 L45 42 L50 57 L30 47 L10 57 L15 42 L2 32 L16 27 L6 12 L24 19 Z"/>
-  </svg>
-  <a class="nav-next" href="#">Selanjutnya →<br><span class="nav-chapter">Cara Pembuatannya</span></a>
-</div>
+  <section class="py-5 select-none" style="background: var(--bark); border-top: 1px solid rgba(184,98,26,0.15);">
+    <div class="container px-6 pt-5">
+      <div class="text-center mb-4">
+        <span style="font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: rgba(247,232,200,0.3); display: block;">Jelajahi Kultur Kanada</span>
+      </div>
+
+      <div class="d-flex align-items-center justify-content-start justify-content-md-center overflow-x-auto pb-3 gap-4 md:gap-5 whitespace-nowrap scrollbar-none">
+        <a href="../bilingual/bilingual.html" class="py-2 text-decoration-none group d-flex flex-column align-items-center relative" style="font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,232,200,0.45); transition: color 0.3s;">
+          <span class="menu-text">Dwibahasa</span>
+          <span class="hover-line"></span>
+        </a>
+
+        <a href="#" class="py-2 text-decoration-none group d-flex flex-column align-items-center relative" style="font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--cream);">
+          <span>Maple Syrup</span>
+          <span class="active-line" style="display: block; width: 1.5rem; height: 2px; background: var(--gold); margin-top: 2px;"></span>
+        </a>
+
+        <a href="../iceHockey/ice-hockey.html" class="py-2 text-decoration-none group d-flex flex-column align-items-center relative" style="font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,232,200,0.45); transition: color 0.3s;">
+          <span class="menu-text">Ice Hockey</span>
+          <span class="hover-line"></span>
+        </a>
+
+        <a href="../winter_carnival/winter-carnival-canada.html" class="py-2 text-decoration-none group d-flex flex-column align-items-center relative" style="font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,232,200,0.45); transition: color 0.3s;">
+          <span class="menu-text">Winter Carnival</span>
+          <span class="hover-line"></span>
+        </a>
+
+        <a href="../ice_canoe/ice_canoe.html" class="py-2 text-decoration-none group d-flex flex-column align-items-center relative" style="font-family: var(--font-sans); font-size: 0.75rem; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(247,232,200,0.45); transition: color 0.3s;">
+          <span class="menu-text">Ice Canoe Racing</span>
+          <span class="hover-line"></span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-5" style="background: var(--bark); border-top: 1px solid rgba(184,98,26,0.1); font-family: var(--font-sans);">
+    <div class="container px-6 d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
+      <div class="space-y-1 text-center text-md-start order-2 order-md-1">
+        <p class="m-0 font-normal" style="color: rgba(247,232,200,0.6); font-size: 0.75rem; letter-spacing: 0.05em;">&copy; Canada Culture - 2026. All rights reserved.</p>
+        <p class="m-0 uppercase" style="font-family: var(--font-mono); font-size: 0.58rem; color: rgba(247,232,200,0.25); letter-spacing: 0.15em;">Semua data diverifikasi melalui badan resmi Statistics Canada.</p>
+      </div>
+
+      <div class="order-1 order-md-2">
+        <a href="https://github.com/KursiHexagon/Tugas_Besar_Sem2_WebDas" 
+           target="_blank" 
+           rel="noopener noreferrer" 
+           class="d-flex align-items-center text-decoration-none github-btn" 
+           style="gap: 0.6rem; padding: 0.5rem 1rem; border: 1px solid rgba(247,232,200,0.1); color: rgba(247,232,200,0.55); transition: all 0.3s ease;">
+          <svg class="git-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="transition: transform 0.3s ease;">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.0.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+          <span style="font-size: 0.68rem; letter-spacing: 0.2em; font-weight: 600; text-transform: uppercase;">GitHub</span>
+        </a>
+      </div>
+    </div>
+  </footer>
 
 <script>
-  const els = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  els.forEach(el => io.observe(el));
+	const els = document.querySelectorAll('.reveal');
+	const io = new IntersectionObserver(entries => {
+		entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+	}, { threshold: 0.12 });
+	els.forEach(el => io.observe(el));
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

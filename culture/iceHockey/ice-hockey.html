@@ -22,19 +22,15 @@
     <link rel="stylesheet" href="ih.css">
 </head>
 <body class="bg-glory-blue antialiased">
-
-    <!-- ── GLASSMORPHISM NAVBAR (iOS STYLE) ── -->
     <nav id="main-navbar" class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between padding-navbar px-6 md:px-12 py-4 bg-glory-blue/40 backdrop-blur-md border-b border-pure-white/10 opacity-0 pointer-events-none">
-        <!-- Logo / Brand -->
+
         <a href="#" class="text-pure-white font-black tracking-tighter text-lg uppercase select-none">
             Ice<span class="text-glory-red"> Hockey</span>
         </a>
 
-        <!-- Nav Links -->
         <div class="flex items-center gap-6 md:gap-8 font-mono text-xs uppercase tracking-widest">
-            <a href="../../main/main_page.html" class="text-pure-white/70 hover:text-pure-white transition-colors duration-300">Home</a>
+            <a href="../../index.html" class="text-pure-white/70 hover:text-pure-white transition-colors duration-300">Home</a>
             <a href="#overview-section" class="text-pure-white/70 hover:text-pure-white transition-colors duration-300">Culture</a>
-            <a href="#history-section" class="text-pure-white/70 hover:text-pure-white transition-colors duration-300">About Canada</a>
         </div>
     </nav>
 
@@ -277,36 +273,58 @@
         </div>
     </section>
 
-
-    <footer class="bg-glory-blue border-t border-pure-white/10 py-16">
-        <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
+    <section class="py-20 border-t border-pure-white/5 bg-glory-blue select-none">
+        <div class="max-w-6xl mx-auto px-6">
             
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-8 select-none">
+            <div class="text-center mb-8">
+                <span class="text-[10px] font-mono uppercase tracking-[0.3em] text-pure-white/30 block">Jelajahi Kultur Kanada</span>
+            </div>
+
+            <div class="flex items-center lg:justify-center overflow-x-auto pb-4 lg:pb-0 gap-x-8 md:gap-x-12 scrollbar-none whitespace-nowrap mask-gradient">
                 
-                <a href="../kisah-kami/index.html" class="group flex flex-col items-center sm:items-start text-center sm:text-left transition-all duration-300 hover:-translate-x-1">
-                    <span class="text-xs font-mono uppercase tracking-widest text-pure-white/40 group-hover:text-glory-red transition-colors duration-300">
-                        &larr; Sebelumnya
-                    </span>
-                    <span class="text-sm md:text-base font-bold uppercase tracking-wider text-pure-white mt-1 group-hover:text-pure-white/80">
-                        Maple
-                    </span>
+                <a href="../bilingual/bilingualism.html" class="py-2 text-xs font-medium uppercase tracking-[0.2em] text-pure-white/40 hover:text-pure-white transition-all duration-300 group flex flex-col items-center relative">
+                    <span>Dwibahasa</span>
+                    <span class="absolute bottom-0 w-0 h-[2px] bg-glory-red group-hover:w-4 transition-all duration-300 opacity-60"></span>
                 </a>
 
-                <div class="flex items-center justify-center animate-pulse" style="animation-duration: 4s;">
-                    <svg width="36" height="36" viewBox="0 0 60 60" fill="#D4921E" opacity="0.4" xmlns="http://www.w3.org/2000/svg" class="hover:opacity-80 transition-opacity duration-300 cursor-help">
-                        <path d="M30 2 L36 19 L54 12 L44 27 L58 32 L45 42 L50 57 L30 47 L10 57 L15 42 L2 32 L16 27 L6 12 L24 19 Z"/>
+                <a href="../maple/Maple-Syrup.html" class="py-2 text-xs font-medium uppercase tracking-[0.2em] text-pure-white/40 hover:text-pure-white transition-all duration-300 group flex flex-col items-center relative">
+                    <span>Maple Syrup</span>
+                    <span class="absolute bottom-0 w-0 h-[2px] bg-glory-red group-hover:w-4 transition-all duration-300 opacity-60"></span>
+                </a>
+
+                <a href="#" class="relative py-2 text-xs font-bold uppercase tracking-[0.2em] text-pure-white group flex flex-col items-center">
+                    <span>Ice Hockey</span>
+                    <span class="absolute bottom-0 w-6 h-[2px] bg-glory-red"></span>
+                </a>
+
+                <a href="../winter_carnival/winter-carnival-canada.html" class="py-2 text-xs font-medium uppercase tracking-[0.2em] text-pure-white/40 hover:text-pure-white transition-all duration-300 group flex flex-col items-center relative">
+                    <span>Winter Carnival</span>
+                    <span class="absolute bottom-0 w-0 h-[2px] bg-glory-red group-hover:w-4 transition-all duration-300 opacity-60"></span>
+                </a>
+
+                <a href="../ice_canoe/ice_canoe.html" class="py-2 text-xs font-medium uppercase tracking-[0.2em] text-pure-white/40 hover:text-pure-white transition-all duration-300 group flex flex-col items-center relative">
+                    <span>Ice Canoe Racing</span>
+                    <span class="absolute bottom-0 w-0 h-[2px] bg-glory-red group-hover:w-4 transition-all duration-300 opacity-60"></span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-pure-white/5 text-xs font-light text-pure-white/40 tracking-wider bg-glory-blue">
+        <div class="max-w-7xl w-full mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="space-y-2 text-center md:text-left order-2 md:order-1">
+                <p class="font-normal text-pure-white/60">&copy; Canada Culture - 2026. All rights reserved.</p>
+            </div>
+            
+            <div class="order-1 md:order-2">
+                <a href="https://github.com/KursiHexagon/Tugas_Besar_Sem2_WebDas" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2.5 px-4 py-2 border border-pure-white/10 hover:border-glory-red hover:bg-pure-white/5 text-pure-white/60 hover:text-pure-white transition-all duration-300 rounded-none group">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-github w-4 h-4 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 16 16">  
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
                     </svg>
-                </div>
-
-                <a href="../culture/" class="group flex flex-col items-center sm:items-end text-center sm:text-right transition-all duration-300 hover:translate-x-1">
-                    <span class="text-xs font-mono uppercase tracking-widest text-pure-white/40 group-hover:text-glory-red transition-colors duration-300">
-                        Selanjutnya &rarr;
-                    </span>
-                    <span class="text-sm md:text-base font-bold uppercase tracking-wider text-pure-white mt-1 group-hover:text-pure-white/80">
-                        Winter Carnival
-                    </span>
+                        
+                    <span class="text-[11px] uppercase tracking-[0.2em] font-medium">GitHub</span>
                 </a>
-
             </div>
         </div>
     </footer>

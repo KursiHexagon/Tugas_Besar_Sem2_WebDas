@@ -1,0 +1,634 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lora:ital,wght@0,400;0,600;1,400&family=Space+Mono:wght@400;700&display=swap');
+
+:root {
+	--ice:      #E8F4FF;
+	--frost:    #B8D8F0;
+	--sky:      #4A90C4;
+	--deep:     #0D2B45;
+	--navy:     #0A1F33;
+	--snow:     #F5FAFF;
+	--red:      #D42B2B;
+	--gold:     #E8C84A;
+	--muted:    #7AAAC8;
+	--text:     #0D2B45;
+}
+
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	background: var(--snow);
+	color: var(--text);
+	font-family: 'Lora', serif;
+	overflow-x: hidden;
+}
+
+/* ── SNOWFALL ── */
+#snowCanvas {
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	z-index: 0;
+}
+
+/* ── BREADCRUMB ── */
+.breadcrumb-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+	background: rgba(13,43,69,0.92);
+	backdrop-filter: blur(12px);
+	border-bottom: 1px solid rgba(184,216,240,0.15);
+	padding: 0.9rem 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.bc-logo {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 1.3rem;
+	letter-spacing: 0.1em;
+	color: var(--ice);
+	text-decoration: none;
+}
+.bc-logo span {
+	color: var(--red);
+}
+.bc-trail {
+	font-family: 'Space Mono', monospace;
+	font-size: 0.58rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--muted);
+	display: flex;
+	gap: 0.8rem;
+	align-items: center;
+}
+.bc-trail .cur {
+	color: var(--frost);
+}
+.bc-trail .sep {
+	opacity: 0.35;
+}
+.bc-home {
+	font-family: 'Space Mono', monospace;
+	font-size: 0.58rem;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: var(--muted);
+	text-decoration: none;
+	transition: color 0.2s;
+}
+.bc-home:hover {
+	color: var(--frost);
+}
+
+/* ── HERO ── */
+.hero {
+	position: relative;
+	min-height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin-top: 52px;
+	overflow: hidden;
+	z-index: 1;
+}
+
+.hero-left {
+	background: var(--navy);
+	padding: 7rem 5rem 5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+/* diagonal ice crack */
+.hero-left::before {
+	content: '';
+	position: absolute;
+	top: -10%;
+	right: -5%;
+	width: 2px;
+	height: 130%;
+	background: linear-gradient(to bottom, transparent, rgba(184,216,240,0.3), transparent);
+	transform: rotate(-12deg);
+}
+
+.chapter-tag {
+	font-family: 'Space Mono', monospace;
+	font-size: 0.6rem;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: var(--red);
+	margin-bottom: 1.5rem;
+	opacity: 0;
+	animation: fadeUp 0.8s 0.2s ease forwards;
+}
+.hero-title {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: clamp(4rem, 7vw, 8rem);
+	line-height: 0.88;
+	letter-spacing: 0.03em;
+	color: var(--ice);
+	margin-bottom: 0.5rem;
+	opacity: 0;
+	animation: fadeUp 0.9s 0.35s ease forwards;
+}
+.hero-title .accent {
+	color: var(--sky);
+	display: block;
+}
+.hero-title .year {
+	font-size: clamp(1.2rem, 2vw, 2rem);
+	color: var(--gold);
+	letter-spacing: 0.3em;
+	display: block;
+	margin-top: 0.5rem;
+}
+.hero-lead {
+	font-size: 1rem;
+	font-weight: 400;
+	font-style: italic;
+	color: rgba(232,244,255,0.65);
+	line-height: 1.8;
+	border-left: 2px solid var(--sky);
+	padding-left: 1.2rem;
+	margin: 2rem 0;
+	max-width: 420px;
+	opacity: 0;
+	animation: fadeUp 0.9s 0.55s ease forwards;
+}
+.hero-meta {
+	display: flex;
+	gap: 2rem;
+	opacity: 0;
+	animation: fadeUp 0.9s 0.7s ease forwards;
+}
+.meta-item {
+	text-align: center;
+}
+.meta-num {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 2.5rem;
+	color: var(--gold);
+	line-height: 1;
+}
+.meta-label {
+	font-family: 'Space Mono', monospace;
+	font-size: 0.55rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--muted);
+	margin-top: 0.2rem;
+}
+
+/* Hero right — ice sculpture visual */
+.hero-right {
+	background: linear-gradient(160deg, #1A3F60 0%, #0D2B45 50%, #050F1A 100%);
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+.hero-right::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(ellipse at 60% 40%, rgba(74,144,196,0.25) 0%, transparent 65%);
+}
+
+/* Ice palace SVG */
+.ice-palace {
+	position: relative;
+	z-index: 2;
+}
+
+/* Floating flag */
+.hero-flag {
+	position: absolute;
+	top: 2.5rem;
+	right: 2.5rem;
+	z-index: 3;
+	opacity: 0;
+	animation: fadeUp 1s 1s ease forwards;
+}
+.flag-box {
+	background: rgba(13,43,69,0.7);
+	border: 1px solid rgba(184,216,240,0.2);
+	padding: 1.2rem 1.5rem;
+	text-align: center;
+	backdrop-filter: blur(6px);
+}
+.flag-emoji {
+	font-size: 2rem;
+	display: block;
+	margin-bottom: 0.4rem;
+}
+.flag-label {
+	font-family: 'Space Mono', monospace;
+	font-size: 0.55rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+
+/* ── STRIP ── */
+.info-strip {
+	background: var(--red);
+	overflow: hidden;
+	white-space: nowrap;
+	padding: 0.75rem 0;
+	position: relative;
+	z-index: 1;
+}
+.strip-inner {
+	display: inline-flex;
+	gap: 3rem;
+	animation: marquee 20s linear infinite;
+}
+.strip-item {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 1rem;
+	letter-spacing: 0.15em;
+	color: white;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+.strip-dot {
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.5);
+}
+@keyframes marquee {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+/* ── MAIN CONTENT ── */
+.page-content {
+	max-width: 900px;
+	margin: 0 auto;
+	padding: 6rem 2rem 3rem;
+	position: relative;
+	z-index: 1;
+}
+
+.s-tag {
+	font-family: 'Space Mono', monospace;
+	font-size: 0.58rem;
+	letter-spacing: 0.3em;
+	text-transform: uppercase;
+	color: var(--sky);
+	margin-bottom: 0.8rem;
+}
+h2 {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 3rem;
+	letter-spacing: 0.04em;
+	color: var(--deep);
+	line-height: 1;
+	margin-bottom: 1.2rem;
+}
+h2 em {
+	font-family: 'Lora', serif;
+	font-style: italic;
+	font-size: 2rem;
+	color: var(--sky);
+}
+p {
+	font-size: 1.05rem;
+	line-height: 1.85;
+	color: #1A3A55;
+	margin-bottom: 1.3rem;
+}
+
+/* pull quote */
+.pull-quote {
+	font-family: 'Lora', serif;
+	font-style: italic;
+	font-size: 1.6rem;
+	color: var(--deep);
+	border-top: 2px solid var(--frost);
+	border-bottom: 2px solid var(--frost);
+	padding: 1.8rem 0;
+	margin: 3rem 0;
+	line-height: 1.5;
+}
+.pull-quote span {
+	color: var(--sky);
+}
+
+/* divider */
+.divider {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin: 3.5rem 0;
+	color: var(--frost);
+}
+.divider::before,
+.divider::after {
+	content: '';
+	flex: 1;
+	height: 1px;
+	background: linear-gradient(to right, transparent, var(--frost), transparent);
+}
+
+/* ── ACTIVITIES GRID ── */
+.activities-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2px;
+	margin: 3rem 0;
+}
+.act-card {
+	background: var(--deep);
+	padding: 2.5rem 2rem;
+	position: relative;
+	overflow: hidden;
+	transition: transform 0.3s;
+	cursor: default;
+}
+.act-card::before {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 3px;
+	background: var(--sky);
+	transform: scaleX(0);
+	transition: transform 0.4s ease;
+	transform-origin: left;
+}
+.act-card:hover {
+	transform: translateY(-4px);
+}
+.act-card:hover::before {
+	transform: scaleX(1);
+}
+.act-icon {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	display: block;
+}
+.act-title {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 1.4rem;
+	letter-spacing: 0.06em;
+	color: var(--ice);
+	margin-bottom: 0.6rem;
+}
+.act-desc {
+	font-size: 0.88rem;
+	color: rgba(184,216,240,0.7);
+	line-height: 1.65;
+	margin: 0;
+}
+.act-tag {
+	position: absolute;
+	top: 1.2rem;
+	right: 1.2rem;
+	font-family: 'Space Mono', monospace;
+	font-size: 0.5rem;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--gold);
+	opacity: 0.8;
+}
+
+/* ── TIMELINE ── */
+.timeline {
+	position: relative;
+	margin: 2rem 0 3rem;
+	padding-left: 2.5rem;
+}
+.timeline::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 1px;
+	background: linear-gradient(to bottom, var(--sky), var(--frost), transparent);
+}
+.tl-item {
+	position: relative;
+	padding: 0 0 2.5rem 2rem;
+}
+.tl-item::before {
+	content: '';
+	position: absolute;
+	left: -5px;
+	top: 6px;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: var(--sky);
+	border: 2px solid var(--snow);
+	transition: background 0.3s;
+}
+.tl-item:hover::before {
+	background: var(--gold);
+}
+.tl-year {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 0.9rem;
+	letter-spacing: 0.15em;
+	color: var(--sky);
+	margin-bottom: 0.3rem;
+}
+.tl-title {
+	font-family: 'Lora', serif;
+	font-weight: 600;
+	font-size: 1.05rem;
+	color: var(--deep);
+	margin-bottom: 0.4rem;
+}
+.tl-desc {
+	font-size: 0.92rem;
+	color: #4A6880;
+	line-height: 1.7;
+	margin: 0;
+}
+
+/* ── BONHOMME FEATURE ── */
+.bonhomme-block {
+	background: var(--deep);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	overflow: hidden;
+	margin: 3rem -2rem;
+}
+.bh-text {
+	padding: 4rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.bh-text .s-tag {
+	color: var(--gold);
+}
+.bh-text h2 {
+	color: var(--ice);
+}
+.bh-text p {
+	color: rgba(232,244,255,0.7);
+}
+.bh-visual {
+	background: linear-gradient(135deg, #1A3F60, #0A1F33);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3rem;
+	position: relative;
+	overflow: hidden;
+}
+.bh-visual::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(circle at center, rgba(74,144,196,0.2) 0%, transparent 70%);
+}
+
+/* ── FACT BAND ── */
+.fact-band {
+	background: var(--sky);
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 1px;
+	background-color: rgba(255,255,255,0.2);
+	margin: 3rem 0;
+}
+.fact-cell {
+	background: var(--sky);
+	padding: 2rem 1.5rem;
+	text-align: center;
+	transition: background 0.3s;
+}
+.fact-cell:hover {
+	background: var(--deep);
+}
+.fact-num {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 3rem;
+	color: white;
+	line-height: 1;
+}
+.fact-label {
+	font-family: 'Space Mono', monospace;
+	font-size: 0.55rem;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.75);
+	margin-top: 0.4rem;
+}
+
+/* ── PRACTICAL INFO ── */
+.info-cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem;
+	margin: 2rem 0;
+}
+.info-card {
+	border: 1px solid var(--frost);
+	padding: 2rem;
+	transition: border-color 0.3s, transform 0.3s;
+}
+.info-card:hover {
+	border-color: var(--sky);
+	transform: translateY(-3px);
+}
+.ic-icon {
+	font-size: 1.8rem;
+	margin-bottom: 0.8rem;
+}
+.ic-title {
+	font-family: 'Bebas Neue', sans-serif;
+	font-size: 1.1rem;
+	letter-spacing: 0.08em;
+	color: var(--deep);
+	margin-bottom: 0.5rem;
+}
+.ic-body {
+	font-size: 0.88rem;
+	color: #4A6880;
+	line-height: 1.7;
+	margin: 0;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.in {
+	opacity: 1;
+	transform: none;
+}
+
+/* ── BOTTOM NAV ── */
+.page-nav {
+border-top: 1px solid var(--frost);
+padding: 2.5rem 5rem;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: relative; z-index: 1;
+}
+.pn-link {
+font-family: 'Space Mono', monospace;
+font-size: 0.6rem;
+letter-spacing: 0.2em;
+text-transform: uppercase;
+color: var(--muted);
+text-decoration: none;
+transition: color 0.2s;
+}
+.pn-link:hover { color: var(--sky); }
+.pn-chapter {
+font-family: 'Lora', serif;
+font-style: italic;
+font-size: 0.95rem;
+color: var(--sky);
+display: block;
+margin-top: 0.2rem;
+}
+
+.group:hover style { color: var(--snow) !important; }
+.group:hover span:last-child { width: 16px !important; }
+.github-btn:hover {
+border-color: var(--red) !important;
+background-color: rgba(232, 244, 255, 0.05) !important;
+color: var(--snow) !important;
+}
+.github-btn:hover .github-icon {
+transform: scale(1.1);
+}
+/* Sembunyikan scrollbar navigasi saat di-scroll mobile */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { -ms-overflow-style: none; scrollbar-width: none; }
+@media (min-width: 992px) { .lg-justify-content-center { justify-content: center !important; } }
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(22px); }
+to   { opacity: 1; transform: translateY(0); }
+}
