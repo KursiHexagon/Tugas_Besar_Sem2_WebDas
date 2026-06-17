@@ -22,6 +22,17 @@ html {
 	scroll-behavior: smooth;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.scrollbar-none {
+    -ms-overflow-style: none;
+}
+
 body {
 	background: var(--snow);
 	color: var(--text);
@@ -631,4 +642,109 @@ transform: scale(1.1);
 @keyframes fadeUp {
 from { opacity: 0; transform: translateY(22px); }
 to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 991px) {
+    .mask-gradient {
+        mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    }
+}
+
+
+/* ── MEDIA QUERIES: RESPONSIVE DESKTOP MEDIUM / LAPTOP (MAX 1024px) ── */
+@media (max-width: 1024px) {
+    .hero-left {
+        padding: 6rem 3rem 4rem;
+    }
+    .hero-title {
+        font-size: 5rem;
+    }
+    .activities-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .fact-band {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ── MEDIA QUERIES: RESPONSIVE TABLET & HP (MAX 768px) ── */
+@media (max-width: 768px) {
+    /* Breadcrumb Adjustment */
+    .breadcrumb-bar {
+        padding: 0.9rem 1.5rem;
+    }
+    .bc-trail {
+        display: none; /* Sembunyikan jejak detail di layar kecil agar tidak menumpuk */
+    }
+
+    /* Hero Grid Layout Transformasi ke 1 Kolom Vertikal */
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    .hero-left {
+        padding: 5rem 2rem 3rem;
+        order: 1;
+    }
+    .hero-right {
+        min-height: 320px;
+        padding: 2rem;
+        order: 2;
+    }
+    .hero-title {
+        font-size: 4rem;
+    }
+    .ice-palace svg {
+        width: 260px;
+        height: auto;
+    }
+    .hero-flag {
+        top: 1rem;
+        right: 1rem;
+    }
+
+    /* Konten Utama */
+    .page-content {
+        padding: 4rem 1.5rem 2rem;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    h2 em {
+        font-size: 1.6rem;
+    }
+    .pull-quote {
+        font-size: 1.25rem;
+        padding: 1.2rem 0;
+        margin: 2rem 0;
+    }
+
+    /* Transformasi Blok Bonhomme */
+    .bonhomme-block {
+        grid-template-columns: 1fr;
+        margin: 2rem 0;
+    }
+    .bh-text {
+        padding: 2.5rem 1.5rem;
+    }
+    .bh-visual {
+        padding: 2rem;
+        min-height: 240px;
+    }
+
+    /* Grid Ativitas & Info praktis */
+    .activities-grid, 
+    .info-cards {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* ── BOOTSTRAP OVERRIDE UTILITY (992px ke atas untuk perataan menu tengah) ── */
+@media (min-width: 992px) {
+    .lg-justify-content-center {
+        justify-content: center !important;
+    }
 }

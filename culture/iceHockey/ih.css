@@ -16,6 +16,15 @@ html::-webkit-scrollbar {
     display: none;
 }
 
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;  
+}
+
 /* Efek Hover Teks ICE HOCKEY */
 .hover-luxury {
     position: relative;

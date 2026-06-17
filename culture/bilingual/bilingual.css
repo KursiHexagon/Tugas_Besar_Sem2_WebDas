@@ -51,48 +51,6 @@ p {
     gap: 1.5rem;
 }
 
-@media (min-width: 640px) {
-    .bento-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .bento-grid {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto;
-        gap: 1.5rem;
-        grid-template-areas:
-            "large medium1 medium2"
-            "large medium3 medium4";
-    }
-
-    .card-large {
-        grid-area: large;
-        min-height: 440px;
-    }
-    .card-medium1 { grid-area: medium1; }
-    .card-medium2 { grid-area: medium2; }
-    .card-medium3 { grid-area: medium3; }
-    .card-medium4 { grid-area: medium4; }
-
-    .magazine-grid {
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: auto auto;
-        gap: 1.5rem;
-        grid-template-areas:
-            "left right-top right-top"
-            "left right-bottom right-bottom";
-    }
-
-    .mag-card-left { 
-        grid-area: left; 
-        min-height: 500px;
-    }
-    .mag-card-right-top { grid-area: right-top; }
-    .mag-card-right-bottom { grid-area: right-bottom; }
-}
-
 @keyframes customBounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-8px); }
@@ -130,3 +88,13 @@ p {
 #main-nav.nav-hidden {
     transform: translateY(-100%);
 }
+
+/* Memastikan scrollbar benar-benar hilang di semua jenis browser mobile */
+.scrollbar-none {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-none::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
