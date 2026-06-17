@@ -1,433 +1,227 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Winter Carnival — Karnaval Musim Dingin Kanada</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="wc.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Winter Carnival - Karnaval Musim Dingin Kanada</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="wc.css">
 </head>
 <body>
-<canvas id="snowCanvas"></canvas>
+	<canvas id="snowCanvas"></canvas>
 
-<nav class="breadcrumb-bar">
-  <a class="bc-logo" href="#">Winter <span>Carnival</span></a>
-  <div class="bc-trail">
-    <span>Kanada</span><span class="sep">/</span>
-    <span>Budaya</span><span class="sep">/</span>
-    <span class="cur">Winter Carnival</span>
-  </div>
-  <a class="bc-home" href="../../index.html">← Beranda</a>
-</nav>
+	<nav class="breadcrumb-bar">
+		<a class="bc-logo" href="#">Winter <span>Carnival</span></a>
+		<div class="bc-trail">
+			<span>Kanada</span><span class="sep">/</span>
+			<span>Budaya</span><span class="sep">/</span>
+			<span class="cur">Winter Carnival</span>
+		</div>
+		<a class="bc-home" href="../../index.html">← Beranda</a>
+	</nav>
 
-<section class="hero">
-  <div class="hero-left">
-    <p class="chapter-tag">Bab 03 · Budaya & Tradisi</p>
-    <h1 class="hero-title">
-      WINTER
-      <span class="accent">CARNIVAL</span>
-      <span class="year">· KANADA ·</span>
-    </h1>
-    <p class="hero-lead">
-      Selama dua minggu setiap Februari, kota Quebec berubah menjadi kerajaan es terbesar di dunia — festival musim dingin tertua dan terbesar di Amerika Utara.
-    </p>
-    <div class="hero-meta">
-      <div class="meta-item">
-        <div class="meta-num">1894</div>
-        <div class="meta-label">Tahun Pertama</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-num">400K+</div>
-        <div class="meta-label">Pengunjung/Tahun</div>
-      </div>
-      <div class="meta-item">
-        <div class="meta-num">17</div>
-        <div class="meta-label">Hari Festival</div>
-      </div>
-    </div>
-  </div>
+	<section class="hero">
+		<div class="hero-left">
+			<p class="chapter-tag">Bab 03 · Budaya & Tradisi</p>
+			<h1 class="hero-title">
+				WINTER
+				<span class="accent">CARNIVAL</span>
+				<span class="year">· KANADA ·</span>
+			</h1>
+			<p class="hero-lead">
+				Pas masuk bulan Februari, Quebec langsung berubah jadi kota es raksasa yang super meriah buat ngerayain dinginnya salju.
+			</p>
+			<div class="hero-meta">
+				<div class="meta-item">
+					<div class="meta-num">17</div>
+					<div class="meta-label">Hari Penuh</div>
+				</div>
+				<div class="meta-item">
+					<div class="meta-num">400k+</div>
+					<div class="meta-label">Pengunjung</div>
+				</div>
+			</div>
+		</div>
 
-  <div class="hero-right">
-    <div class="ice-palace">
-      <svg width="340" height="400" viewBox="0 0 340 400" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 40px rgba(74,144,196,0.4))">
-        <!-- Ground -->
-        <rect x="0" y="370" width="340" height="30" fill="rgba(184,216,240,0.15)" rx="2"/>
-        <!-- Main castle body -->
-        <rect x="80" y="200" width="180" height="170" fill="rgba(74,144,196,0.2)" stroke="rgba(184,216,240,0.5)" stroke-width="1"/>
-        <!-- Door -->
-        <rect x="145" y="290" width="50" height="80" fill="rgba(10,31,51,0.8)" rx="25 25 0 0"/>
-        <!-- Windows -->
-        <rect x="95" y="220" width="35" height="40" fill="rgba(232,244,255,0.15)" stroke="rgba(184,216,240,0.4)" stroke-width="1" rx="17 17 0 0"/>
-        <rect x="210" y="220" width="35" height="40" fill="rgba(232,244,255,0.15)" stroke="rgba(184,216,240,0.4)" stroke-width="1" rx="17 17 0 0"/>
-        <!-- Center tower -->
-        <rect x="130" y="120" width="80" height="110" fill="rgba(74,144,196,0.25)" stroke="rgba(184,216,240,0.5)" stroke-width="1"/>
-        <!-- Center tower roof -->
-        <polygon points="170,50 110,130 230,130" fill="rgba(100,170,220,0.4)" stroke="rgba(184,216,240,0.7)" stroke-width="1.5"/>
-        <!-- Side towers -->
-        <rect x="55" y="240" width="50" height="130" fill="rgba(74,144,196,0.15)" stroke="rgba(184,216,240,0.35)" stroke-width="1"/>
-        <rect x="235" y="240" width="50" height="130" fill="rgba(74,144,196,0.15)" stroke="rgba(184,216,240,0.35)" stroke-width="1"/>
-        <!-- Side tower roofs -->
-        <polygon points="80,180 55,245 105,245" fill="rgba(100,170,220,0.35)" stroke="rgba(184,216,240,0.6)" stroke-width="1"/>
-        <polygon points="260,180 235,245 285,245" fill="rgba(100,170,220,0.35)" stroke="rgba(184,216,240,0.6)" stroke-width="1"/>
-        <!-- Flag on center -->
-        <line x1="170" y1="50" x2="170" y2="15" stroke="rgba(184,216,240,0.8)" stroke-width="1.5"/>
-        <rect x="170" y="15" width="22" height="14" fill="rgba(212,43,43,0.8)" rx="1"/>
-        <!-- Ice sparkles -->
-        <circle cx="113" cy="240" r="3" fill="rgba(232,244,255,0.6)"/>
-        <circle cx="227" cy="240" r="3" fill="rgba(232,244,255,0.6)"/>
-        <circle cx="170" cy="165" r="3" fill="rgba(232,244,255,0.6)"/>
-        <!-- Icicles from main roof -->
-        <line x1="95" y1="200" x2="95" y2="215" stroke="rgba(184,216,240,0.6)" stroke-width="2"/>
-        <line x1="110" y1="200" x2="110" y2="222" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
-        <line x1="125" y1="200" x2="125" y2="210" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
-        <line x1="215" y1="200" x2="215" y2="218" stroke="rgba(184,216,240,0.6)" stroke-width="2"/>
-        <line x1="230" y1="200" x2="230" y2="212" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
-        <line x1="245" y1="200" x2="245" y2="220" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
-        <!-- Light glow inside -->
-        <ellipse cx="170" cy="310" rx="20" ry="10" fill="rgba(232,200,74,0.15)"/>
-      </svg>
-    </div>
+		<div class="hero-right">
+			<div class="hero-flag">
+				<div class="flag-box">
+					<span class="flag-emoji">🇨🇦</span>
+					<span class="flag-label">Quebec</span>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <div class="hero-flag">
-      <div class="flag-box">
-        <span class="flag-emoji">🇨🇦</span>
-        <div class="flag-label">Quebec City</div>
-      </div>
-    </div>
-  </div>
-</section>
+	<div class="info-strip" id="strip"></div>
 
-<div class="info-strip">
-  <div class="strip-inner" id="strip"></div>
-</div>
+	<main class="page-content">
+		<div class="reveal">
+			<p class="s-tag">Sejarah & Tradisi</p>
+			<h2>Serunya Musim Dingin di <em>Quebec</em></h2>
+			<p>Festival ini udah ada dari tahun 1894. Awalnya, warga lokal bikin acara ini biar nggak bosan dan tetep semangat pas musim dingin lagi ekstrem-ekstremnya. Tapi sekarang, malah jadi salah satu karnaval musim dingin paling gede sedunia yang didatengin turis dari berbagai negara.</p>
+		</div>
 
-<article class="page-content">
+		<div class="pull-quote reveal">
+			"Karnaval ini bukan cuma acara seru-seruan biasa, tapi cara orang Kanada nikmatin musim dingin bareng keluarga lewat tradisi yang hangat."
+		</div>
 
-  <div class="reveal">
-    <p class="s-tag">Pengenalan</p>
-    <h2>Festival Es <em>Terbesar di Dunia</em></h2>
-  </div>
-  <p class="reveal">Carnaval de Québec — atau Quebec Winter Carnival — adalah perayaan musim dingin terbesar dan tertua di Amerika Utara yang diadakan setiap tahun di Quebec City, Kanada. Festival ini berlangsung selama 17 hari pada akhir Januari hingga pertengahan Februari, bertepatan dengan puncak musim dingin yang paling dingin di kota tersebut.</p>
-  <p class="reveal">Apa yang membuat festival ini unik adalah semangat warganya: alih-alih bersembunyi dari suhu yang bisa mencapai -20°C, masyarakat Quebec justru merayakannya dengan penuh sukacita. Festival ini merupakan bukti filosofi hidup orang Kanada — khususnya Quebec — bahwa musim dingin bukan halangan, melainkan undangan untuk bersenang-senang.</p>
+		<div class="divider"></div>
 
-  <blockquote class="pull-quote reveal">
-    "Di Quebec, musim dingin bukan sesuatu yang <span>ditahan</span> — melainkan sesuatu yang <span>dirayakan</span>."
-  </blockquote>
+		<div class="reveal">
+			<p class="s-tag">Aktivitas Utama</p>
+			<h2>Acara yang Paling Ditunggu</h2>
+			<div class="activities-grid">
+				<div class="act-card">
+					<span class="act-tag">01</span>
+					<span class="act-icon">🛶</span>
+					<h3 class="act-title">Balap Perahu Es</h3>
+					<p class="act-desc">Nyeberangin Sungai St. Lawrence yang beku pakai perahu. Seru sekaligus ekstrem banget!</p>
+				</div>
+				<div class="act-card">
+					<span class="act-tag">02</span>
+					<span class="act-icon">🪵</span>
+					<h3 class="act-title">Kompetisi Ukir Es</h3>
+					<p class="act-desc">Seniman dari berbagai belahan dunia kumpul buat nyulap balok es raksasa jadi karya seni super keren.</p>
+				</div>
+				<div class="act-card">
+					<span class="act-tag">03</span>
+					<span class="act-icon">🛷</span>
+					<h3 class="act-title">Seluncuran Salju</h3>
+					<p class="act-desc">Merasain sensasi meluncur kencang dari puncak perbukitan salju kota pakai papan luncur tradisional.</p>
+				</div>
+			</div>
+		</div>
 
-  <div class="divider reveal">❄</div>
+		<div class="bonhomme-block reveal">
+			<div class="bh-text">
+				<p class="s-tag">Ikon Karnaval</p>
+				<h2>Kenalan Sama Bonhomme</h2>
+				<p>Bonhomme ini maskot resmi Winter Carnival yang wujudnya manusia salju raksasa. Ciri khasnya pakai topi merah (tuque) sama ikat pinggang kain tradisional. Pas festival dimulai, dia bakal nerima kunci kota sebagai tanda perayaan resmi dibuka.</p>
+			</div>
+			<div class="bh-visual">
+				<span style="font-size: 5rem;">☃️</span>
+			</div>
+		</div>
 
-  <div class="reveal">
-    <p class="s-tag">Sejarah</p>
-    <h2>Lebih dari <em>130 Tahun</em> Tradisi</h2>
-  </div>
-  <p class="reveal">Winter Carnival lahir dari kebutuhan warga Quebec untuk mengangkat semangat di tengah musim dingin yang panjang dan keras. Festival ini pertama kali diadakan secara resmi pada 1894, menjadikannya salah satu festival musim dingin paling tua di dunia.</p>
+		<div class="fact-band reveal">
+			<div class="fact-cell">
+				<div class="fact-num">1894</div>
+				<div class="fact-label">Mulai Diadakan</div>
+			</div>
+			<div class="fact-cell">
+				<div class="fact-num">30+</div>
+				<div class="fact-label">Negara Ikut Serta</div>
+			</div>
+			<div class="fact-cell">
+				<div class="fact-num">-15°C</div>
+				<div class="fact-label">Suhu Rata-rata</div>
+			</div>
+			<div class="fact-cell">
+				<div class="fact-num">100%</div>
+				<div class="fact-label">Pasti Seru</div>
+			</div>
+		</div>
 
-  <div class="timeline reveal">
-    <div class="tl-item">
-      <div class="tl-year">1894</div>
-      <div class="tl-title">Festival Pertama</div>
-      <p class="tl-desc">Quebec menggelar festival musim dingin pertama untuk menarik wisatawan di bulan Februari. Diisi dengan pertandingan olahraga musim dingin dan parade.</p>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">1955</div>
-      <div class="tl-title">Kelahiran Bonhomme</div>
-      <p class="tl-desc">Maskot ikonik festival — Bonhomme Carnaval, manusia salju bertopi merah — resmi diperkenalkan dan langsung menjadi simbol yang dicintai jutaan orang.</p>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">1980-an</div>
-      <div class="tl-title">Ekspansi Global</div>
-      <p class="tl-desc">Festival mulai menarik perhatian internasional. Istana es mulai dibangun dengan skala yang semakin megah, menggunakan ribuan ton es dari Sungai St. Lawrence.</p>
-    </div>
-    <div class="tl-item">
-      <div class="tl-year">Hari Ini</div>
-      <div class="tl-title">Warisan Dunia</div>
-      <p class="tl-desc">Dengan 400.000+ pengunjung per tahun dari seluruh penjuru dunia, Winter Carnival kini menjadi salah satu festival paling terkenal di planet ini.</p>
-    </div>
-  </div>
+		<div class="reveal">
+			<p class="s-tag">Tips Pengunjung</p>
+			<h2>Info Penting Buat yang Mau Dateng</h2>
+			<div class="info-cards">
+				<div class="info-card">
+					<div class="ic-icon">🧥</div>
+					<h3 class="ic-title">Pakai Baju Berlapis</h3>
+					<p class="ic-body">Karena acaranya full outdoor, wajib banget pakai jaket tebal berlapis, sarung tangan, sama penutup telinga biar nggak kedinginan.</p>
+				</div>
+				<div class="info-card">
+					<div class="ic-icon">🎟️</div>
+					<h3 class="ic-title">Tiket Masuk (Effigy)</h3>
+					<p class="ic-body">Buat masuk ke area utama, kamu harus beli gantungan kunci khusus namanya 'Effigy'. Bisa dibeli langsung di lokasi atau pesan online jauh-jauh hari.</p>
+				</div>
+			</div>
+		</div>
+	</main>
 
-  <div class="divider reveal">❄</div>
+	<footer class="page-nav">
+		<a href="#" class="pn-link">
+			<span>SEBELUMNYA</span>
+			<span class="pn-chapter">Bab 02 · Harbin Festival</span>
+		</a>
+		<a href="#" class="pn-link" style="text-align: right;">
+			<span>SELANJUTNYA</span>
+			<span class="pn-chapter">Bab 04 · Sapporo Festival</span>
+		</a>
+	</footer>
 
-  <div class="reveal">
-    <p class="s-tag">Aktivitas Utama</p>
-    <h2>Apa yang Bisa <em>Dilakukan?</em></h2>
-  </div>
-  <p class="reveal">Festival ini menawarkan puluhan aktivitas yang tersebar di seluruh kota tua Quebec. Dari kompetisi internasional hingga pertunjukan seni, ada sesuatu untuk semua usia.</p>
+	<script>
+		const canvas = document.getElementById('snowCanvas');
+		const ctx = canvas.getContext('2d');
+		
+		function resizeCanvas() {
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+		}
+		resizeCanvas();
 
-  <div class="activities-grid reveal">
-    <div class="act-card">
-      <span class="act-tag">Ikonik</span>
-      <span class="act-icon">🏰</span>
-      <div class="act-title">Istana Es</div>
-      <p class="act-desc">Dibangun dari 6.000+ balok es seberat 300 ton. Buka malam hari dengan pencahayaan berwarna yang spektakuler. Pusat festival setiap tahun.</p>
-    </div>
-    <div class="act-card">
-      <span class="act-tag">Olahraga</span>
-      <span class="act-icon">🛷</span>
-      <div class="act-title">Balapan Kanoe Es</div>
-      <p class="act-desc">Kompetisi paling ekstrem: tim mendayung dan berlari melewati Sungai St. Lawrence yang setengah beku. Tradisi unik sejak 1894.</p>
-    </div>
-    <div class="act-card">
-      <span class="act-tag">Seni</span>
-      <span class="act-icon">🗿</span>
-      <div class="act-title">Ukiran Salju</div>
-      <p class="act-desc">Seniman dari seluruh dunia berkompetisi menciptakan patung salju raksasa di Plains of Abraham. Karya yang menakjubkan dan sementara.</p>
-    </div>
-    <div class="act-card">
-      <span class="act-tag">Kuliner</span>
-      <span class="act-icon">🍺</span>
-      <div class="act-title">Caribou & Cidre</div>
-      <p class="act-desc">Minuman khas festival — Caribou — campuran anggur merah, whisky, dan rempah hangat. Disajikan di "cabane" kecil sepanjang Old Quebec.</p>
-    </div>
-    <div class="act-card">
-      <span class="act-tag">Anak-anak</span>
-      <span class="act-icon">⛷</span>
-      <div class="act-title">Seluncur & Ski</div>
-      <p class="act-desc">Jalur seluncur es (glissades) sepanjang 270 meter, skating di luar ruangan, dan area ski khusus anak-anak di jantung kota tua.</p>
-    </div>
-    <div class="act-card">
-      <span class="act-tag">Malam</span>
-      <span class="act-icon">🎆</span>
-      <div class="act-title">Parade & Kembang Api</div>
-      <p class="act-desc">Parade malam yang megah dengan floats bercahaya, kostum warna-warni, dan pesta kembang api yang menerangi langit Quebec yang gelap.</p>
-    </div>
-  </div>
+		const flakes = [];
+		for(let i=0; i<100; i++) {
+			flakes.push({
+				x: Math.random() * canvas.width,
+				y: Math.random() * canvas.height,
+				speed: Math.random() * 2 + 0.5,
+				radius: Math.random() * 3 + 1,
+				drift: Math.random() * 1 - 0.5
+			});
+		}
 
-</article>
+		function drawSnow() {
+			ctx.clearRect(0,0, canvas.width, canvas.height);
+			ctx.fillStyle = '#fff';
+			ctx.beginPath();
+			flakes.forEach(f => {
+				ctx.moveTo(f.x, f.y);
+				ctx.arc(f.x, f.y, f.radius, 0, Math.PI*2);
+			});
+			ctx.fill();
+			updateSnow();
+			requestAnimationFrame(drawSnow);
+		}
 
-<div class="bonhomme-block reveal">
-  <div class="bh-text">
-    <p class="s-tag">Maskot Festival</p>
-    <h2>BONHOMME CARNAVAL</h2>
-    <p>Bonhomme adalah maskot resmi festival sejak 1955 — manusia salju raksasa berbadan bulat dengan syal merah, topi kulit, dan senyum abadi. Ia adalah "raja" festival yang menyambut tamu, memimpin parade, dan tinggal di Istana Es.</p>
-    <p>Nama "Bonhomme" berasal dari bahasa Prancis yang berarti "pria baik" atau "pria sederhana". Setiap tahun ia membagikan Effigie-nya — sejenis lencana kecil — yang menjadi simbol keberuntungan bagi pemegangnya.</p>
-  </div>
-  <div class="bh-visual">
-    <svg width="220" height="280" viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg" style="filter: drop-shadow(0 0 20px rgba(74,144,196,0.3))">
-      <!-- Hat -->
-      <ellipse cx="110" cy="52" rx="42" ry="8" fill="#8B1A1A"/>
-      <rect x="75" y="20" width="70" height="35" rx="4" fill="#B22222"/>
-      <ellipse cx="110" cy="20" rx="35" ry="7" fill="#CC2222"/>
-      <!-- Head -->
-      <circle cx="110" cy="90" r="45" fill="white" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
-      <!-- Eyes -->
-      <circle cx="96" cy="82" r="6" fill="#0D2B45"/>
-      <circle cx="124" cy="82" r="6" fill="#0D2B45"/>
-      <circle cx="98" cy="80" r="2" fill="white"/>
-      <circle cx="126" cy="80" r="2" fill="white"/>
-      <!-- Carrot nose -->
-      <ellipse cx="110" cy="93" rx="5" ry="8" fill="#E8A030" transform="rotate(10,110,93)"/>
-      <!-- Smile -->
-      <path d="M94 103 Q110 115 126 103" stroke="#0D2B45" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      <!-- Scarf -->
-      <path d="M68 125 Q110 140 152 125" stroke="#CC2222" stroke-width="12" fill="none" stroke-linecap="round"/>
-      <path d="M130 130 Q140 155 125 170" stroke="#CC2222" stroke-width="10" fill="none" stroke-linecap="round"/>
-      <!-- Body -->
-      <ellipse cx="110" cy="195" rx="55" ry="55" fill="white" stroke="rgba(184,216,240,0.5)" stroke-width="1.5"/>
-      <!-- Buttons -->
-      <circle cx="110" cy="173" r="5" fill="#0D2B45"/>
-      <circle cx="110" cy="193" r="5" fill="#0D2B45"/>
-      <circle cx="110" cy="213" r="5" fill="#0D2B45"/>
-      <!-- Belt -->
-      <rect x="65" y="228" width="90" height="12" rx="2" fill="#8B1A1A"/>
-      <rect x="103" y="226" width="14" height="16" rx="1" fill="#E8C84A"/>
-    </svg>
-  </div>
-</div>
+		function updateSnow() {
+			flakes.forEach(f => {
+				f.y += f.speed;
+				f.x += f.drift;
+				if (f.y > canvas.height) { f.y = -5; f.x = Math.random() * canvas.width; }
+				if (f.x > canvas.width)  { f.x = 0; }
+				if (f.x < 0)             { f.x = canvas.width; }
+			});
+		}
+		drawSnow();
 
-<article class="page-content">
+		window.addEventListener('resize', resizeCanvas);
 
-  <div class="fact-band reveal">
-    <div class="fact-cell">
-      <div class="fact-num">-20°C</div>
-      <div class="fact-label">Suhu Rata-rata</div>
-    </div>
-    <div class="fact-cell">
-      <div class="fact-num">6000</div>
-      <div class="fact-label">Balok Es Istana</div>
-    </div>
-    <div class="fact-cell">
-      <div class="fact-num">17</div>
-      <div class="fact-label">Hari Festival</div>
-    </div>
-    <div class="fact-cell">
-      <div class="fact-num">70+</div>
-      <div class="fact-label">Aktivitas Berbeda</div>
-    </div>
-  </div>
+		const stripItems = [
+			'Quebec City 🇨🇦', 'Sejak 1894', 'Istana Es', 'Bonhomme Carnaval',
+			'Balapan Kano', 'Ukiran Salju', '400.000 Pengunjung', '17 Hari Penuh',
+			'Quebec City 🇨🇦', 'Sejak 1894', 'Istana Es', 'Bonhomme Carnaval',
+			'Balapan Kano', 'Ukiran Salju', '400.000 Pengunjung', '17 Hari Penuh'
+		];
+		const strip = document.getElementById('strip');
+		stripItems.forEach(t => {
+			const el = document.createElement('span');
+			el.className = 'strip-item';
+			el.innerHTML = `<span class="strip-text">${t}</span><span class="strip-dot"></span>`;
+			strip.appendChild(el);
+		});
 
-  <div class="divider reveal">❄</div>
-
-  <div class="reveal">
-    <p class="s-tag">Info Praktis</p>
-    <h2>Cara <em>Mengunjungi</em></h2>
-  </div>
-  <p class="reveal">Ingin merasakan sendiri keajaiban Winter Carnival? Berikut yang perlu kamu ketahui sebelum berangkat ke Quebec City.</p>
-
-  <div class="info-cards reveal">
-    <div class="info-card">
-      <div class="ic-icon">📅</div>
-      <div class="ic-title">Kapan</div>
-      <p class="ic-body">Akhir Januari – pertengahan Februari setiap tahunnya. Biasanya 17 hari penuh. Cek situs resmi untuk tanggal pasti karena berubah tiap tahun.</p>
-    </div>
-    <div class="info-card">
-      <div class="ic-icon">📍</div>
-      <div class="ic-title">Di Mana</div>
-      <p class="ic-body">Quebec City, Quebec, Kanada. Sebagian besar aktivitas berlangsung di Vieux-Québec (Old Quebec) dan Plains of Abraham yang ikonik.</p>
-    </div>
-    <div class="info-card">
-      <div class="ic-icon">🎟</div>
-      <div class="ic-title">Tiket</div>
-      <p class="ic-body">Banyak aktivitas gratis. Tiket "Effigie" (lencana resmi) memberikan akses ke Istana Es, glissades, dan acara berbayar lainnya. Harga sekitar CAD $20–30.</p>
-    </div>
-    <div class="info-card">
-      <div class="ic-icon">🧥</div>
-      <div class="ic-title">Persiapan</div>
-      <p class="ic-body">Lapisan pakaian sangat penting. Bawa jaket thermal, sarung tangan tebal, sepatu tahan air, dan kaos kaki wol. Suhu bisa mencapai -25°C di malam hari.</p>
-    </div>
-  </div>
-
-  <div class="divider reveal">❄</div>
-
-  <div class="reveal">
-    <p class="s-tag">Kesimpulan</p>
-    <h2>Lebih dari Sekadar <em>Festival</em></h2>
-  </div>
-  <p class="reveal">Winter Carnival bukan hanya perayaan musim dingin — ia adalah cerminan jiwa masyarakat Quebec. Dalam setiap istana es yang dibangun, setiap balap kanoe di atas sungai yang beku, dan setiap senyum Bonhomme yang menyambut pengunjung, ada pesan yang jelas: hidup adalah untuk dirayakan, bukan ditakuti — bahkan di tengah dingin yang menggigit sekalipun.</p>
-  <p class="reveal">Bagi siapa pun yang berkesempatan mengunjungi Kanada di bulan Februari, Winter Carnival adalah pengalaman yang tidak akan pernah terlupakan — sebuah perpaduan unik antara budaya, seni, olahraga, dan kehangatan manusia di tengah lautan salju.</p>
-
-</article>
-
-<section class="py-5 select-none" style="background-color: var(--navy); border-top: 1px solid rgba(232, 244, 255, 0.05);">
-    <div class="container max-w-6xl mx-auto px-4">
-      
-      <div class="text-center mb-4">
-        <span class="d-block" style="font-family: 'Space Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.3em; color: rgba(232, 244, 255, 0.3);">Jelajahi Kultur Kanada</span>
-      </div>
-
-      <div class="d-flex align-items-center lg-justify-content-center overflow-x-auto pb-3 gap-4 md-gap-5 scrollbar-none whitespace-nowrap mask-gradient" style="font-family: 'Space Mono', monospace; justify-content: md-center; flex-wrap: nowrap; -webkit-overflow-scrolling: touch;">
-        
-        <a href="../bilingual/bilingualism.html" class="py-2 text-decoration-none d-flex flex-column align-items-center position-relative group" style="font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(232, 244, 255, 0.4); transition: all 0.3s ease;">
-          <span>Dwibahasa</span>
-          <span class="position-absolute bottom-0 start-50 translate-middle-x" style="width: 0; height: 2px; background-color: var(--red); transition: all 0.3s ease; opacity: 0.6;"></span>
-        </a>
-
-        <a href="../maple/Maple-Syrup.html" class="py-2 text-decoration-none d-flex flex-column align-items-center position-relative group" style="font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(232, 244, 255, 0.4); transition: all 0.3s ease;">
-          <span>Maple Syrup</span>
-          <span class="position-absolute bottom-0 start-50 translate-middle-x" style="width: 0; height: 2px; background-color: var(--red); transition: all 0.3s ease; opacity: 0.6;"></span>
-        </a>
-
-        <a href="../iceHockey/ice-hockey.html" class="py-2 text-decoration-none d-flex flex-column align-items-center position-relative group" style="font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(232, 244, 255, 0.4); transition: all 0.3s ease;">
-          <span>Ice Hockey</span>
-          <span class="position-absolute bottom-0 start-50 translate-middle-x" style="width: 0; height: 2px; background-color: var(--red); transition: all 0.3s ease; opacity: 0.6;"></span>
-        </a>
-
-        <a href="#" class="py-2 text-decoration-none d-flex flex-column align-items-center position-relative" style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: var(--snow);">
-          <span>Winter Carnival</span>
-          <span class="position-absolute bottom-0 start-50 translate-middle-x" style="width: 24px; height: 2px; background-color: var(--red);"></span>
-        </a>
-
-        <a href="../ice_canoe/ice_canoe.html" class="py-2 text-decoration-none d-flex flex-column align-items-center position-relative group" style="font-size: 11px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(232, 244, 255, 0.4); transition: all 0.3s ease;">
-          <span>Ice Canoe Racing</span>
-          <span class="position-absolute bottom-0 start-50 translate-middle-x" style="width: 0; height: 2px; background-color: var(--red); transition: all 0.3s ease; opacity: 0.6;"></span>
-        </a>
-
-      </div>
-    </div>
-</section>
-
-  <footer class="py-4 text-center" style="background-color: var(--navy); border-top: 1px solid rgba(232, 244, 255, 0.05); font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.05em;">
-    <div class="container max-w-7xl mx-auto px-4 d-flex flex-column flex-md-row align-items-center justify-content-between gap-4">
-        
-        <div class="text-center text-md-start order-2 order-md-1" style="line-height: 1.6;">
-            <p class="m-0" style="font-weight: 400; color: rgba(232, 244, 255, 0.6);">&copy; Canada Culture - 2026. All rights reserved.</p>
-        </div>
-        
-        <div class="order-1 order-md-2">
-            <a href="https://github.com/KursiHexagon/Tugas_Besar_Sem2_WebDas" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="d-inline-flex align-items-center gap-2 px-3 py-2 text-decoration-none github-btn" 
-               style="border: 1px solid rgba(232, 244, 255, 0.1); color: rgba(232, 244, 255, 0.6); transition: all 0.3s ease; font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; font-weight: 500;">
-            
-                <svg xmlns="http://www.w3.org/2000/svg" 
-                     fill="currentColor" 
-                     class="bi bi-github github-icon" 
-                     style="width: 14px; height: 14px; transition: transform 0.3s ease;" 
-                     viewBox="0 0 16 16">  
-                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
-                </svg>
-                    
-                <span>GitHub</span>
-            </a>
-        </div>
-    </div>
-  </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  const canvas = document.getElementById('snowCanvas');
-  const ctx = canvas.getContext('2d');
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-
-  const flakes = Array.from({ length: 120 }, () => ({
-    x: Math.random() * canvas.width,
-    y: Math.random() * canvas.height,
-    r: 1 + Math.random() * 3,
-    speed: 0.4 + Math.random() * 1.2,
-    drift: (Math.random() - 0.5) * 0.5,
-    opacity: 0.3 + Math.random() * 0.7
-  }));
-
-  function drawSnow() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    flakes.forEach(f => {
-      ctx.beginPath();
-      ctx.arc(f.x, f.y, f.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(232,244,255,${f.opacity})`;
-      ctx.fill();
-      f.y += f.speed;
-      f.x += f.drift;
-      if (f.y > canvas.height) { f.y = -5; f.x = Math.random() * canvas.width; }
-      if (f.x > canvas.width)  { f.x = 0; }
-      if (f.x < 0)             { f.x = canvas.width; }
-    });
-    requestAnimationFrame(drawSnow);
-  }
-  drawSnow();
-
-  window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  });
-
-  // ── MARQUEE STRIP ──
-  const stripItems = [
-    'Quebec City 🇨🇦', 'Sejak 1894', 'Istana Es', 'Bonhomme Carnaval',
-    'Balapan Kanoe', 'Ukiran Salju', '400.000 Pengunjung', '17 Hari Penuh',
-    'Quebec City 🇨🇦', 'Sejak 1894', 'Istana Es', 'Bonhomme Carnaval',
-    'Balapan Kanoe', 'Ukiran Salju', '400.000 Pengunjung', '17 Hari Penuh'
-  ];
-  const strip = document.getElementById('strip');
-  stripItems.forEach(t => {
-    const el = document.createElement('span');
-    el.className = 'strip-item';
-    el.innerHTML = `<span class="strip-dot"></span>${t}`;
-    strip.appendChild(el);
-  });
-
-  // ── SCROLL REVEAL ──
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        e.target.style.transitionDelay = (i % 3) * 0.1 + 's';
-        e.target.classList.add('in');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => io.observe(el));
-</script>
+		const reveals = document.querySelectorAll('.reveal');
+		const observer = new IntersectionObserver(entries => {
+			entries.forEach(entry => {
+				if(entry.isIntersecting) {
+					entry.target.classList.add('in');
+				}
+			});
+		}, { threshold: 0.1 });
+		reveals.forEach(r => observer.observe(r));
+	</script>
 </body>
 </html>
