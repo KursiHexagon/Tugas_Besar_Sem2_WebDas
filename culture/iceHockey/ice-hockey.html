@@ -10,9 +10,11 @@
             theme: {
                 extend: {
                     colors: {
-                        'glory-blue': '#0E1E42',
-                        'glory-red': '#AF143C',
-                        'pure-white': '#FFFFFF',
+                        /* PEMETAAN COLOR PALETTE ARISTOKRATIK GELAP */
+                        'glory-blue': '#1B1717',   /* Hitam Pekat Latar Belakang Utama */
+                        'glory-red': '#810100',    /* Merah Aksen / Maroon Terang */
+                        'pure-white': '#EDEBDD',   /* Krem Gading Terang / Kontras */
+                        'panel-maroon': '#630000', /* Merah Gelap Sekunder / Background Panel */
                     }
                 }
             }
@@ -21,9 +23,9 @@
     <script src="ih.js"></script>
     <link rel="stylesheet" href="ih.css">
 </head>
-<body class="bg-glory-blue antialiased">
-    <nav id="main-navbar" class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between padding-navbar px-6 md:px-12 py-4 bg-glory-blue/40 backdrop-blur-md border-b border-pure-white/10 opacity-0 pointer-events-none">
+<body class="bg-glory-blue antialiased text-pure-white">
 
+    <nav id="main-navbar" class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between padding-navbar px-6 md:px-12 py-4 bg-glory-blue/40 backdrop-blur-md border-b border-pure-white/10 opacity-0 pointer-events-none">
         <a href="#" class="text-pure-white font-black tracking-tighter text-lg uppercase select-none">
             Ice<span class="text-glory-red"> Hockey</span>
         </a>
@@ -55,9 +57,7 @@
         </div>
     </div>
 
-
     <section id="hero-section" class="w-full h-screen bg-glory-blue text-pure-white relative flex flex-col justify-center items-center overflow-hidden">
-        
         <div class="absolute inset-0 z-0 opacity-40">
             <img src="../../asset/img/culture/iceHockey/playerHand.jpg" alt="Canada Ice Hockey Backdrop" class="w-full h-full object-cover">
         </div>
@@ -67,62 +67,52 @@
         </div>
 
         <div class="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center justify-center">
-            
-            <div id="hero-title-container" class="w-full min-h-[60px] md:min-h-[100px] flex items-center justify-center mb-8">
-                </div>
-
-            <p class="text-sm md:text-base font-mono tracking-[0.35em] text-pure-white/90 bg-glory-red px-6 py-2 uppercase font-bold rounded-sm shadow-md">
+            <div id="hero-title-container" class="w-full min-h-[60px] md:min-h-[100px] flex items-center justify-center mb-8"></div>
+            <p class="text-sm md:text-base font-mono tracking-[0.35em] text-pure-white bg-glory-red px-6 py-2 uppercase font-bold rounded-sm shadow-md">
                 Puck, Rink, Ice Skates
             </p>
-
         </div>
     </section>  
 
-
-    <section id="overview-section" class="w-full bg-pure-white text-glory-blue py-20 md:py-32 relative overflow-hidden">
+    <!-- SECTION 1: OVERVIEW - Menggunakan latar belakang Merah Gelap Sekunder (panel-maroon) -->
+    <section id="overview-section" class="w-full bg-panel-maroon text-pure-white py-20 md:py-32 relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
-            
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                
                 <div class="lg:col-span-7 max-w-2xl">
                     <div class="mb-8">
-                        <span class="text-xs font-mono uppercase tracking-widest text-glory-red font-bold">01 / Overview</span>
-                        <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mt-1">Apa itu Ice Hockey?</h2>
+                        <span class="text-xs font-mono uppercase tracking-widest text-pure-white/60 font-bold">01 / Overview</span>
+                        <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mt-1 text-pure-white">Apa itu Ice Hockey?</h2>
                         <div class="w-16 h-[3px] bg-glory-red mt-3"></div>
                     </div>
 
-                    <div class="space-y-6 text-base md:text-lg text-glory-blue/80 leading-relaxed font-light">
+                    <div class="space-y-6 text-base md:text-lg text-pure-white/80 leading-relaxed font-light">
                         <p>
-                            <strong class="text-glory-blue font-bold">Ice Hockey</strong> adalah olahraga tim yang dimainkan di atas permukaan es menggunakan sepatu skating dengan tujuan untuk memasukkan piringan karet hitam (<span class="italic font-medium text-glory-blue">puck</span>) ke gawang lawan menggunakan tongkat pemukul (<span class="italic font-medium text-glory-blue">hockey stick</span>).
+                            <strong class="text-pure-white font-bold">Ice Hockey</strong> adalah olahraga tim yang dimainkan di atas permukaan es menggunakan sepatu skating dengan tujuan untuk memasukkan piringan karet hitam (<span class="italic font-medium text-pure-white">puck</span>) ke gawang lawan menggunakan tongkat pemukul (<span class="italic font-medium text-pure-white">hockey stick</span>).
                         </p>
                         <p>
-                            Olahraga ini sangat terkenal dengan temponya yang sangat cepat, penuh benturan fisik secara legal, dan mengharuskan koordinasi motorik tingkat tinggi karena setiap pemain wajib meluncur di atas es dengan kecepatan prima sambil mengendalikan arah laju <span class="italic font-medium text-glory-blue">puck</span>.
+                            Olahraga ini sangat terkenal dengan temponya yang sangat cepat, penuh benturan fisik secara legal, dan mengharuhankan koordinasi motorik tingkat tinggi karena setiap pemain wajib meluncur di atas es dengan kecepatan prima sambil mengendalikan arah laju <span class="italic font-medium text-pure-white">puck</span>.
                         </p>
                     </div>
                 </div>
 
                 <div class="lg:col-span-5 w-full">
-                    <div class="border-4 border-glory-blue/5 p-3 rounded-sm bg-pure-white shadow-xl">
+                    <div class="border-4 border-pure-white/5 p-3 rounded-sm bg-glory-blue shadow-xl">
                         <div class="relative h-64 md:h-80 overflow-hidden rounded-sm bg-glory-blue/10">
                             <img src="../../asset/img/culture/iceHockey/hockey_puck_ice.jpg" alt="Hockey Puck on Ice" class="w-full h-full object-cover">
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
     </section>
 
-
+    <!-- SECTION 2: HISTORY - Menggunakan latar belakang Hitam Pekat (glory-blue) -->
     <section id="history-section" class="w-full bg-glory-blue text-pure-white py-20 md:py-32 relative overflow-hidden">
-        
         <div class="absolute inset-0 opacity-5 pointer-events-none bg-cover bg-center mix-blend-overlay" 
              style="background-image: url('../../asset/img/culture/iceHockey/ice_texture_close_up.jpg');">
         </div>
 
         <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20 relative z-10">
-            
             <div class="text-center max-w-2xl mx-auto mb-20">
                 <span class="text-xs font-mono uppercase tracking-widest text-pure-white bg-glory-red px-3 py-1.5 rounded-sm font-bold shadow-md">
                     02 / Chronology
@@ -137,9 +127,8 @@
                 
                 <div class="relative flex flex-col md:flex-row items-start md:items-center">
                     <div class="absolute -left-[9px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-glory-red border-4 border-glory-blue z-20"></div>
-                    
                     <div class="w-full md:w-[45%] pl-6 md:pl-0 md:text-right">
-                        <span class="font-mono text-sm font-bold text-glory-red bg-pure-white/10 px-2 py-0.5 rounded-sm">Sebelum 1875</span>
+                        <span class="font-mono text-sm font-bold text-pure-white bg-glory-red px-2 py-0.5 rounded-sm">Sebelum 1875</span>
                         <h3 class="text-xl font-bold uppercase tracking-tight mt-2 text-pure-white">Asal-usul Historis dan Proses Adaptasi Lingkungan</h3>
                         <p class="text-sm md:text-base text-pure-white/70 leading-relaxed font-light mt-2">
                             Hoki es berakar dari permainan tradisional stik dan bola asal Eropa Utara seperti <span class="italic font-normal">Hurling</span> dan <span class="italic font-normal">Shinty</span>. Ketika para imigran dan tentara Inggris mendarat di Kanada, permainan ini berakulturasi dengan tradisi tangkas suku asli Amerika (<span class="font-normal text-pure-white">Mi'kmaq</span>) di atas permukaan danau yang membeku.
@@ -147,7 +136,7 @@
                     </div>
                     <div class="hidden md:block w-[10%]"></div>
                     <div class="w-full md:w-[45%] mt-4 md:mt-0 pl-6 md:pl-0">
-                        <div class="max-w-md md:mr-auto overflow-hidden rounded-sm border border-pure-white/10 p-1.5 bg-glory-blue/50 shadow-lg">
+                        <div class="max-w-md md:mr-auto overflow-hidden rounded-sm border border-pure-white/10 p-1.5 bg-panel-maroon shadow-lg">
                             <img src="../../asset/img/culture/iceHockey/pond_hockey_canada.jpg" alt="Traditional Pond Hockey Roots" class="w-full h-40 object-cover rounded-sm grayscale hover:grayscale-0 transition-all duration-500">
                         </div>
                     </div>
@@ -155,9 +144,8 @@
 
                 <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center">
                     <div class="absolute -left-[9px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-glory-red border-4 border-glory-blue z-20"></div>
-                    
                     <div class="w-full md:w-[45%] pl-6 md:pl-0 md:text-left">
-                        <span class="font-mono text-sm font-bold text-glory-red bg-pure-white/10 px-2 py-0.5 rounded-sm">3 Maret 1875</span>
+                        <span class="font-mono text-sm font-bold text-pure-white bg-glory-red px-2 py-0.5 rounded-sm">3 Maret 1875</span>
                         <h3 class="text-xl font-bold uppercase tracking-tight mt-2 text-pure-white">Laga Indoor Pertama di Dunia</h3>
                         <p class="text-sm md:text-base text-pure-white/70 leading-relaxed font-light mt-2">
                             James Creighton memelopori pertandingan hoki es terstruktur kategori <span class="italic font-normal">indoor</span> pertama di Victoria Skating Rink, Montreal. Momen vital ini menandai pergantian bola bundar menjadi piringan karet ceper (<span class="italic font-normal">puck</span>) kayu agar tidak melambung keluar membahayakan penonton, sekaligus membatasi jumlah pemain menjadi 9 orang per tim.
@@ -165,7 +153,7 @@
                     </div>
                     <div class="hidden md:block w-[10%]"></div>
                     <div class="w-full md:w-[45%] mt-4 md:mt-0 pl-6 md:pl-0">
-                        <div class="max-w-md md:ml-auto p-6 bg-pure-white/5 border border-pure-white/10 rounded-sm text-center">
+                        <div class="max-w-md md:ml-auto p-6 bg-panel-maroon border border-pure-white/10 rounded-sm text-center">
                             <span class="block text-3xl font-mono font-black text-pure-white/20">1875</span>
                             <span class="text-xs uppercase tracking-widest text-pure-white/50 block mt-1">Montreal, Quebec</span>
                         </div>
@@ -174,9 +162,8 @@
 
                 <div class="relative flex flex-col md:flex-row items-start md:items-center">
                     <div class="absolute -left-[9px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-glory-red border-4 border-glory-blue z-20"></div>
-                    
                     <div class="w-full md:w-[45%] pl-6 md:pl-0 md:text-right">
-                        <span class="font-mono text-sm font-bold text-glory-red bg-pure-white/10 px-2 py-0.5 rounded-sm">1877</span>
+                        <span class="font-mono text-sm font-bold text-pure-white bg-glory-red px-2 py-0.5 rounded-sm">1877</span>
                         <h3 class="text-xl font-bold uppercase tracking-tight mt-2 text-pure-white">Kodifikasi Aturan McGill</h3>
                         <p class="text-sm md:text-base text-pure-white/70 leading-relaxed font-light mt-2">
                             Para mahasiswa dari Universitas McGill mengodifikasi tujuh aturan tertulis pertama yang menjadi landasan regulasi dunia. Di tahun ini pula klub hoki es pertama, <span class="font-normal text-pure-white">McGill University Hockey Club</span>, resmi didirikan dan mulai memperkenalkan sistem penalti untuk membatasi kekerasan fisik yang berlebihan di atas lapangan.
@@ -184,7 +171,7 @@
                     </div>
                     <div class="hidden md:block w-[10%]"></div>
                     <div class="w-full md:w-[45%] mt-4 md:mt-0 pl-6 md:pl-0">
-                        <div class="max-w-md md:mr-auto p-6 bg-pure-white/5 border border-pure-white/10 rounded-sm text-center">
+                        <div class="max-w-md md:mr-auto p-6 bg-panel-maroon border border-pure-white/10 rounded-sm text-center">
                             <span class="block text-3xl font-mono font-black text-pure-white/20">7 RULES</span>
                             <span class="text-xs uppercase tracking-widest text-pure-white/50 block mt-1">Kodifikasi Pertama</span>
                         </div>
@@ -193,9 +180,8 @@
 
                 <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center">
                     <div class="absolute -left-[9px] md:left-1/2 md:-translate-x-1/2 w-4 h-4 rounded-full bg-glory-red border-4 border-glory-blue z-20"></div>
-                    
                     <div class="w-full md:w-[45%] pl-6 md:pl-0 md:text-left">
-                        <span class="font-mono text-sm font-bold text-glory-red bg-pure-white/10 px-2 py-0.5 rounded-sm">1924</span>
+                        <span class="font-mono text-sm font-bold text-pure-white bg-glory-red px-2 py-0.5 rounded-sm">1924</span>
                         <h3 class="text-xl font-bold uppercase tracking-tight mt-2 text-pure-white">Legitimasi Olimpiade Musim Dingin</h3>
                         <p class="text-sm md:text-base text-pure-white/70 leading-relaxed font-light mt-2">
                             Setelah menyebar luas ke Amerika Serikat dan benua Eropa, hoki es mencapai puncak pengakuan global tertingginya dengan resmi dipertandingkan dalam ajang <span class="font-normal text-pure-white">Olimpiade Musim Dingin Pertama di Chamonix, Prancis</span> pada tahun 1924. Tim Kanada mendominasi era ini dan keluar sebagai peraih medali emas pertama sepanjang sejarah.
@@ -203,7 +189,7 @@
                     </div>
                     <div class="hidden md:block w-[10%]"></div>
                     <div class="w-full md:w-[45%] mt-4 md:mt-0 pl-6 md:pl-0">
-                        <div class="max-w-md md:ml-auto p-6 bg-pure-white/5 border border-pure-white/10 rounded-sm text-center">
+                        <div class="max-w-md md:ml-auto p-6 bg-panel-maroon border border-pure-white/10 rounded-sm text-center">
                             <span class="block text-3xl font-mono font-black text-pure-white/20">CHAMONIX</span>
                             <span class="text-xs uppercase tracking-widest text-pure-white/50 block mt-1">Olimpiade Global</span>
                         </div>
@@ -211,109 +197,97 @@
                 </div>
 
             </div>
-
         </div>
     </section>
 
-
-    <section id="gameplay-section" class="w-full bg-pure-white text-glory-blue py-20 md:py-32 relative overflow-hidden">
+    <!-- SECTION 3: GAMEPLAY - Menggunakan latar belakang Merah Gelap Sekunder (panel-maroon) -->
+    <section id="gameplay-section" class="w-full bg-panel-maroon text-pure-white py-20 md:py-32 relative overflow-hidden">
         <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
-            
             <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-xs font-mono uppercase tracking-widest text-glory-red font-bold">03 / Gameplay & Regulations</span>
-                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mt-1">Struktur & Cara Bermain</h2>
+                <span class="text-xs font-mono uppercase tracking-widest text-pure-white/70 font-bold">03 / Gameplay & Regulations</span>
+                <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mt-1 text-pure-white">Struktur & Cara Bermain</h2>
                 <div class="w-16 h-[3px] bg-glory-red mx-auto mt-3"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 
-                <div class="bg-pure-white border-2 border-glory-blue/5 p-8 rounded-sm shadow-md hover:border-glory-red/40 transition-all duration-300 flex flex-col">
+                <div class="bg-glory-blue border-2 border-pure-white/5 p-8 rounded-sm shadow-md hover:border-glory-red/60 transition-all duration-300 flex flex-col">
                     <div class="text-glory-red font-mono text-xs uppercase tracking-wider mb-2 font-bold">Squad Size</div>
-                    <h3 class="text-xl font-bold uppercase tracking-tight mb-4 text-glory-blue">Komposisi Tim</h3>
-                    <p class="text-sm text-glory-blue/70 leading-relaxed font-light mb-6">
-                        Masing-masing tim menurunkan <span class="text-glory-blue font-semibold">6 pemain sekaligus</span> di arena (1 penjaga gawang dan 5 pemain posisi bertahan serta penyerang). Karena intensitas laga sangat tinggi, pergantian pemain diperbolehkan kapan saja secara instan (<span class="italic font-medium">on-the-fly substitution</span>).
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-4 text-pure-white">Komposisi Tim</h3>
+                    <p class="text-sm text-pure-white/70 leading-relaxed font-light mb-6">
+                        Masing-masing tim menurunkan <span class="text-pure-white font-semibold">6 pemain sekaligus</span> di arena (1 penjaga gawang dan 5 pemain posisi bertahan serta penyerang). Karena intensitas laga sangat tinggi, pergantian pemain diperbolehkan kapan saja secara instan (<span class="italic font-medium">on-the-fly substitution</span>).
                     </p>
-                    <div class="mt-auto h-32 w-full rounded-sm overflow-hidden bg-glory-blue/5">
+                    <div class="mt-auto h-32 w-full rounded-sm overflow-hidden bg-panel-maroon/40">
                         <img src="../../asset/img/culture/iceHockey/pond_hockey_kids.jpg" alt="Kids playing hockey together" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <div class="bg-pure-white border-2 border-glory-blue/5 p-8 rounded-sm shadow-md hover:border-glory-red/40 transition-all duration-300 flex flex-col">
+                <div class="bg-glory-blue border-2 border-pure-white/5 p-8 rounded-sm shadow-md hover:border-glory-red/60 transition-all duration-300 flex flex-col">
                     <div class="text-glory-red font-mono text-xs uppercase tracking-wider mb-2 font-bold">Period Time</div>
-                    <h3 class="text-xl font-bold uppercase tracking-tight mb-4 text-glory-blue">Durasi Pertandingan</h3>
-                    <p class="text-sm text-glory-blue/70 leading-relaxed font-light mb-6">
-                        Laga resmi dibagi menjadi <span class="text-glory-blue font-semibold">3 babak (period)</span> yang masing-masing berjalan selama 20 menit waktu bersih. Waktu bersih berarti stopwatch atau penghitung waktu akan langsung berhenti otomatis setiap kali wasit meniup peluit tanda terjadinya pelanggaran.
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-4 text-pure-white">Durasi Pertandingan</h3>
+                    <p class="text-sm text-pure-white/70 leading-relaxed font-light mb-6">
+                        Laga resmi dibagi menjadi <span class="text-pure-white font-semibold">3 babak (period)</span> yang masing-masing berjalan selama 20 menit waktu bersih. Waktu bersih berarti stopwatch atau penghitung waktu akan langsung berhenti otomatis setiap kali wasit meniup peluit tanda terjadinya pelanggaran.
                     </p>
-                    <div class="mt-auto h-32 w-full rounded-sm overflow-hidden bg-glory-blue/5">
+                    <div class="mt-auto h-32 w-full rounded-sm overflow-hidden bg-panel-maroon/40">
                         <img src="../../asset/img/culture/iceHockey/playingField.png" alt="Ice Hockey Rink Field Layout" class="w-full h-full object-cover">
                     </div>
                 </div>
 
-                <div class="bg-pure-white border-2 border-glory-blue/5 p-8 rounded-sm shadow-md hover:border-glory-red/40 transition-all duration-300 flex flex-col">
+                <div class="bg-glory-blue border-2 border-pure-white/5 p-8 rounded-sm shadow-md hover:border-glory-red/60 transition-all duration-300 flex flex-col">
                     <div class="text-glory-red font-mono text-xs uppercase tracking-wider mb-2 font-bold">Official Rules</div>
-                    <h3 class="text-xl font-bold uppercase tracking-tight mb-4 text-glory-blue">Regulasi Lapangan</h3>
-                    <ul class="text-xs text-glory-blue/70 space-y-3 font-light list-disc list-inside mb-6">
+                    <h3 class="text-xl font-bold uppercase tracking-tight mb-4 text-pure-white">Regulasi Lapangan</h3>
+                    <ul class="text-xs text-pure-white/70 space-y-3 font-light list-disc list-inside mb-6">
                         <li>
-                            <span class="text-glory-blue font-semibold">Offside:</span> Pemain penyerang dilarang mendahului pergerakan <span class="italic">puck</span> saat memasuki zona pertahanan lawan.
+                            <span class="text-pure-white font-semibold">Offside:</span> Pemain penyerang dilarang mendahului pergerakan <span class="italic">puck</span> saat memasuki zona pertahanan lawan.
                         </li>
                         <li>
-                            <span class="text-glory-blue font-semibold">Icing:</span> Larangan memukul <span class="italic">puck</span> dari area pertahanan sendiri langsung melewati garis gawang lawan.
+                            <span class="text-pure-white font-semibold">Icing:</span> Larangan memukul <span class="italic">puck</span> dari area pertahanan sendiri langsung melewati garis gawang lawan.
                         </li>
                         <li>
-                            <span class="text-glory-blue font-semibold">Body Check:</span> Kontak fisik aman diperbolehkan penuh selama menggunakan pinggul/bahu untuk merebut kendali piringan karet dari depan lawan.
+                            <span class="text-pure-white font-semibold">Body Check:</span> Kontak fisik aman diperbolehkan penuh selama menggunakan pinggul/bahu untuk merebut kendali piringan karet dari depan lawan.
                         </li>
                     </ul>
-                    <div class="mt-auto h-32 w-full rounded-sm overflow-hidden bg-glory-blue/5">
+                    <div class="mt-auto h-32 w-full rounded-sm overflow-hidden bg-panel-maroon/40">
                         <img src="../../asset/img/culture/iceHockey/hockey_helmet_close_up.jpg" alt="Hockey Player Protective Gear" class="w-full h-full object-cover">
                     </div>
                 </div>
 
             </div>
-
         </div>
     </section>
 
-    <!-- ================= JELAJAHI KULTUR KANADA ================= -->
+    <!-- SECTION 4: NAVIGATION TRACK BAR - Menggunakan latar belakang Hitam Pekat (glory-blue) -->
     <section class="py-20 border-t border-pure-white/5 bg-glory-blue select-none">
         <div class="max-w-6xl mx-auto px-6">
-            
             <div class="text-center mb-8">
                 <span class="text-[10px] font-mono uppercase tracking-[0.3em] text-pure-white/30 block">Jelajahi Kultur Kanada</span>
             </div>
 
-            <!-- Perbaikan Utama: flex-nowrap, px-4 untuk memberi jarak geser, snap-x untuk mengunci posisi di HP -->
             <div class="flex items-center justify-start md:justify-center overflow-x-auto pb-4 md:pb-0 gap-x-8 md:gap-x-12 scrollbar-none whitespace-nowrap flex-nowrap px-4 snap-x snap-mandatory mask-gradient">
-                
-                <!-- Link Dwibahasa -->
                 <a href="../bilingual/bilingual.html" class="py-2 text-xs font-medium uppercase tracking-[0.2em] text-pure-white/40 hover:text-pure-white transition-all duration-300 group flex flex-col items-center relative shrink-0 snap-center">
                     <span>Dwibahasa</span>
                     <span class="absolute bottom-0 w-0 h-[2px] bg-glory-red group-hover:w-4 transition-all duration-300 opacity-60"></span>
                 </a>
 
-                <!-- Link Maple Syrup -->
                 <a href="../maple/Maple-Syrup.html" class="py-2 text-xs font-medium uppercase tracking-[0.2em] text-pure-white/40 hover:text-pure-white transition-all duration-300 group flex flex-col items-center relative shrink-0 snap-center">
                     <span>Maple Syrup</span>
                     <span class="absolute bottom-0 w-0 h-[2px] bg-glory-red group-hover:w-4 transition-all duration-300 opacity-60"></span>
                 </a>
 
-                <!-- Link Ice Hockey (Active) -->
                 <a href="#" class="relative py-2 text-xs font-bold uppercase tracking-[0.2em] text-pure-white group flex flex-col items-center shrink-0 snap-center">
                     <span>Ice Hockey</span>
                     <span class="absolute bottom-0 w-6 h-[2px] bg-glory-red"></span>
                 </a>
 
-                <!-- Link Winter Carnival -->
                 <a href="../winter_carnival/winter-carnival-canada.html" class="py-2 text-xs font-medium uppercase tracking-[0.2em] text-pure-white/40 hover:text-pure-white transition-all duration-300 group flex flex-col items-center relative shrink-0 snap-center">
                     <span>Winter Carnival</span>
                     <span class="absolute bottom-0 w-0 h-[2px] bg-glory-red group-hover:w-4 transition-all duration-300 opacity-60"></span>
                 </a>
 
-                <!-- Link Ice Canoe Racing -->
                 <a href="../ice_canoe/ice_canoe.html" class="py-2 text-xs font-medium uppercase tracking-[0.2em] text-pure-white/40 hover:text-pure-white transition-all duration-300 group flex flex-col items-center relative shrink-0 snap-center">
                     <span>Ice Canoe Racing</span>
                     <span class="absolute bottom-0 w-0 h-[2px] bg-glory-red group-hover:w-4 transition-all duration-300 opacity-60"></span>
                 </a>
-
             </div>
         </div>
     </section>
@@ -329,7 +303,6 @@
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-github w-4 h-4 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 16 16">  
                         <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
                     </svg>
-                        
                     <span class="text-[11px] uppercase tracking-[0.2em] font-medium">GitHub</span>
                 </a>
             </div>

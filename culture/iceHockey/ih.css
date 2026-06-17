@@ -9,6 +9,7 @@ html {
     -ms-overflow-style: none;
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    background-color: #1B1717; /* Menggunakan Hitam Pekat latar belakang utama */
 }
 
 /* khusus chrome/safari */
@@ -25,16 +26,15 @@ html::-webkit-scrollbar {
     scrollbar-width: none;  
 }
 
-/* Efek Hover Teks ICE HOCKEY */
+/* Efek Hover Teks ICE HOCKEY - Menggunakan Merah Aksen Aristokratik */
 .hover-luxury {
     position: relative;
     display: inline-block;
-    /* Ubah ini agar tidak bentrok dengan transisi opacity yang diatur oleh JS */
     transition: color 0.5s cubic-bezier(0.25, 1, 0.5, 1), letter-spacing 0.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .hover-luxury:hover {
-    color: #AF143C; 
+    color: #810100; /* Merah Aksen Aristokratik */
     letter-spacing: 0.05em; 
 }
 
@@ -73,7 +73,7 @@ html::-webkit-scrollbar {
     }
 }
 
-/*  SCROLL REVEAL EFFECT (Sama dengan Maple Syrup)  */
+/*  SCROLL REVEAL EFFECT  */
 .reveal {
     opacity: 0;
     transform: translateY(28px);
