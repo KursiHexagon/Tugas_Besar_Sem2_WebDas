@@ -16,26 +16,25 @@
 </head>
 <body>
 
-    <!-- HERO -->
     <div class="hero" id="home">
         <div class="background"></div>
         <nav class="nav">
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#culture">Culture</a></li>
+            <ul class="flex gap-6 sm:gap-[50px] list-none">
+                <li><a href="#home" class="text-base sm:text-[18px] text-white no-underline font-normal transition-opacity duration-300 hover:opacity-80">Home</a></li>
+                <li><a href="#about" class="text-base sm:text-[18px] text-white no-underline font-normal transition-opacity duration-300 hover:opacity-80">About</a></li>
+                <li><a href="#culture" class="text-base sm:text-[18px] text-white no-underline font-normal transition-opacity duration-300 hover:opacity-80">Culture</a></li>
             </ul>
         </nav>
         <div class="hero-content">
-            <h1>A Mari Usque Ad Mare</h1>
+            <h1 class="text-[42px] sm:text-[72px] px-4 sm:px-0">A Mari Usque Ad Mare</h1>
             <div class="hero-divider"></div>
-            <p>Dari laut ke laut</p>
+            <p class="text-[18px] sm:text-[24px]">Dari laut ke laut</p>
         </div>
     </div>
 
     <div class="bridge-gradient bridge-hero-about"></div>
 
-    <section id="about" class="about-section">
+    <section id="about" class="about-section px-5 sm:px-10 lg:px-20 pt-20 sm:pt-24 lg:pt-[140px] pb-16 sm:pb-20 lg:pb-[120px]">
         <div class="about-bg">
             <img src="asset/img/main/banff-national-park-canada.jpg"
                  alt="Canada landscape"
@@ -50,54 +49,54 @@
                 <div class="about-label-line"></div>
             </div>
 
-            <h2 class="about-headline reveal">
+            <h2 class="about-headline reveal text-[36px] sm:text-[48px] lg:text-[64px]">
                 Raksasa yang <span class="about-highlight">"Sepi"</span>
             </h2>
 
-            <p class="about-desc reveal">
-                Negara terbesar kedua di dunia berdasarkan luas wilayah, namun dengan populasi yang hanya sekitar 40 jiwa. Sebuah paradoks yang melahirkan budaya unik, hangat, dan kaya multikulturalisme.
+            <p class="about-desc reveal text-[16px] sm:text-[18px] leading-[1.7] sm:leading-[1.85]">
+                Negara terbesar kedua di dunia berdasarkan luas wilayah, namun dengan populasi yang hanya sekitar 40 juta jiwa. Sebuah paradoks yang melahirkan budaya unik, hangat, dan kaya multikulturalisme.
             </p>
 
-            <div class="about-stats reveal">
+            <div class="about-stats reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 lg:gap-4 my-8 sm:my-10 lg:my-14">
 
-                <div class="stat-card reveal">
-                    <span class="stat-number">9,98</span>
+                <div class="stat-card reveal py-5 sm:py-7">
+                    <span class="stat-number text-[32px] sm:text-[40px]">9,98</span>
                     <span class="stat-unit">juta km²</span>
                     <span class="stat-label">Luas Wilayah</span>
                 </div>
 
-                <div class="stat-card reveal">
-                    <span class="stat-number">40</span>
+                <div class="stat-card reveal py-5 sm:py-7">
+                    <span class="stat-number text-[32px] sm:text-[40px]">40</span>
                     <span class="stat-unit">juta jiwa</span>
                     <span class="stat-label">Populasi</span>
                 </div>
 
-                <div class="stat-card reveal">
-                    <span class="stat-number">#2</span>
+                <div class="stat-card reveal py-5 sm:py-7">
+                    <span class="stat-number text-[32px] sm:text-[40px]">#2</span>
                     <span class="stat-unit">di dunia</span>
                     <span class="stat-label">Negara Terluas</span>
                 </div>
 
-                <div class="stat-card reveal">
-                    <span class="stat-number">2</span>
+                <div class="stat-card reveal py-5 sm:py-7">
+                    <span class="stat-number text-[32px] sm:text-[40px]">2</span>
                     <span class="stat-unit">bahasa</span>
                     <span class="stat-label">Resmi Nasional</span>
                 </div>
 
             </div>
 
-            <blockquote class="about-quote reveal">
-                <div class="about-quote-bar"></div>
-                <p>
+            <blockquote class="about-quote reveal my-8 sm:my-12 lg:my-12">
+                <div class="about-quote-bar h-[100px] sm:h-20"></div>
+                <p class="text-[16px] sm:text-[20px] leading-[1.6] sm:leading-[1.7]">
                     "Kanada adalah penghubung utama dalam persatuan Inggris-Amerika, terlepas dari kejayaannya sendiri." — Winston Churchill
                 </p>
             </blockquote>
 
             <div class="about-multicultural reveal">
-                <h3 class="about-sub-headline">
+                <h3 class="about-sub-headline text-[26px] sm:text-[32px] lg:text-[40px]">
                     Budaya <span class="about-highlight">Multikulturalisme</span>
                 </h3>
-                <p class="about-desc">
+                <p class="about-desc text-[16px] sm:text-[18px] leading-[1.7] sm:leading-[1.85]">
                     Kanada adalah salah satu negara paling beragam di dunia. Lebih dari 200 bahasa dituturkan oleh warganya, dan kebijakan multikulturalisme resmi negara ini menjadikannya rumah bagi ratusan kelompok etnis yang hidup berdampingan.
                 </p>
             </div>
@@ -122,20 +121,20 @@
             <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20"></div>
         </div>
 
-        <div class="relative z-10 flex items-center w-full px-16 py-20 gap-12">
+        <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center w-full px-5 sm:px-10 lg:px-16 pt-10 pb-10 sm:py-20 gap-8 lg:gap-12">
 
-            <div class="flex-none w-96 text-white">
+            <div class="flex-none w-full lg:w-96 text-white">
                 <p class="text-xs tracking-[3.5px] uppercase text-white/50 mb-4">Budaya &amp; Tradisi</p>
                 <div class="w-10 h-0.5 bg-[#C8102E] mb-5"></div>
-                <h2 id="cultureTitle" class="text-5xl font-bold leading-tight mb-5">
+                <h2 id="cultureTitle" class="text-[32px] lg:text-[48px] lg:text-5xl font-bold leading-tight mb-5">
                     Dwibahasa
                 </h2>
-                <p id="cultureDesc" class="text-base font-light leading-relaxed text-white/70">
+                <p id="cultureDesc" class="text-sm lg:text-base font-light leading-relaxed text-white/70">
                     Kanada adalah negara dwibahasa secara resmi, dengan Bahasa Inggris dan Bahasa Prancis yang memiliki status serta hak yang setara. Kebijakan ini memastikan dokumen pemerintah diterbitkan dalam kedua bahasa dan layanan publik tersedia bagi semua warga negara.
                 </p>
             </div>
 
-            <div class="flex-1 min-w-0">
+            <div class="flex-1 min-w-0 w-full">
                 <div class="overflow-hidden py-6">
                     <div id="cardsTrack" class="flex gap-4 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
 
@@ -196,8 +195,7 @@
                     </div>
                 </div>
 
-                <!-- Navigation  -->
-                <div class="flex items-center gap-3 mt-2">
+                <div class="flex flex-wrap sm:flex-nowrap items-center gap-3 mt-2">
 
                     <button id="culturePrev"
                             class="w-10 h-10 rounded-full border border-white/30 bg-white/10 text-white
@@ -218,8 +216,8 @@
                     </button>
 
                     <a id="cultureMoreInfo" href="#"
-                       class="ml-1 px-4 h-10 rounded-full text-white text-sm font-medium
-                              flex items-center gap-1.5 backdrop-blur border border-transparent
+                       class="w-full sm:w-auto order-3 sm:order-none ml-0 sm:ml-1 px-4 h-10 rounded-full text-white text-sm font-medium
+                              flex items-center justify-center gap-1.5 backdrop-blur border border-transparent
                               transition-all duration-300"
                        style="background-color: #C8102E;"
                        aria-label="More Info">
@@ -233,7 +231,6 @@
 
     <script>
     (function () {
-        // Penjelasan culture cards (judul, deskripsi, gambar, warna untuk tombol, dan link)
         const cultures = [
             {
                 title:  "Dwibahasa",
@@ -272,7 +269,6 @@
             }
         ];
 
-        // Opacity class per jarak dari active 
         const DIST_CLASS = [
             ['opacity-100', 'scale-105', 'shadow-[0_16px_48px_rgba(0,0,0,0.5)]'],
             ['opacity-65',  'scale-[0.98]'],
@@ -292,7 +288,6 @@
         const moreBtn  = document.getElementById('cultureMoreInfo');
         const cards    = [...track.querySelectorAll('.culture-card')];
 
-        // Background crossfade 
         function setBg(url) {
             const next = activeBg === 1 ? bg2 : bg1;
             const prev = activeBg === 1 ? bg1 : bg2;
@@ -302,7 +297,6 @@
             activeBg = activeBg === 1 ? 2 : 1;
         }
 
-        // Card positions & opacity
         function updateCards(idx) {
             const CARD_W   = 176 + 16;
             const wrapperW = track.parentElement.offsetWidth;
@@ -322,7 +316,6 @@
             });
         }
 
-        // Dots 
         function buildDots() {
             cultures.forEach((_, i) => {
                 const d = document.createElement('button');
@@ -346,7 +339,6 @@
             });
         }
 
-        // Teks 
         function updateText(idx) {
             [titleEl, descEl].forEach(el => {
                 el.classList.remove('text-enter');
@@ -357,7 +349,6 @@
             descEl.textContent  = cultures[idx].desc;
         }
 
-        // More Info button 
         function updateMoreInfo(idx) {
             const { color, link } = cultures[idx];
             moreBtn.href = link;
@@ -365,7 +356,6 @@
             moreBtn.style.boxShadow = `0 0 18px ${color}55`;
         }
 
-        // Go to 
         function goTo(idx) {
             if (idx === active) return;
             active = idx;
@@ -384,7 +374,6 @@
         document.getElementById('cultureNext').addEventListener('click', () =>
             goTo((active + 1) % cultures.length));
 
-        // Initialize
         bg1.style.opacity = '1';
         bg1.style.backgroundImage = `url('${cultures[0].bg}')`;
         buildDots();
@@ -392,7 +381,6 @@
         setTimeout(() => updateCards(0), 50);
     })();
 
-    // Intersection Observer untuk Scroll Reveal Animation
     (function() {
         const revealEls = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver(
