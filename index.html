@@ -1,402 +1,318 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Mari Usque Ad Mare</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" type="text/css" href="index.css">
-    <style>
-        @keyframes textIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-        .text-enter { animation: textIn 0.4s ease forwards; }
-    </style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>A Mari Usque Ad Mare</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<style>
+		@keyframes textIn {
+			from { opacity: 0; transform: translateY(10px); }
+			to   { opacity: 1; transform: translateY(0); }
+		}
+		.text-enter { animation: textIn 0.4s ease forwards; }
+	</style>
 </head>
 <body>
 
-    <div class="hero" id="home">
-        <div class="background"></div>
-        <nav class="nav">
-            <ul class="flex gap-6 sm:gap-[50px] list-none">
-                <li><a href="#home" class="text-base sm:text-[18px] text-white no-underline font-normal transition-opacity duration-300 hover:opacity-80">Home</a></li>
-                <li><a href="#about" class="text-base sm:text-[18px] text-white no-underline font-normal transition-opacity duration-300 hover:opacity-80">About</a></li>
-                <li><a href="#culture" class="text-base sm:text-[18px] text-white no-underline font-normal transition-opacity duration-300 hover:opacity-80">Culture</a></li>
-            </ul>
-        </nav>
-        <div class="hero-content">
-            <h1 class="text-[42px] sm:text-[72px] px-4 sm:px-0">A Mari Usque Ad Mare</h1>
-            <div class="hero-divider"></div>
-            <p class="text-[18px] sm:text-[24px]">Dari laut ke laut</p>
-        </div>
-    </div>
+	<div class="hero" id="home">
+		<div class="background"></div>
+		<nav class="nav">
+			<ul class="flex gap-6 sm:gap-[50px] list-none">
+				<li><a href="#home" class="text-base sm:text-[18px] text-white no-underline font-normal transition-opacity duration-300 hover:opacity-80">Home</a></li>
+				<li><a href="#about" class="text-base sm:text-[18px] text-white no-underline font-normal transition-opacity duration-300 hover:opacity-80">About</a></li>
+				<li><a href="#culture" class="text-base sm:text-[18px] text-white no-underline font-normal transition-opacity duration-300 hover:opacity-80">Culture</a></li>
+			</ul>
+		</nav>
+		<div class="hero-content">
+			<h1 class="text-[42px] sm:text-[72px] px-4 sm:px-0">A Mari Usque Ad Mare</h1>
+			<div class="hero-divider"></div>
+			<p class="text-[18px] sm:text-[24px]">Dari laut ke laut</p>
+		</div>
+	</div>
 
-    <div class="bridge-gradient bridge-hero-about"></div>
+	<div class="bridge-gradient bridge-hero-about"></div>
 
-    <section id="about" class="about-section px-5 sm:px-10 lg:px-20 pt-20 sm:pt-24 lg:pt-[140px] pb-16 sm:pb-20 lg:pb-[120px]">
-        <div class="about-bg">
-            <img src="asset/img/main/banff-national-park-canada.jpg"
-                 alt="Canada landscape"
-                 class="about-bg-img">
-            <div class="about-bg-overlay"></div>
-        </div>
-        <div class="about-container">
+	<section id="about" class="about-section px-5 sm:px-10 lg:px-20 pt-20 sm:pt-24 lg:pt-[140px] pb-16 sm:pb-20 lg:pb-[120px]">
+		<div class="about-bg">
+			<img src="asset/img/main/banff-national-park-canada.jpg"
+				 alt="Canada landscape"
+				 class="about-bg-img">
+			<div class="about-bg-overlay"></div>
+		</div>
+		<div class="about-container">
 
-            <div class="about-label reveal">
-                <div class="about-label-line"></div>
-                <span>About Kanada</span>
-                <div class="about-label-line"></div>
-            </div>
+			<div class="about-label reveal">
+				<div class="about-label-line"></div>
+				<span>About Kanada</span>
+				<div class="about-label-line"></div>
+			</div>
 
-            <h2 class="about-headline reveal text-[36px] sm:text-[48px] lg:text-[64px]">
-                Raksasa yang <span class="about-highlight">"Sepi"</span>
-            </h2>
+			<h2 class="about-headline reveal text-[36px] sm:text-[48px] lg:text-[64px]">
+				Raksasa yang <span class="about-highlight">"Sepi"</span>
+			</h2>
 
-            <p class="about-desc reveal text-[16px] sm:text-[18px] leading-[1.7] sm:leading-[1.85]">
-                Negara terbesar kedua di dunia berdasarkan luas wilayah, namun dengan populasi yang hanya sekitar 40 juta jiwa. Sebuah paradoks yang melahirkan budaya unik, hangat, dan kaya multikulturalisme.
-            </p>
+			<p class="about-desc reveal text-[16px] sm:text-[18px] leading-[1.7] sm:leading-[1.85]">
+				Negara terbesar kedua di dunia berdasarkan luas wilayah, namun dengan populasi yang hanya sekitar 40 juta jiwa. Sebuah paradoks yang melahirkan budaya unik, hangat, dan kaya multikulturalisme.
+			</p>
 
-            <div class="about-stats reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 lg:gap-4 my-8 sm:my-10 lg:my-14">
+			<div class="about-stats reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 lg:gap-4 my-8 sm:my-10 lg:my-14">
 
-                <div class="stat-card reveal py-5 sm:py-7">
-                    <span class="stat-number text-[32px] sm:text-[40px]">9,98</span>
-                    <span class="stat-unit">juta km²</span>
-                    <span class="stat-label">Luas Wilayah</span>
-                </div>
+				<div class="stat-card reveal py-5 sm:py-7">
+					<span class="stat-number text-[32px] sm:text-[40px]">9,98</span>
+					<span class="stat-unit">juta km²</span>
+					<span class="stat-label">Luas Wilayah</span>
+				</div>
 
-                <div class="stat-card reveal py-5 sm:py-7">
-                    <span class="stat-number text-[32px] sm:text-[40px]">40</span>
-                    <span class="stat-unit">juta jiwa</span>
-                    <span class="stat-label">Populasi</span>
-                </div>
+				<div class="stat-card reveal py-5 sm:py-7">
+					<span class="stat-number text-[32px] sm:text-[40px]">40</span>
+					<span class="stat-unit">juta jiwa</span>
+					<span class="stat-label">Populasi</span>
+				</div>
 
-                <div class="stat-card reveal py-5 sm:py-7">
-                    <span class="stat-number text-[32px] sm:text-[40px]">#2</span>
-                    <span class="stat-unit">di dunia</span>
-                    <span class="stat-label">Negara Terluas</span>
-                </div>
+				<div class="stat-card reveal py-5 sm:py-7">
+					<span class="stat-number text-[32px] sm:text-[40px]">#2</span>
+					<span class="stat-unit">di dunia</span>
+					<span class="stat-label">Negara Terluas</span>
+				</div>
 
-                <div class="stat-card reveal py-5 sm:py-7">
-                    <span class="stat-number text-[32px] sm:text-[40px]">2</span>
-                    <span class="stat-unit">bahasa</span>
-                    <span class="stat-label">Resmi Nasional</span>
-                </div>
+				<div class="stat-card reveal py-5 sm:py-7">
+					<span class="stat-number text-[32px] sm:text-[40px]">2</span>
+					<span class="stat-unit">bahasa</span>
+					<span class="stat-label">Resmi Nasional</span>
+				</div>
 
-            </div>
+			</div>
 
-            <blockquote class="about-quote reveal my-8 sm:my-12 lg:my-12">
-                <div class="about-quote-bar h-[100px] sm:h-20"></div>
-                <p class="text-[16px] sm:text-[20px] leading-[1.6] sm:leading-[1.7]">
-                    "Kanada adalah penghubung utama dalam persatuan Inggris-Amerika, terlepas dari kejayaannya sendiri." — Winston Churchill
-                </p>
-            </blockquote>
+			<blockquote class="about-quote reveal my-8 sm:my-12 lg:my-12">
+				<div class="about-quote-bar h-[100px] sm:h-20"></div>
+				<p class="text-[16px] sm:text-[20px] leading-[1.6] sm:leading-[1.7]">
+					"Kanada adalah penghubung utama dalam persatuan Inggris-Amerika, terlepas dari kejayaannya sendiri." — Winston Churchill
+				</p>
+			</blockquote>
 
-            <div class="about-multicultural reveal">
-                <h3 class="about-sub-headline text-[26px] sm:text-[32px] lg:text-[40px]">
-                    Budaya <span class="about-highlight">Multikulturalisme</span>
-                </h3>
-                <p class="about-desc text-[16px] sm:text-[18px] leading-[1.7] sm:leading-[1.85]">
-                    Kanada adalah salah satu negara paling beragam di dunia. Lebih dari 200 bahasa dituturkan oleh warganya, dan kebijakan multikulturalisme resmi negara ini menjadikannya rumah bagi ratusan kelompok etnis yang hidup berdampingan.
-                </p>
-            </div>
+			<div class="about-multicultural reveal">
+				<h3 class="about-sub-headline text-[26px] sm:text-[32px] lg:text-[40px]">
+					Budaya <span class="about-highlight">Multikulturalisme</span>
+				</h3>
+				<p class="about-desc text-[16px] sm:text-[18px] leading-[1.7] sm:leading-[1.85]">
+					Kanada adalah salah satu negara paling beragam di dunia. Lebih dari 200 bahasa dituturkan oleh warganya, dan kebijakan multikulturalisme resmi negara ini menjadikannya rumah bagi ratusan kelompok etnis yang hidup berdampingan.
+				</p>
+			</div>
 
-        </div>
+		</div>
 
-    </section>
+	</section>
 
-    <div class="bridge-gradient bridge-about-culture"></div>
+	<div class="bridge-gradient bridge-hero-about"></div>
 
-    <section id="culture" class="relative min-h-screen flex items-center overflow-hidden">
+	<section id="culture" class="relative min-h-screen flex items-center overflow-hidden">
 
-        <div id="cultureBg1"
-            class="absolute inset-0 bg-cover bg-center"
-            style="background-image: url('asset/img/culture/maple_background.jpg'); opacity: 0; transition: opacity 0.7s ease;">
-            <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20"></div>
-        </div>
+		<div id="cultureBg1"
+			class="absolute inset-0 bg-cover bg-center"
+			style="background-image: url('asset/img/culture/maple_background.jpg'); opacity: 0; transition: opacity 0.7s ease;">
+			<div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20"></div>
+		</div>
 
-        <div id="cultureBg2"
-            class="absolute inset-0 bg-cover bg-center"
-            style="opacity: 0; transition: opacity 0.7s ease;">
-            <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20"></div>
-        </div>
+		<div id="cultureBg2"
+			class="absolute inset-0 bg-cover bg-center"
+			style="opacity: 0; transition: opacity 0.7s ease;">
+			<div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/50 to-black/20"></div>
+		</div>
 
-        <div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center w-full px-5 sm:px-10 lg:px-16 pt-10 pb-10 sm:py-20 gap-8 lg:gap-12">
+		<div class="relative z-10 flex flex-col lg:flex-row items-start lg:items-center w-full px-5 sm:px-10 lg:px-16 pt-10 pb-10 sm:py-20 gap-8 lg:gap-12">
 
-            <div class="flex-none w-full lg:w-96 text-white">
-                <p class="text-xs tracking-[3.5px] uppercase text-white/50 mb-4">Budaya &amp; Tradisi</p>
-                <div class="w-10 h-0.5 bg-[#C8102E] mb-5"></div>
-                <h2 id="cultureTitle" class="text-[32px] lg:text-[48px] lg:text-5xl font-bold leading-tight mb-5">
-                    Dwibahasa
-                </h2>
-                <p id="cultureDesc" class="text-sm lg:text-base font-light leading-relaxed text-white/70">
-                    Kanada adalah negara dwibahasa secara resmi, dengan Bahasa Inggris dan Bahasa Prancis yang memiliki status serta hak yang setara. Kebijakan ini memastikan dokumen pemerintah diterbitkan dalam kedua bahasa dan layanan publik tersedia bagi semua warga negara.
-                </p>
-            </div>
+			<div class="flex-none w-full lg:w-96 text-white">
+				<p class="text-xs tracking-[3.5px] uppercase text-white/50 mb-4">Budaya &amp; Tradisi</p>
+				<div class="w-10 h-0.5 bg-[#C8102E] mb-5"></div>
+				<h2 id="cultureTitle" class="text-[32px] lg:text-[48px] lg:text-5xl font-bold leading-tight mb-5">
+					Dwibahasa
+				</h2>
+				<p id="cultureDesc" class="text-sm lg:text-base font-light leading-relaxed text-white/70">
+					Kanada adalah negara dwibahasa secara resmi, dengan Bahasa Inggris dan Bahasa Prancis yang memiliki status serta hak yang setara. Kebijakan ini memastikan dokumen pemerintah diterbitkan dalam kedua bahasa dan layanan publik tersedia bagi semua warga negara.
+				</p>
+			</div>
 
-            <div class="flex-1 min-w-0 w-full">
-                <div class="overflow-hidden py-6">
-                    <div id="cardsTrack" class="flex gap-4 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
+			<div class="flex-1 min-w-0 w-full">
+				<div class="overflow-hidden py-6">
+					<div id="cardsTrack" class="flex gap-4 transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]">
 
-                        <div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-500 opacity-[0.18] scale-[0.92]" data-index="0">
-                            <img src="asset/img/culture/book_paper.jpg"
-                                alt="book"
-                                class="w-full h-full object-cover pointer-events-none">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                            <div class="absolute bottom-3 left-3 text-white">
-                                <p class="text-sm font-medium">Dwibahasa</p>
-                                <p class="text-xs font-light text-white/60 mt-0.5">Inggris &amp; Prancis</p>
-                            </div>
-                        </div>
+						<div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-500 opacity-[0.18] scale-[0.92]" data-index="0">
+							<img src="asset/img/culture/book_paper.jpg"
+								alt="book"
+								class="w-full h-full object-cover pointer-events-none">
+							<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+							<div class="absolute bottom-3 left-3 text-white">
+								<p class="text-sm font-medium">Dwibahasa</p>
+								<p class="text-xs font-light text-white/60 mt-0.5">Inggris &amp; Prancis</p>
+							</div>
+						</div>
 
-                        <div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-500 opacity-[0.18] scale-[0.92]" data-index="1">
-                            <img src="asset/img/culture/maple_background.jpg"
-                                alt="Maple Tree"
-                                class="w-full h-full object-cover pointer-events-none">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                            <div class="absolute bottom-3 left-3 text-white">
-                                <p class="text-sm font-medium">Maple Syrup</p>
-                                <p class="text-xs font-light text-white/60 mt-0.5">Proses Alami &amp; Botani</p>
-                            </div>
-                        </div>
+						<div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-500 opacity-[0.18] scale-[0.92]" data-index="1">
+							<img src="asset/img/culture/maple_background.jpg"
+								alt="Maple Tree"
+								class="w-full h-full object-cover pointer-events-none">
+							<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+							<div class="absolute bottom-3 left-3 text-white">
+								<p class="text-sm font-medium">Maple Syrup</p>
+								<p class="text-xs font-light text-white/60 mt-0.5">Proses Alami &amp; Botani</p>
+							</div>
+						</div>
 
-                        <div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-500 opacity-[0.18] scale-[0.92]" data-index="2">
-                            <img src="asset/img/culture/ice_hockey.jpg"
-                                 alt="Ice Hockey"
-                                 class="w-full h-full object-cover pointer-events-none">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                            <div class="absolute bottom-3 left-3 text-white">
-                                <p class="text-sm font-medium">Ice Hockey</p>
-                                <p class="text-xs font-light text-white/60 mt-0.5">Nationwide</p>
-                            </div>
-                        </div>
+						<div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-500 opacity-[0.18] scale-[0.92]" data-index="2">
+							<img src="asset/img/culture/ice_hockey.jpg"
+								 alt="Ice Hockey"
+								 class="w-full h-full object-cover pointer-events-none">
+							<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+							<div class="absolute bottom-3 left-3 text-white">
+								<p class="text-sm font-medium">Ice Hockey</p>
+								<p class="text-xs font-light text-white/60 mt-0.5">Nationwide</p>
+							</div>
+						</div>
 
-                        <div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-500 opacity-[0.18] scale-[0.92]" data-index="3">
-                            <img src="asset/img/culture/winter_carnival_person.jpg"
-                                 alt="Winter Carnival"
-                                 class="w-full h-full object-cover pointer-events-none">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                            <div class="absolute bottom-3 left-3 text-white">
-                                <p class="text-sm font-medium">Winter Carnival</p>
-                                <p class="text-xs font-light text-white/60 mt-0.5">Quebec City</p>
-                            </div>
-                        </div>
-                        
-                        <div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-500 opacity-[0.18] scale-[0.92]" data-index="4">
-                            <img src="asset/img/culture/ice_canoe_racing_person.jpg"
-                                 alt="Ice Canoe Racing"
-                                 class="w-full h-full object-cover pointer-events-none">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-                            <div class="absolute bottom-3 left-3 text-white">
-                                <p class="text-sm font-medium">Ice Canoe Racing</p>
-                                <p class="text-xs font-light text-white/60 mt-0.5">Quebec</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+						<div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-500 opacity-[0.18] scale-[0.92]" data-index="3">
+							<img src="asset/img/culture/winter_carnival_person.jpg"
+								 alt="Winter Carnival"
+								 class="w-full h-full object-cover pointer-events-none">
+							<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+							<div class="absolute bottom-3 left-3 text-white">
+								<p class="text-sm font-medium">Winter Carnival</p>
+								<p class="text-xs font-light text-white/60 mt-0.5">Quebec City</p>
+							</div>
+						</div>
+						
+						<div class="culture-card flex-none w-44 h-64 rounded-2xl overflow-hidden relative cursor-pointer transition-all duration-500 opacity-[0.18] scale-[0.92]" data-index="4">
+							<img src="asset/img/culture/ice_canoe_racing_person.jpg"
+								 alt="Ice Canoe Racing"
+								 class="w-full h-full object-cover pointer-events-none">
+							<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+							<div class="absolute bottom-3 left-3 text-white">
+								<p class="text-sm font-medium">Ice Canoe Racing</p>
+								<p class="text-xs font-light text-white/60 mt-0.5">Quebec</p>
+							</div>
+						</div>
+					</div>
+				</div>
 
-                <div class="flex flex-wrap sm:flex-nowrap items-center gap-3 mt-2">
+				<div class="flex flex-wrap sm:flex-nowrap items-center gap-3 mt-2">
 
-                    <button id="culturePrev"
-                            class="w-10 h-10 rounded-full border border-white/30 bg-white/10 text-white
-                                   flex items-center justify-center text-lg backdrop-blur
-                                   hover:bg-[#C8102E]/60 hover:border-[#C8102E] transition-all duration-200"
-                            aria-label="Previous">
-                        &#8592;
-                    </button>
+					<button id="culturePrev"
+							class="w-10 h-10 rounded-full border border-white/30 bg-white/10 text-white
+								   flex items-center justify-center text-lg backdrop-blur
+								   hover:bg-[#C8102E]/60 hover:border-[#C8102E] transition-all duration-200"
+							aria-label="Previous">
+						&#8592;
+					</button>
 
-                    <div id="cultureNavDots" class="flex items-center gap-1.5"></div>
+					<div id="cultureNavDots" class="flex items-center gap-1.5"></div>
 
-                    <button id="cultureNext"
-                            class="w-10 h-10 rounded-full border border-white/30 bg-white/10 text-white
-                                   flex items-center justify-center text-lg backdrop-blur
-                                   hover:bg-[#C8102E]/60 hover:border-[#C8102E] transition-all duration-200"
-                            aria-label="Next">
-                        &#8594;
-                    </button>
+					<button id="cultureNext"
+							class="w-10 h-10 rounded-full border border-white/30 bg-white/10 text-white
+								   flex items-center justify-center text-lg backdrop-blur
+								   hover:bg-[#C8102E]/60 hover:border-[#C8102E] transition-all duration-200"
+							aria-label="Next">
+						&#8594;
+					</button>
 
-                    <a id="cultureMoreInfo" href="#"
-                       class="w-full sm:w-auto order-3 sm:order-none ml-0 sm:ml-1 px-4 h-10 rounded-full text-white text-sm font-medium
-                              flex items-center justify-center gap-1.5 backdrop-blur border border-transparent
-                              transition-all duration-300"
-                       style="background-color: #C8102E;"
-                       aria-label="More Info">
-                        More Info <span class="text-base leading-none">↗</span>
-                    </a>
+					<a id="cultureMoreInfo" href="#"
+					   class="w-full sm:w-auto order-3 sm:order-none ml-0 sm:ml-1 px-4 h-10 rounded-full text-white text-sm font-medium
+							  flex items-center justify-center gap-1.5 backdrop-blur border border-transparent
+							  transition-all duration-300"
+					   style="background-color: #C8102E;"
+					   aria-label="More Info">
+						More Info <span class="text-base leading-none">↗</span>
+					</a>
 
-                </div>
-            </div>
-        </div>
-    </section>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <script>
-    (function () {
-        const cultures = [
-            {
-                title:  "Dwibahasa",
-                desc:   "Kanada adalah negara dwibahasa secara resmi, dengan Bahasa Inggris dan Bahasa Prancis yang memiliki status serta hak yang setara. Kebijakan ini memastikan dokumen pemerintah diterbitkan dalam kedua bahasa dan layanan publik tersedia bagi semua warga negara",
-                bg:     "asset/img/culture/sign_in_canada.jpg",
-                color:  "#630000",
-                link:   "culture/bilingual/bilingual.html"
-            },
-            {
-                title:  "Maple Syrup",
-                desc:   "Maple syrup murni adalah keajaiban biologis yang bergantung pada siklus pembekuan dan pencairan musim dingin-semi Kanada. Tekanan alami di dalam batang pohon mendorong getah bening (yang kaya akan gula hasil fotosintesis musim panas lalu) keluar untuk disadap, lalu diuapkan secara sabar di rumah asap tradisional hingga menjadi cairan emas yang pekat.",
-                bg:     "asset/img/culture/maple_background.jpg",
-                color:  "#C8102E",
-                link:   "culture/maple/Maple-Syrup.html"
-            },
-            {
-                title:  "Ice Hockey",
-                desc:   "Ice hockey adalah olahraga musim dingin nasional resmi yang berasal dari Kanada pada awal abad ke-19. Olahraga ini menggabungkan unsur permainan tongkat tradisional dari Eropa dan permainan suku asli Mi'kmaq, yang kemudian diformalkan dengan aturan modern pertama oleh mahasiswa Universitas McGill pada tahun 1875.",
-                bg:     "asset/img/culture/ice_hockey.jpg",
-                color:  "#8B4513",
-                link:   "culture/iceHockey/ice-hockey.html"
-            },
-            {
-                title:  "Quebec Winter Carnival",
-                desc:   "Karnaval musim dingin terbesar di dunia. Parade meriah, patung es raksasa, dan lomba kano di tengah Sungai St. Lawrence yang beku — merayakan keindahan musim dingin Kanada.",
-                bg:     "asset/img/culture/winter_carnival.jpg",
-                color:  "#4A90C4",
-                link:   "culture/winter_carnival/winter-carnival-canada.html"
-            },
-            {
-                title:  "Ice Canoe Racing",
-                desc:   "Ice canoe racing (balap kano es) adalah olahraga ekstrem sekaligus tradisi musim dingin Kanada di mana peserta harus mendayung dan mendorong perahu kano melintasi perairan beku dan bongkahan es Sungai St. Lawrence. Olahraga warisan budaya ini menguji ketahanan fisik dan kekompakan tim dalam kondisi alam yang menantang.",
-                bg:     "asset/img/culture/ice_canoe_racing.jpg",
-                color:  "#2E7D32",
-                link:   "/culture/ice-canoe"
-            }
-        ];
+	<div class="bridge-gradient bridge-hero-about"></div>
 
-        const DIST_CLASS = [
-            ['opacity-100', 'scale-105', 'shadow-[0_16px_48px_rgba(0,0,0,0.5)]'],
-            ['opacity-65',  'scale-[0.98]'],
-            ['opacity-35',  'scale-[0.95]'],
-        ];
-        const FAR_CLASS = ['opacity-[0.18]', 'scale-[0.92]'];
+	<section id="quiz" class="bg-[#0D0D0D] px-5 sm:px-10 lg:px-20 py-20 sm:py-24 lg:py-32">
+	<div class="max-w-2xl mx-auto flex flex-col items-center text-center">
 
-        let active   = 0;
-        let activeBg = 1;
+		<div class="about-label ">
+			<div class="about-label-line"></div>
+			<span>Uji Pengetahuan</span>
+			<div class="about-label-line"></div>
+		</div>
 
-        const bg1      = document.getElementById('cultureBg1');
-        const bg2      = document.getElementById('cultureBg2');
-        const track    = document.getElementById('cardsTrack');
-        const titleEl  = document.getElementById('cultureTitle');
-        const descEl   = document.getElementById('cultureDesc');
-        const dotsEl   = document.getElementById('cultureNavDots');
-        const moreBtn  = document.getElementById('cultureMoreInfo');
-        const cards    = [...track.querySelectorAll('.culture-card')];
+		<h2 class="reveal text-[32px] sm:text-[44px] lg:text-[52px] font-bold text-white leading-tight tracking-wide mb-3">
+		Tes Pengetahuanmu Mengenai Negara <span class="text-[#C8102E]">Kanada</span>
+		</h2>
+		<p class="reveal text-[15px] sm:text-[16px] font-light text-white/40 tracking-wide mb-10">
+		Jawablah 5 pertanyaan seputar kanada dari masing-masing topik yang tesedia. 
+		</p>
 
-        function setBg(url) {
-            const next = activeBg === 1 ? bg2 : bg1;
-            const prev = activeBg === 1 ? bg1 : bg2;
-            next.style.backgroundImage = `url('${url}')`;
-            next.style.opacity = '1';
-            prev.style.opacity = '0';
-            activeBg = activeBg === 1 ? 2 : 1;
-        }
+		<div id="quizForm" class="reveal w-full bg-white/[0.03] border border-white/[0.08] rounded-2xl p-6 sm:p-8 flex flex-col gap-5">
+			<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-        function updateCards(idx) {
-            const CARD_W   = 176 + 16;
-            const wrapperW = track.parentElement.offsetWidth;
-            const offset   = (wrapperW / 2) - 88 - idx * CARD_W;
-            track.style.transform = `translateX(${offset}px)`;
+				<div class="flex flex-col items-start gap-2">
+				<label for="playerName" class="text-[11px] font-light tracking-[3px] uppercase text-white/35">Nama</label>
+				<input
+					type="text"
+					id="playerName"
+					placeholder="Masukkan namamu"
+					maxlength="30"
+					autocomplete="off"
+					class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white text-[15px] placeholder-white/20 transition-all duration-300 focus:outline-none focus:border-[#C8102E]/50 focus:bg-[#C8102E]/[0.04]"
+				>
+				</div>
 
-            cards.forEach((card, i) => {
-                card.className = card.className
-                    .replace(/opacity-\S+/g, '')
-                    .replace(/scale-\S+/g, '')
-                    .replace(/shadow-\S+/g, '')
-                    .trim();
+				<div class="flex flex-col items-start gap-2">
+				<label for="topicSelect" class="text-[11px] font-light tracking-[3px] uppercase text-white/35">Topik Kuis</label>
+				<div class="relative w-full">
+					<select
+					id="topicSelect"
+					class="w-full appearance-none bg-white/5 border border-white/10 rounded-lg px-4 py-3 pr-10 text-white text-[15px] cursor-pointer transition-all duration-300 focus:outline-none focus:border-[#C8102E]/50 focus:bg-[#C8102E]/[0.04]"
+					>
+					<option value="general" class="bg-[#1a1a1a]">Pengetahuan Umum Kanada</option>
+					<option value="hockey"  class="bg-[#1a1a1a]">Ice Hockey</option>
+					<option value="maple"   class="bg-[#1a1a1a]">Maple Syrup</option>
+					<option value="carnival" class="bg-[#1a1a1a]">Winter Carnival</option>
+					<option value="canoe" class="bg-[#1a1a1a]">Ice Canoe Racing</option>
+					
+					</select>
+					<span class="absolute right-4 top-1/2 -translate-y-1/2 text-white/30 pointer-events-none text-lg">⌄</span>
+				</div>
+				</div>
 
-                const dist    = Math.abs(i - idx);
-                const classes = dist < DIST_CLASS.length ? DIST_CLASS[dist] : FAR_CLASS;
-                card.classList.add(...classes);
-            });
-        }
+			</div>
 
-        function buildDots() {
-            cultures.forEach((_, i) => {
-                const d = document.createElement('button');
-                d.dataset.i = i;
-                d.className = i === 0
-                    ? 'w-5 h-1.5 rounded bg-[#C8102E] transition-all duration-300'
-                    : 'w-1.5 h-1.5 rounded-full bg-white/30 transition-all duration-300';
-                d.setAttribute('aria-label', `Slide ${i + 1}`);
-                d.addEventListener('click', () => goTo(i));
-                dotsEl.appendChild(d);
-            });
-        }
+			<button
+				id="startQuizBtn"
+				class="self-center bg-[#C8102E] hover:bg-[#a50d26] text-white font-bold text-[13px] tracking-[1.5px] uppercase px-12 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(200,16,46,0.40)] active:translate-y-0"
+			>Mulai Kuis</button>
+		</div>
 
-        function updateDots(idx) {
-            [...dotsEl.children].forEach((d, i) => {
-                if (i === idx) {
-                    d.className = 'w-5 h-1.5 rounded bg-[#C8102E] transition-all duration-300';
-                } else {
-                    d.className = 'w-1.5 h-1.5 rounded-full bg-white/30 transition-all duration-300';
-                }
-            });
-        }
+		<div id="quizCard" class="w-full bg-white/[0.03] border border-white/[0.08] rounded-2xl p-7 sm:p-9" style="display:none;">
 
-        function updateText(idx) {
-            [titleEl, descEl].forEach(el => {
-                el.classList.remove('text-enter');
-                void el.offsetWidth;
-                el.classList.add('text-enter');
-            });
-            titleEl.textContent = cultures[idx].title;
-            descEl.textContent  = cultures[idx].desc;
-        }
+		<div class="w-full h-[3px] bg-white/[0.08] rounded-full mb-6 overflow-hidden">
+			<div id="quizProgressBar" class="h-full bg-[#C8102E] rounded-full transition-[width] duration-500 ease-out" style="width:20%;"></div>
+		</div>
 
-        function updateMoreInfo(idx) {
-            const { color, link } = cultures[idx];
-            moreBtn.href = link;
-            moreBtn.style.backgroundColor = color;
-            moreBtn.style.boxShadow = `0 0 18px ${color}55`;
-        }
+		<p id="quizCount" class="text-[11px] font-light tracking-[3px] uppercase text-white/30 mb-4">Pertanyaan 1 / 5</p>
+		<p id="quizQuestion" class="text-[20px] sm:text-[22px] font-bold text-white text-left leading-snug mb-7">Memuat...</p>
+		<div id="quizOptions" class="flex flex-col gap-2.5"></div>
+		</div>
 
-        function goTo(idx) {
-            if (idx === active) return;
-            active = idx;
-            setBg(cultures[idx].bg);
-            updateCards(idx);
-            updateDots(idx);
-            updateText(idx);
-            updateMoreInfo(idx);
-        }
+		<div id="quizResult" class="w-full bg-white/[0.03] border border-white/[0.08] rounded-2xl px-8 py-12 flex-col items-center gap-2" style="display:none;">
+		<p id="quizResultName" class="text-[11px] font-light tracking-[3px] uppercase text-white/30"></p>
+		<p id="quizResultScore" class="text-[56px] font-bold text-white leading-none my-1"></p>
+		<p id="quizResultMsg" class="text-[15px] font-light text-white/50 max-w-sm leading-relaxed"></p>
+		<button
+			id="quizRetryBtn"
+			class="mt-6 self-center bg-[#C8102E] hover:bg-[#a50d26] text-white font-bold text-[13px] tracking-[1.5px] uppercase px-12 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(200,16,46,0.40)] active:translate-y-0"
+		>Coba Lagi </button>
+		</div>
 
-        cards.forEach(card => {
-            card.addEventListener('click', () => goTo(+card.dataset.index));
-        });
-        document.getElementById('culturePrev').addEventListener('click', () =>
-            goTo((active - 1 + cultures.length) % cultures.length));
-        document.getElementById('cultureNext').addEventListener('click', () =>
-            goTo((active + 1) % cultures.length));
+	</div>
+	</section>
 
-        bg1.style.opacity = '1';
-        bg1.style.backgroundImage = `url('${cultures[0].bg}')`;
-        buildDots();
-        updateMoreInfo(0);
-        setTimeout(() => updateCards(0), 50);
-    })();
-
-    (function() {
-        const revealEls = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0.15 }
-        );
-        revealEls.forEach(el => observer.observe(el));
-    })();
-    </script>
+	<script src="script.js"></script>
 
 </body>
 </html>
