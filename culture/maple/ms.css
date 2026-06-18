@@ -536,6 +536,21 @@ p {
     }
 }
 
+@media (max-width: 768px) {
+    .page-hero {
+        grid-template-columns: 1fr; 
+        min-height: auto;
+    }
+
+    .hero-text {
+        padding: 6rem 2rem 3rem 2rem; 
+    }
+
+    .hero-panel {
+        padding: 4rem 2rem; 
+    }
+}
+
 @media (max-width: 640px) {
     .article-hero {
         height: 50vh;
