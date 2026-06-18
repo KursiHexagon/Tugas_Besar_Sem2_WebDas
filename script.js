@@ -176,8 +176,6 @@
 })();
 
 // quiz
-
-// ── CANADA QUIZ ──────────────────────────────────────────────
 (function () {
 	const QUESTIONS = {
 		general: [
