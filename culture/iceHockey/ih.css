@@ -9,10 +9,9 @@ html {
     -ms-overflow-style: none;
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
-    background-color: #1B1717; /* Menggunakan Hitam Pekat latar belakang utama */
+    background-color: #1B1717; 
 }
 
-/* khusus chrome/safari */
 html::-webkit-scrollbar {
     display: none;
 }
@@ -26,7 +25,6 @@ html::-webkit-scrollbar {
     scrollbar-width: none;  
 }
 
-/* Efek Hover Teks ICE HOCKEY - Menggunakan Merah Aksen Aristokratik */
 .hover-luxury {
     position: relative;
     display: inline-block;
@@ -34,11 +32,10 @@ html::-webkit-scrollbar {
 }
 
 .hover-luxury:hover {
-    color: #810100; /* Merah Aksen Aristokratik */
+    color: #810100; 
     letter-spacing: 0.05em; 
 }
 
-/* Animasi untuk menutup div preloader */
 .cubic-bezier-frame {
     transition: all 1000s cubic-bezier(0.25, 1, 0.3, 1);
 }
@@ -59,7 +56,6 @@ html::-webkit-scrollbar {
     opacity: 0 !important;
 }
 
-/* Animasi Fade-In Hero Section */
 .fade-in {
     animation: fadeInPage 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
@@ -73,14 +69,12 @@ html::-webkit-scrollbar {
     }
 }
 
-/*  SCROLL REVEAL EFFECT  */
 .reveal {
     opacity: 0;
     transform: translateY(28px);
     transition: opacity 0.75s ease, transform 0.75s ease;
 }
 
-/* Ketika elemen sudah masuk ke area layar */
 .reveal.in { 
     opacity: 1; 
     transform: translateY(0); 
@@ -94,4 +88,10 @@ html::-webkit-scrollbar {
 
 #main-navbar.nav-hidden {
     transform: translateY(-100%);
+}
+
+@media (max-width: 768px) {
+    #main-navbar .flex.items-center.gap-6 a:not(:first-child) {
+        display: none !important;
+    }
 }
