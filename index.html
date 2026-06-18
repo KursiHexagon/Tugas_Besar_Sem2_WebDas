@@ -54,7 +54,7 @@
 			</h2>
 
 			<p class="about-desc reveal text-[16px] sm:text-[18px] leading-[1.7] sm:leading-[1.85]">
-				Negara terbesar kedua di dunia berdasarkan luas wilayah, namun dengan populasi yang hanya sekitar 40 juta jiwa. Sebuah paradoks yang melahirkan budaya unik, hangat, dan kaya multikulturalisme.
+				Negara terbesar kedua di dunia berdasarkan luas wilayah, namun dengan populasi yang hanya sekitar 40 juta jiwa.
 			</p>
 
 			<div class="about-stats reveal grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 lg:gap-4 my-8 sm:my-10 lg:my-14">
@@ -282,31 +282,22 @@
 
 			</div>
 
-			<button
-				id="startQuizBtn"
-				class="self-center bg-[#C8102E] hover:bg-[#a50d26] text-white font-bold text-[13px] tracking-[1.5px] uppercase px-12 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(200,16,46,0.40)] active:translate-y-0"
+			<button id="startQuizBtn" class="self-center bg-[#C8102E] hover:bg-[#a50d26] text-white font-bold text-[13px] tracking-[1.5px] uppercase px-12 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(200,16,46,0.40)] active:translate-y-0"
 			>Mulai Kuis</button>
 		</div>
 
 		<div id="quizCard" class="w-full bg-white/[0.03] border border-white/[0.08] rounded-2xl p-7 sm:p-9" style="display:none;">
 
-		<div class="w-full h-[3px] bg-white/[0.08] rounded-full mb-6 overflow-hidden">
-			<div id="quizProgressBar" class="h-full bg-[#C8102E] rounded-full transition-[width] duration-500 ease-out" style="width:20%;"></div>
-		</div>
-
-		<p id="quizCount" class="text-[11px] font-light tracking-[3px] uppercase text-white/30 mb-4">Pertanyaan 1 / 5</p>
-		<p id="quizQuestion" class="text-[20px] sm:text-[22px] font-bold text-white text-left leading-snug mb-7">Memuat...</p>
-		<div id="quizOptions" class="flex flex-col gap-2.5"></div>
+			<p id="quizCount" class="text-[11px] font-light tracking-[3px] uppercase text-white/30 mb-4">Pertanyaan 1 / 5</p>
+			<p id="quizQuestion" class="text-[20px] sm:text-[22px] font-bold text-white text-left leading-snug mb-7"></p>
+			<div id="quizOptions" class="flex flex-col gap-2.5"></div>
 		</div>
 
 		<div id="quizResult" class="w-full bg-white/[0.03] border border-white/[0.08] rounded-2xl px-8 py-12 flex-col items-center gap-2" style="display:none;">
-		<p id="quizResultName" class="text-[11px] font-light tracking-[3px] uppercase text-white/30"></p>
-		<p id="quizResultScore" class="text-[56px] font-bold text-white leading-none my-1"></p>
-		<p id="quizResultMsg" class="text-[15px] font-light text-white/50 max-w-sm leading-relaxed"></p>
-		<button
-			id="quizRetryBtn"
-			class="mt-6 self-center bg-[#C8102E] hover:bg-[#a50d26] text-white font-bold text-[13px] tracking-[1.5px] uppercase px-12 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(200,16,46,0.40)] active:translate-y-0"
-		>Coba Lagi </button>
+			<p id="quizResultName" class="text-[11px] font-light tracking-[3px] uppercase text-white/30"></p>
+			<p id="quizResultScore" class="text-[56px] font-bold text-white leading-none my-1"></p>
+			<p id="quizResultMsg" class="text-[15px] font-light text-white/50 max-w-sm leading-relaxed"></p>
+			<button id="quizRetryBtn" class="mt-6 self-center bg-[#C8102E] hover:bg-[#a50d26] text-white font-bold text-[13px] tracking-[1.5px] uppercase px-12 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(200,16,46,0.40)] active:translate-y-0">Coba Lagi </button>
 		</div>
 
 	</div>

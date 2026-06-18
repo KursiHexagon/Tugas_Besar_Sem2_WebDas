@@ -4,16 +4,15 @@
 	--font-mono:   'Courier New', Courier, monospace;
 }
 
-/* IMPLEMENTASI COLOR PALETTE DARI BILINGUAL PAGE */
 :root {
-	--bark:    #1B1717;       /* Hitam Pekat Latar Belakang Utama[cite: 1] */
-	--amber:   #810100;       /* Merah Aksen / Maroon Terang[cite: 1] */
-	--gold:    #810100;       /* Disamakan menjadi Merah Aksen[cite: 1] */
-	--honey:   #630000;       /* Merah Gelap Sekunder / Background Panel[cite: 1] */
-	--pale:    #EDEBDD;       /* Krem Gading Terang / Kontras[cite: 1] */
-	--cream:   #1B1717;       /* Mengubah background body menjadi gelap[cite: 1] */
-	--text:    #EDEBDD;       /* Teks Utama menjadi Krem Gading[cite: 1] */
-	--muted:   rgba(237,235,221,0.6); /* Teks redup menggunakan opasitas krem[cite: 1] */
+	--bark:    #1B1717;
+	--amber:   #810100;
+	--gold:    #810100;
+	--honey:   #630000;
+	--pale:    #EDEBDD;
+	--cream:   #1B1717;
+	--text:    #EDEBDD;
+	--muted:   rgba(237,235,221,0.6);
 }
 
 *, *::before, *::after { 
@@ -26,7 +25,7 @@ html {
     scrollbar-width: none;
     -ms-overflow-style: none;
     scroll-behavior: smooth;
-    background-color: #0D0D0D; /* Tetap sinkron[cite: 2] */
+    background-color: #0D0D0D;
 }
 
 html::-webkit-scrollbar {
@@ -53,9 +52,9 @@ body {
 	align-items: center;
 	justify-content: space-between;
 	padding: 1.1rem 3rem;
-	background: rgba(27,23,23,0.88); /* Diubah ke hitam transparan[cite: 1] */
+	background: rgba(27,23,23,0.88); 
 	backdrop-filter: blur(10px);
-	border-bottom: 1px solid rgba(237,235,221,0.08); /* Menyesuaikan border nav bilingual[cite: 1] */
+	border-bottom: 1px solid rgba(237,235,221,0.08); 
 }
 
 .bc-logo {
@@ -63,7 +62,7 @@ body {
 	font-weight: 800;
 	font-size: 1rem;
 	letter-spacing: -0.02em;
-	color: #EDEBDD; /* Gading murni[cite: 1] */
+	color: #EDEBDD; 
 	text-decoration: none;
 }
 
@@ -138,7 +137,7 @@ body {
 	font-size: clamp(3.8rem, 6vw, 6.5rem);
 	line-height: 0.92;
 	letter-spacing: -0.02em;
-	color: #EDEBDD; /* Gading murni[cite: 1] */
+	color: #EDEBDD; 
 	margin-bottom: 2.2rem;
 	opacity: 0;
 	animation: up 1s 0.4s ease forwards;
@@ -157,14 +156,14 @@ body {
 	color: var(--muted);
 	line-height: 1.8;
 	max-width: 500px;
-	border-left: 2px solid var(--amber); /* Menggunakan aksen merah[cite: 1] */
+	border-left: 2px solid var(--amber);
 	padding-left: 1.5rem;
 	opacity: 0;
 	animation: up 1s 0.6s ease forwards;
 }
 
 .hero-panel {
-	background: #630000; /* Merah gelap sekunder[cite: 1] */
+	background: #630000; 
 	position: relative;
 	overflow: hidden;
 	display: flex;
@@ -184,8 +183,8 @@ body {
 	font-family: var(--font-sans);
 	font-size: 10rem;
 	font-weight: 800;
-	color: var(--pale); /* Menggunakan krem[cite: 1] */
-	opacity: 0.05; /* Diturunkan sedikit agar tidak terlalu kontras di latar merah */
+	color: var(--pale); 
+	opacity: 0.05;
 	position: absolute;
 	bottom: -2rem;
 	right: 1rem;
@@ -204,7 +203,7 @@ body {
 	font-family: var(--font-serif);
 	font-weight: 700;
 	font-size: 5.5rem;
-	color: var(--pale); /* Gading murni[cite: 1] */
+	color: var(--pale);
 	line-height: 1;
 }
 
@@ -213,7 +212,7 @@ body {
 	font-size: 0.8rem;
 	letter-spacing: 0.25em;
 	text-transform: uppercase;
-	color: rgba(237,235,221,0.6); /* Menyesuaikan gading[cite: 1] */
+	color: rgba(237,235,221,0.6);
 	margin-top: 0.6rem;
 }
 
@@ -221,7 +220,7 @@ body {
 	font-family: var(--font-serif);
 	font-size: 1.05rem;
 	font-style: italic;
-	color: rgba(237,235,221,0.55); /* Menyesuaikan gading[cite: 1] */
+	color: rgba(237,235,221,0.55);
 	margin-top: 0.8rem;
 	line-height: 1.5;
 }
@@ -254,7 +253,7 @@ h2 {
 	font-size: 2.4rem;
 	letter-spacing: -0.01em;
 	line-height: 1.15;
-	color: #EDEBDD; /* Gading murni[cite: 1] */
+	color: #EDEBDD;
 	margin-bottom: 1.2rem;
 }
 
@@ -267,7 +266,7 @@ h2 em {
 p {
 	font-size: 1.08rem;
 	font-weight: 300;
-	color: rgba(237,235,221,0.6); /* Warna teks sekunder paragraf bilingual[cite: 1] */
+	color: rgba(237,235,221,0.6);
 	line-height: 1.85;
 	margin-bottom: 1.4rem;
 }
@@ -277,7 +276,7 @@ p {
 	font-size: 1.8rem;
 	font-weight: 300;
 	font-style: italic;
-	color: var(--pale); /* Gading murni blockquote[cite: 1] */
+	color: var(--pale);
 	line-height: 1.45;
 	border-top: 1px solid rgba(237,235,221,0.1);
 	border-bottom: 1px solid rgba(237,235,221,0.1);
@@ -303,7 +302,7 @@ p {
 }
 
 .grades-block {
-	background: #630000; /* Menggunakan blok maroon gelap[cite: 1] */
+	background: #630000;
 	border-left: 3px solid var(--amber);
 	padding: 3rem 3.5rem;
 	margin: 3rem 0;
@@ -335,7 +334,7 @@ p {
 	font-family: var(--font-sans);
 	font-size: 0.85rem;
 	font-weight: 700;
-	color: #EDEBDD; /* Judul gading[cite: 1] */
+	color: #EDEBDD;
 	display: block;
 	margin-bottom: 0.2rem;
 }
@@ -343,7 +342,7 @@ p {
 .grade-info span {
 	font-size: 0.9rem;
 	font-weight: 300;
-	color: rgba(237,235,221,0.7); /* Kontras teks dalam blok gelap[cite: 1] */
+	color: rgba(237,235,221,0.7);
 }
 
 .grade-use {
@@ -359,27 +358,27 @@ p {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 1px;
-	background: rgba(237,235,221,0.1); /* Diubah agar border strip elegan halus[cite: 1] */
+	background: rgba(237,235,221,0.1);
 	margin: 3rem 0;
 	overflow: hidden;
 }
 
 .nutr-cell {
-	background: rgba(237,235,221,0.03); /* Meniru bento-card transparan[cite: 1] */
+	background: rgba(237,235,221,0.03);
 	padding: 1.8rem 1.5rem;
 	text-align: center;
 	transition: background 0.3s;
 }
 
 .nutr-cell:hover { 
-	background: rgba(237,235,221,0.05); /* Hover mask[cite: 1] */
+	background: rgba(237,235,221,0.05);
 }
 
 .nutr-val {
 	font-family: var(--font-serif);
 	font-size: 2.4rem;
 	font-weight: 700;
-	color: #EDEBDD; /* Mengikuti gading[cite: 1] */
+	color: #EDEBDD;
 	line-height: 1;
 }
 
@@ -400,7 +399,7 @@ p {
 }
 
 .canada-bar {
-	background: #630000; /* Diubah menjadi latar maroon kontras[cite: 1] */
+	background: #630000;
 	color: var(--pale);
 	padding: 4rem 5rem;
 	display: grid;
@@ -414,7 +413,7 @@ p {
 	font-family: var(--font-serif);
 	font-size: 5rem;
 	font-weight: 700;
-	color: #EDEBDD; /* Angka gading murni[cite: 1] */
+	color: #EDEBDD;
 	line-height: 1;
 	margin-bottom: 0.5rem;
 }
@@ -496,13 +495,13 @@ p {
 	display: none;
 }
 .group:hover .menu-text {
-	color: #EDEBDD !important; /* Gading hover[cite: 1] */
+	color: #EDEBDD !important;
 }
 .group .hover-line {
 	display: block;
 	width: 0;
 	height: 2px;
-	background: var(--amber); /* Diubah ke merah aksen[cite: 1] */
+	background: var(--amber);
 	margin-top: 2px;
 	transition: width 0.3s ease;
 	opacity: 0.6;
@@ -511,7 +510,7 @@ p {
 	width: 1rem;
 }
 .github-btn:hover {
-    border-color: var(--amber) !important; /* Diubah ke merah aksen[cite: 1] */
+    border-color: var(--amber) !important;
     background: rgba(237,235,221,0.05);
 	color: #EDEBDD !important;
 }

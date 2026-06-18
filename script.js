@@ -9,7 +9,7 @@
 		},
 		{
 			title:  "Maple Syrup",
-			desc:   "Maple syrup murni adalah keajaiban biologis yang bergantung pada siklus pembekuan dan pencairan musim dingin-semi Kanada. Tekanan alami di dalam batang pohon mendorong getah bening (yang kaya akan gula hasil fotosintesis musim panas lalu) keluar untuk disadap, lalu diuapkan secara sabar di rumah asap tradisional hingga menjadi cairan emas yang pekat.",
+			desc:   "Maple Syrup adalah sirop manis yang dibuat dari getah pohon mapel. Di daerah beriklim dingin, pohon-pohon ini menyimpan pati di dalam batang dan akarnya sebelum musim dingin tiba; pati tersebut kemudian diubah menjadi gula yang naik bersama getah pada akhir musim dingin dan awal musim semi. Pohon mapel disadap dengan cara mengebor lubang pada batangnya dan mengumpulkan getahnya, yang kemudian dipanaskan untuk menguapkan sebagian besar kandungan airnya, sehingga menyisakan sirop yang pekat.",
 			bg:     "asset/img/culture/maple_background.jpg",
 			color:  "#C8102E",
 			link:   "culture/maple/Maple-Syrup.html"
@@ -18,12 +18,12 @@
 			title:  "Ice Hockey",
 			desc:   "Ice hockey adalah olahraga musim dingin nasional resmi yang berasal dari Kanada pada awal abad ke-19. Olahraga ini menggabungkan unsur permainan tongkat tradisional dari Eropa dan permainan suku asli Mi'kmaq, yang kemudian diformalkan dengan aturan modern pertama oleh mahasiswa Universitas McGill pada tahun 1875.",
 			bg:     "asset/img/culture/ice_hockey.jpg",
-			color:  "#8B4513",
+			color:  "#005eff",
 			link:   "culture/iceHockey/ice-hockey.html"
 		},
 		{
 			title:  "Quebec Winter Carnival",
-			desc:   "Karnaval musim dingin terbesar di dunia. Parade meriah, patung es raksasa, dan lomba kano di tengah Sungai St. Lawrence yang beku — merayakan keindahan musim dingin Kanada.",
+			desc:   "Karnaval musim dingin terbesar di dunia. Parade meriah, patung es raksasa, dan lomba kano di tengah Sungai St. Lawrence yang beku, merayakan keindahan musim dingin Kanada.",
 			bg:     "asset/img/culture/winter_carnival.jpg",
 			color:  "#4A90C4",
 			link:   "culture/winter_carnival/winter-carnival-canada.html"
@@ -32,7 +32,7 @@
 			title:  "Ice Canoe Racing",
 			desc:   "Ice canoe racing (balap kano es) adalah olahraga ekstrem sekaligus tradisi musim dingin Kanada di mana peserta harus mendayung dan mendorong perahu kano melintasi perairan beku dan bongkahan es Sungai St. Lawrence. Olahraga warisan budaya ini menguji ketahanan fisik dan kekompakan tim dalam kondisi alam yang menantang.",
 			bg:     "asset/img/culture/ice_canoe_racing.jpg",
-			color:  "#2E7D32",
+			color:  "#4141d9",
 			link:   "culture/ice_canoe/ice_canoe.html"
 		}
 	];
@@ -221,7 +221,6 @@
 	const resultCard = document.getElementById('quizResult');
 	const startBtn   = document.getElementById('startQuizBtn');
 	const retryBtn   = document.getElementById('quizRetryBtn');
-	const progressBar= document.getElementById('quizProgressBar');
 	const countEl    = document.getElementById('quizCount');
 	const questionEl = document.getElementById('quizQuestion');
 	const optionsEl  = document.getElementById('quizOptions');
@@ -249,7 +248,6 @@
 		const q = questions[currentQ];
 		countEl.textContent    = `Pertanyaan ${currentQ + 1} / 5`;
 		questionEl.textContent = q.q;
-		progressBar.style.width = `${((currentQ + 1) / 5) * 100}%`;
 
 		optionsEl.innerHTML = '';
 		q.opts.forEach((opt, i) => {
