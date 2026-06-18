@@ -108,7 +108,7 @@ body {
 }
 
 .page-hero {
-	margin-top: 56px;
+	margin-top: 0px; 
 	display: grid;
 	grid-template-columns: 1fr 420px;
 	min-height: 88vh;
