@@ -57,6 +57,7 @@
 	const cards    = [...track.querySelectorAll('.culture-card')];
 
 	function setBg(url) {
+		console.log(`[Ubah background ke: ${url}`);
 		const next = activeBg === 1 ? bg2 : bg1;
 		const prev = activeBg === 1 ? bg1 : bg2;
 		next.style.backgroundImage = `url('${url}')`;
@@ -66,6 +67,7 @@
 	}
 
 	function updateCards(idx) {
+		console.log(`Geser track kartu ke indeks: ${idx}`);
 		const CARD_W   = 176 + 16;
 		const wrapperW = track.parentElement.offsetWidth;
 		const offset   = (wrapperW / 2) - 88 - idx * CARD_W;
@@ -81,10 +83,14 @@
 			const dist    = Math.abs(i - idx);
 			const classes = dist < DIST_CLASS.length ? DIST_CLASS[dist] : FAR_CLASS;
 			card.classList.add(...classes);
+			console.log(`  -> Kartu indeks [${i}] ("${cultures[i]?.title || 'Unknown'}") ` + `memiliki jarak |${i} - ${idx}| = ${dist}. `
+			);
+			console.log(`     -> Kelas yang diterapkan: ${classes.join(', ')}`);
 		});
 	}
 
 	function buildDots() {
+		console.log("Buat dots navigasi ");
 		cultures.forEach((_, i) => {
 			const d = document.createElement('button');
 			d.dataset.i = i;
@@ -125,6 +131,7 @@
 	}
 
 	function goTo(idx) {
+		console.log(`[Culture] Navigasi ke slide indeks: ${idx} (${cultures[idx].title})`);
 		if (idx === active) return;
 		active = idx;
 		setBg(cultures[idx].bg);
@@ -142,6 +149,7 @@
 	document.getElementById('cultureNext').addEventListener('click', () =>
 		goTo((active + 1) % cultures.length));
 
+	console.log("[Culture] Menginisialisasi komponen Culture Carousel...");
 	bg1.style.opacity = '1';
 	bg1.style.backgroundImage = `url('${cultures[0].bg}')`;
 	buildDots();
@@ -150,11 +158,13 @@
 })();
 
 (function() {
+	console.log("[Observer] Menginisialisasi IntersectionObserver untuk efek reveal...");
 	const revealEls = document.querySelectorAll('.reveal');
 	const observer = new IntersectionObserver(
 		(entries) => {
 			entries.forEach(entry => {
 				if (entry.isIntersecting) {
+					console.log(`[Observer] Elemen terdeteksi masuk viewport:`, entry.target);
 					entry.target.classList.add('visible');
 					observer.unobserve(entry.target);
 				}
@@ -238,6 +248,9 @@
         currentQ   = 0;
         score      = 0;
 
+		console.log(`[Quiz] Memulai kuis. Pemain: ${playerName}, Topik: ${topic}`);
+        console.log(`[Quiz] Pertanyaan yang diacak untuk sesi ini:`, questions);
+
         document.getElementById('quizForm').style.display   = 'none';
         document.getElementById('quizResult').style.display = 'none';
         document.getElementById('quizCard').style.display   = 'block';
@@ -246,6 +259,7 @@
 
 	function renderQuestion() {
 		const q = questions[currentQ];
+		console.log(`[Quiz] Menampilkan Pertanyaan ${currentQ + 1}: "${q.q}"`);
 		countEl.textContent    = `Pertanyaan ${currentQ + 1} / 5`;
 		questionEl.textContent = q.q;
 
@@ -264,11 +278,12 @@
         allBtns.forEach(b => { b.disabled = true; });
 
         if (chosen === correct) {
-            // tandai jawaban kalau benar
+			// tandai jawaban kalau benar
             chosenBtn.style.background    = 'rgba(34,197,94,0.12)';
             chosenBtn.style.borderColor   = 'rgba(34,197,94,0.45)';
             chosenBtn.style.color         = '#86efac';
             score++;
+			console.log(`[Quiz] Jawaban dipilih: indeks ${chosen} ("${questions[currentQ].opts[chosen]}"). Benar? ${correct}`);
         } else {
             // tandai jawaban kalau salah 
             chosenBtn.style.background    = 'rgba(200,16,46,0.10)';
@@ -279,6 +294,8 @@
             allBtns[correct].style.background  = 'rgba(34,197,94,0.12)';
             allBtns[correct].style.borderColor = 'rgba(34,197,94,0.45)';
             allBtns[correct].style.color       = '#86efac';
+
+			console.log(`[Quiz] Jawaban benar indeks ${correct} ("${questions[currentQ].opts[correct]}")`);
         }
 
         setTimeout(() => {
