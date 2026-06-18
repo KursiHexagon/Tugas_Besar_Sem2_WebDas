@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< Updated upstream
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ice Hockey - Culture & Legacy</title>
@@ -21,14 +22,38 @@
     </script>
     <script src="ih.js"></script>
     <link rel="stylesheet" href="ih.css">
+=======
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Ice Hockey - Culture & Legacy</title>
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						/* PEMETAAN COLOR PALETTE ARISTOKRATIK GELAP */
+						'glory-blue': '#1B1717',   /* Hitam Pekat Latar Belakang Utama */
+						'glory-red': '#810100',    /* Merah Aksen / Maroon Terang */
+						'pure-white': '#EDEBDD',   /* Krem Gading Terang / Kontras */
+						'panel-maroon': '#630000', /* Merah Gelap Sekunder / Background Panel */
+					}
+				}
+			}
+		}
+	</script>
+	<script src="ih.js"></script>
+	<link rel="stylesheet" href="ih.css">
+>>>>>>> Stashed changes
 </head>
 <body class="bg-glory-blue antialiased text-pure-white">
 
-    <nav id="main-navbar" class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between padding-navbar px-6 md:px-12 py-4 bg-glory-blue/40 backdrop-blur-md border-b border-pure-white/10 opacity-0 pointer-events-none">
-        <a href="#" class="text-pure-white font-black tracking-tighter text-lg uppercase select-none">
-            Ice<span class="text-glory-red"> Hockey</span>
-        </a>
+	<nav id="main-navbar" class="fixed top-0 left-0 right-0 z-40 flex items-center justify-between padding-navbar px-6 md:px-12 py-4 bg-glory-blue/40 backdrop-blur-md border-b border-pure-white/10 opacity-0 pointer-events-none">
+		<a href="#" class="text-pure-white font-black tracking-tighter text-lg uppercase select-none">
+			Ice<span class="text-glory-red"> Hockey</span>
+		</a>
 
+<<<<<<< Updated upstream
         <div class="flex items-center gap-6 md:gap-8 font-mono text-xs uppercase tracking-widest">
             <a href="../../index.html" class="text-pure-white/70 hover:text-pure-white transition-colors duration-300">Home</a>
             <a href="#overview-section" class="text-pure-white/70 hover:text-pure-white transition-colors duration-300">What is it?</a>
@@ -37,76 +62,83 @@
             
         </div>
     </nav>
+=======
+		<div class="flex items-center gap-6 md:gap-8 font-mono text-xs uppercase tracking-widest">
+			<a href="../../index.html" class="text-pure-white/70 hover:text-pure-white transition-colors duration-300">Home</a>
+			<a href="#overview-section" class="text-pure-white/70 hover:text-pure-white transition-colors duration-300">Culture</a>
+		</div>
+	</nav>
+>>>>>>> Stashed changes
 
-    <div id="preloader" class="fixed inset-0 bg-glory-blue z-50 flex items-center justify-center p-6 md:p-12 lg:p-16 cursor-pointer select-none">
-        <div class="absolute inset-0 flex flex-col md:flex-row w-full h-full z-0 overflow-hidden">
-            <div id="pre-col-1" class="flex-1 h-full w-full relative transition-transform duration-1000 ease-in-out">
-                <img src="../../asset/img/culture/iceHockey/pond_hockey_canada.jpg" alt="Pond Hockey" class="w-full h-full object-cover">
-            </div>
-            <div id="pre-col-2" class="flex-1 h-full w-full relative border-t md:border-t-0 md:border-l border-pure-white/10 transition-transform duration-1000 ease-in-out">
-                <img src="../../asset/img/culture/iceHockey/hockey_puck_ice.jpg" alt="Hockey Puck" class="w-full h-full object-cover">
-            </div>
-            <div id="pre-col-3" class="flex-1 h-full w-full relative border-t md:border-t-0 md:border-l border-pure-white/10 transition-transform duration-1000 ease-in-out">
-                <img src="../../asset/img/culture/iceHockey/hockey_helmet_close_up.jpg" alt="Hockey Gear" class="w-full h-full object-cover">
-            </div>
-        </div>
-        <div id="pre-overlay" class="absolute inset-0 bg-glory-blue/85 mix-blend-multiply z-10 transition-opacity duration-700 ease-in-out"></div>
-        <div id="pre-frame" class="absolute inset-6 md:inset-12 lg:inset-16 border border-pure-white/20 pointer-events-none z-20 transition-all duration-1000 cubic-bezier(0.25, 1, 0.5, 1)"></div>
-        <div id="opening-box" class="text-center transition-all duration-1000 ease-in-out transform z-30 relative px-4">
-            <h1 id="opening-title" class="text-5xl md:text-8xl font-black tracking-tighter text-pure-white uppercase transition-all duration-1000 ease-in-out hover-luxury">
-                ICE HOCKEY
-            </h1>
-        </div>
-    </div>
+	<div id="preloader" class="fixed inset-0 bg-glory-blue z-50 flex items-center justify-center p-6 md:p-12 lg:p-16 cursor-pointer select-none">
+		<div class="absolute inset-0 flex flex-col md:flex-row w-full h-full z-0 overflow-hidden">
+			<div id="pre-col-1" class="flex-1 h-full w-full relative transition-transform duration-1000 ease-in-out">
+				<img src="../../asset/img/culture/iceHockey/pond_hockey_canada.jpg" alt="Pond Hockey" class="w-full h-full object-cover">
+			</div>
+			<div id="pre-col-2" class="flex-1 h-full w-full relative border-t md:border-t-0 md:border-l border-pure-white/10 transition-transform duration-1000 ease-in-out">
+				<img src="../../asset/img/culture/iceHockey/hockey_puck_ice.jpg" alt="Hockey Puck" class="w-full h-full object-cover">
+			</div>
+			<div id="pre-col-3" class="flex-1 h-full w-full relative border-t md:border-t-0 md:border-l border-pure-white/10 transition-transform duration-1000 ease-in-out">
+				<img src="../../asset/img/culture/iceHockey/hockey_helmet_close_up.jpg" alt="Hockey Gear" class="w-full h-full object-cover">
+			</div>
+		</div>
+		<div id="pre-overlay" class="absolute inset-0 bg-glory-blue/85 mix-blend-multiply z-10 transition-opacity duration-700 ease-in-out"></div>
+		<div id="pre-frame" class="absolute inset-6 md:inset-12 lg:inset-16 border border-pure-white/20 pointer-events-none z-20 transition-all duration-1000 cubic-bezier(0.25, 1, 0.5, 1)"></div>
+		<div id="opening-box" class="text-center transition-all duration-1000 ease-in-out transform z-30 relative px-4">
+			<h1 id="opening-title" class="text-5xl md:text-8xl font-black tracking-tighter text-pure-white uppercase transition-all duration-1000 ease-in-out hover-luxury">
+				ICE HOCKEY
+			</h1>
+		</div>
+	</div>
 
-    <section id="hero-section" class="w-full h-screen bg-glory-blue text-pure-white relative flex flex-col justify-center items-center overflow-hidden">
-        <div class="absolute inset-0 z-0 opacity-40">
-            <img src="../../asset/img/culture/iceHockey/playerHand.jpg" alt="Canada Ice Hockey Backdrop" class="w-full h-full object-cover">
-        </div>
+	<section id="hero-section" class="w-full h-screen bg-glory-blue text-pure-white relative flex flex-col justify-center items-center overflow-hidden">
+		<div class="absolute inset-0 z-0 opacity-40">
+			<img src="../../asset/img/culture/iceHockey/playerHand.jpg" alt="Canada Ice Hockey Backdrop" class="w-full h-full object-cover">
+		</div>
 
-        <div class="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center z-0" 
-             style="background-image: url('../../asset/img/culture/iceHockey/ice_texture_close_up.jpg');">
-        </div>
+		<div class="absolute inset-0 opacity-10 pointer-events-none bg-cover bg-center z-0" 
+			 style="background-image: url('../../asset/img/culture/iceHockey/ice_texture_close_up.jpg');">
+		</div>
 
-        <div class="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center justify-center">
-            <div id="hero-title-container" class="w-full min-h-[60px] md:min-h-[100px] flex items-center justify-center mb-8"></div>
-            <p class="text-sm md:text-base font-mono tracking-[0.35em] text-pure-white bg-glory-red px-6 py-2 uppercase font-bold rounded-sm shadow-md">
-                Puck, Rink, Ice Skates
-            </p>
-        </div>
-    </section>  
+		<div class="max-w-4xl mx-auto px-6 relative z-10 text-center flex flex-col items-center justify-center">
+			<div id="hero-title-container" class="w-full min-h-[60px] md:min-h-[100px] flex items-center justify-center mb-8"></div>
+			<p class="text-sm md:text-base font-mono tracking-[0.35em] text-pure-white bg-glory-red px-6 py-2 uppercase font-bold rounded-sm shadow-md">
+				Puck, Rink, Ice Skates
+			</p>
+		</div>
+	</section>  
 
-    <!-- SECTION 1: OVERVIEW - Menggunakan latar belakang Merah Gelap Sekunder (panel-maroon) -->
-    <section id="overview-section" class="w-full bg-panel-maroon text-pure-white py-20 md:py-32 relative overflow-hidden">
-        <div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 max-w-2xl">
-                    <div class="mb-8">
-                        <span class="text-xs font-mono uppercase tracking-widest text-pure-white/60 font-bold">01 / Overview</span>
-                        <h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mt-1 text-pure-white">Apa itu Ice Hockey?</h2>
-                        <div class="w-16 h-[3px] bg-glory-red mt-3"></div>
-                    </div>
+	<!-- SECTION 1: OVERVIEW - Menggunakan latar belakang Merah Gelap Sekunder (panel-maroon) -->
+	<section id="overview-section" class="w-full bg-panel-maroon text-pure-white py-20 md:py-32 relative overflow-hidden">
+		<div class="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
+			<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+				<div class="lg:col-span-7 max-w-2xl">
+					<div class="mb-8">
+						<span class="text-xs font-mono uppercase tracking-widest text-pure-white/60 font-bold">01 / Overview</span>
+						<h2 class="text-3xl md:text-4xl font-black uppercase tracking-tight mt-1 text-pure-white">Apa itu Ice Hockey?</h2>
+						<div class="w-16 h-[3px] bg-glory-red mt-3"></div>
+					</div>
 
-                    <div class="space-y-6 text-base md:text-lg text-pure-white/80 leading-relaxed font-light">
-                        <p>
-                            <strong class="text-pure-white font-bold">Ice Hockey</strong> adalah olahraga tim yang dimainkan di atas permukaan es menggunakan sepatu skating dengan tujuan untuk memasukkan piringan karet hitam (<span class="italic font-medium text-pure-white">puck</span>) ke gawang lawan menggunakan tongkat pemukul (<span class="italic font-medium text-pure-white">hockey stick</span>).
-                        </p>
-                        <p>
-                            Olahraga ini sangat terkenal dengan temponya yang sangat cepat, penuh benturan fisik secara legal, dan mengharuhankan koordinasi motorik tingkat tinggi karena setiap pemain wajib meluncur di atas es dengan kecepatan prima sambil mengendalikan arah laju <span class="italic font-medium text-pure-white">puck</span>.
-                        </p>
-                    </div>
-                </div>
+					<div class="space-y-6 text-base md:text-lg text-pure-white/80 leading-relaxed font-light">
+						<p>
+							<strong class="text-pure-white font-bold">Ice Hockey</strong> adalah olahraga tim yang dimainkan di atas permukaan es menggunakan sepatu skating dengan tujuan untuk memasukkan piringan karet hitam (<span class="italic font-medium text-pure-white">puck</span>) ke gawang lawan menggunakan tongkat pemukul (<span class="italic font-medium text-pure-white">hockey stick</span>).
+						</p>
+						<p>
+							Olahraga ini sangat terkenal dengan temponya yang sangat cepat, penuh benturan fisik secara legal, dan mengharuhankan koordinasi motorik tingkat tinggi karena setiap pemain wajib meluncur di atas es dengan kecepatan prima sambil mengendalikan arah laju <span class="italic font-medium text-pure-white">puck</span>.
+						</p>
+					</div>
+				</div>
 
-                <div class="lg:col-span-5 w-full">
-                    <div class="border-4 border-pure-white/5 p-3 rounded-sm bg-glory-blue shadow-xl">
-                        <div class="relative h-64 md:h-80 overflow-hidden rounded-sm bg-glory-blue/10">
-                            <img src="../../asset/img/culture/iceHockey/hockey_puck_ice.jpg" alt="Hockey Puck on Ice" class="w-full h-full object-cover">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+				<div class="lg:col-span-5 w-full">
+					<div class="border-4 border-pure-white/5 p-3 rounded-sm bg-glory-blue shadow-xl">
+						<div class="relative h-64 md:h-80 overflow-hidden rounded-sm bg-glory-blue/10">
+							<img src="../../asset/img/culture/iceHockey/hockey_puck_ice.jpg" alt="Hockey Puck on Ice" class="w-full h-full object-cover">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
     <!-- SECTION 2: HISTORY - Menggunakan latar belakang Hitam Pekat (glory-blue) -->
     <section id="history-section" class="w-full bg-glory-blue text-pure-white py-20 md:py-32 relative overflow-hidden">
