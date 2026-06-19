@@ -13,32 +13,48 @@
 	<canvas id="snowCanvas"></canvas>
 
 	<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100 transition-transform duration-300 px-6 py-4 flex items-center justify-between">
-		<a href="#" class="font-bold tracking-wider text-xl text-gray-900">
+		<a href="#" class="font-bold tracking-wider text-xl text-gray-900 no-underline">
 			EXPLORE <span class="text-[#810100]">CANADA</span>
 		</a>
 
 		<div class="hidden lg:flex items-center gap-8 font-mono text-xs uppercase tracking-widest">
-			<a href="../bilingual/bilingual.html" class="text-gray-500 hover:text-[#810100] transition-colors duration-200">
+			<a href="../bilingual/bilingual.html" class="text-gray-500 hover:text-[#810100] transition-colors duration-200 no-underline">
 				Dwibahasa
 			</a>
-			<a href="../maple/Maple-Syrup.html" class="text-gray-500 hover:text-[#810100] transition-colors duration-200">
+			<a href="../maple/Maple-Syrup.html" class="text-gray-500 hover:text-[#810100] transition-colors duration-200 no-underline">
 				Maple Syrup
 			</a>
-			<a href="../iceHockey/ice-hockey.html" class="text-gray-500 hover:text-[#810100] transition-colors duration-200">
+			<a href="../iceHockey/ice-hockey.html" class="text-gray-500 hover:text-[#810100] transition-colors duration-200 no-underline">
 				Ice Hockey
 			</a>
-			<a href="#" class="text-[#810100] font-bold relative after:absolute after:bottom-[-4px] after:left-0 after:w-4 after:h-[2px] after:bg-[#810100]">
+			<a href="#" class="text-[#810100] font-bold no-underline relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-[#810100]">
 				Winter Carnival
 			</a>
-			<a href="../ice_canoe/ice_canoe.html" class="text-gray-500 hover:text-[#810100] transition-colors duration-200">
+			<a href="../ice_canoe/ice_canoe.html" class="text-gray-500 hover:text-[#810100] transition-colors duration-200 no-underline">
 				Ice Canoe Racing
 			</a>
 		</div>
 
-		<a href="../../index.html" class="font-mono text-xs uppercase tracking-wider text-gray-500 hover:text-gray-900 transition-colors duration-200">
+		<a href="../../index.html" class="font-mono text-xs uppercase tracking-widest text-gray-500 hover:text-[#810100] transition-colors duration-200 no-underline">
 			← Beranda
 		</a>
+
+		<button id="hamburger-btn" class="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-[70]" aria-label="Toggle Menu">
+			<span class="w-6 h-0.5 bg-gray-900 transition-all duration-300 transform origin-center"></span>
+			<span class="w-6 h-0.5 bg-gray-900 transition-all duration-300 opacity-100"></span>
+			<span class="w-6 h-0.5 bg-gray-900 transition-all duration-300 transform origin-center"></span>
+		</button>
 	</nav>
+
+	<div id="mobile-menu" class="fixed inset-0 z-[60] bg-[rgba(13,13,13,0.88)] backdrop-blur-md flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-2">
+		<div class="flex flex-col items-center space-y-8 text-center text-xl md:text-2xl font-light uppercase tracking-[0.2em] font-mono">
+			<a href="../bilingual/bilingual.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Dwibahasa</a>
+			<a href="../maple/Maple-Syrup.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Maple Syrup</a>
+			<a href="../iceHockey/ice-hockey.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Ice Hockey</a>
+			<a href="#" class="mobile-link text-[#EDEBDD] font-bold border-b-2 border-[#810100] pb-2 no-underline">Winter Carnival</a>
+			<a href="../ice_canoe/ice_canoe.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Ice Canoe Racing</a>
+		</div>
+	</div>
 
 	<section class="hero">
 		<div class="hero-left">
@@ -204,6 +220,40 @@
 			});
 		}, { threshold: 0.1 });
 		reveals.forEach(r => observer.observe(r));
+
+		document.addEventListener('DOMContentLoaded', () => {
+			const hamburgerBtn = document.getElementById('hamburger-btn');
+			const mobileMenu = document.getElementById('mobile-menu');
+			const mobileLinks = document.querySelectorAll('.mobile-link');
+
+			function toggleMenu() {
+				const isOpen = mobileMenu.classList.contains('menu-active');
+				
+				if (!isOpen) {
+					// Buka Menu
+					mobileMenu.classList.add('menu-active');
+					hamburgerBtn.classList.add('open');
+					document.body.style.overflow = 'hidden';
+				} else {
+					// Tutup Menu
+					mobileMenu.classList.remove('menu-active');
+					hamburgerBtn.classList.remove('open');
+					document.body.style.overflow = '';
+				}
+			}
+
+			// Event Listener klik tombol hamburger
+			hamburgerBtn.addEventListener('click', toggleMenu);
+
+			// Tutup menu otomatis jika salah satu link navigasi diklik
+			mobileLinks.forEach(link => {
+				link.addEventListener('click', () => {
+					if (mobileMenu.classList.contains('menu-active')) {
+						toggleMenu();
+					}
+				});
+			});
+		});
 	</script>
 </body>
 </html>

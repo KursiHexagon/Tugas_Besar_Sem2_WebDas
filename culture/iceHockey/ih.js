@@ -49,3 +49,37 @@ document.addEventListener("DOMContentLoaded", function() {
         lastScrollY = currentScrollY;
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('menu-active');
+            
+            if (!isOpen) {
+                // Buka Menu
+                mobileMenu.classList.add('menu-active');
+                hamburgerBtn.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            } else {
+                // Tutup Menu
+                mobileMenu.classList.remove('menu-active');
+                hamburgerBtn.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Event Listener klik tombol hamburger
+        hamburgerBtn.addEventListener('click', toggleMenu);
+
+        // Tutup menu otomatis jika salah satu link navigasi diklik
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('menu-active')) {
+                    toggleMenu();
+                }
+            });
+        });
+    });

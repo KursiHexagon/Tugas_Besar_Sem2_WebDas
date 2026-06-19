@@ -550,3 +550,22 @@ p {
 		text-align: center;
 	}
 }
+
+#mobile-menu.menu-active {
+	opacity: 1 !important;
+	pointer-events: auto !important;
+	transform: translateY(0) !important;
+}
+
+/* --- MORPHING HAMBURGER TO X --- */
+#hamburger-btn.open span:nth-child(1) {
+	transform: translateY(8px) rotate(45deg);
+}
+
+#hamburger-btn.open span:nth-child(2) {
+	opacity: 0;
+}
+
+#hamburger-btn.open span:nth-child(3) {
+	transform: translateY(-8px) rotate(-45deg);
+}

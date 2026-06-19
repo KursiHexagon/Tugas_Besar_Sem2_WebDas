@@ -26,24 +26,39 @@
 <body class="bg-glory-blue antialiased text-pure-white">
 
     <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 border-b border-pure-white/10 bg-glory-blue/40 backdrop-blur-md transition-transform duration-300">
-        <a href="#" class="text-pure-white font-black tracking-tighter text-lg uppercase select-none">
-            Explore<span class="text-glory-red"> Canada</span>
+        <a href="#" class="text-pure-white font-black tracking-tighter text-lg uppercase select-none no-underline">
+            Explore<span class="text-glory-red">Canada</span>
         </a>
 
-        <div class="hidden lg:flex items-center gap-8 font-mono text-xs uppercase tracking-widest">
-            <a href="../bilingual/bilingual.html" class="text-pure-white/70 hover:text-glory-red transition-colors duration-300">Dwibahasa</a>
-            <a href="../maple/Maple-Syrup.html" class="text-pure-white/70 hover:text-glory-red transition-colors duration-300">Maple Syrup</a>
-            <a href="#" class="relative py-1 text-pure-white font-bold transition-all duration-300 group">
-                Ice Hockey  
-            </a>
-            <a href="../winter_carnival/winter-carnival-canada.html" class="text-pure-white/70 hover:text-glory-red transition-colors duration-300">Winter Carnival</a>
-            <a href="../ice_canoe/ice_canoe.html" class="text-pure-white/70 hover:text-glory-red transition-colors duration-300">Ice Canoe Racing</a>
+        
+        <div class="hidden lg:flex items-center gap-8 font-mono text-[11px] uppercase tracking-[0.25em]">
+            <a href="../bilingual/bilingual.html" class="text-pure-white/50 hover:text-pure-white no-underline transition-colors duration-300">Dwibahasa</a>
+            <a href="../maple/Maple-Syrup.html" class="text-pure-white/50 hover:text-pure-white no-underline transition-colors duration-300">Maple Syrup</a>
+            <a href="#" class="text-pure-white font-bold no-underline relative after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-glory-red">Ice Hockey</a>
+            <a href="../winter_carnival/winter-carnival-canada.html" class="text-pure-white/50 hover:text-pure-white no-underline transition-colors duration-300">Winter Carnival</a>
+            <a href="../ice_canoe/ice_canoe.html" class="text-pure-white/50 hover:text-pure-white no-underline transition-colors duration-300">Ice Canoe Racing</a>
         </div>
 
-        <a href="../../index.html" class="text-xs uppercase tracking-widest font-mono font-bold text-pure-white border border-pure-white/20 px-4 py-2 hover:bg-pure-white/5 transition-all duration-300">
-            &larr; Beranda
+        <a href="../../index.html" class="font-mono text-xs uppercase tracking-widest text-pure-white/60 hover:text-glory-red transition-colors duration-200 no-underline">
+            ← Beranda
         </a>
+        
+        <button id="hamburger-btn" class="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-[70]" aria-label="Toggle Menu">
+            <span class="w-6 h-0.5 bg-[#EDEBDD] transition-all duration-300 transform origin-center"></span>
+            <span class="w-6 h-0.5 bg-[#EDEBDD] transition-all duration-300 opacity-100"></span>
+            <span class="w-6 h-0.5 bg-[#EDEBDD] transition-all duration-300 transform origin-center"></span>
+        </button>
     </nav>
+
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[rgba(13,13,13,0.88)] backdrop-blur-md flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-2">
+        <div class="flex flex-col items-center space-y-8 text-center text-xl md:text-2xl font-light uppercase tracking-[0.2em] font-mono">
+            <a href="../bilingual/bilingual.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Dwibahasa</a>
+            <a href="../maple/Maple-Syrup.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Maple Syrup</a>
+            <a href="#" class="mobile-link text-[#EDEBDD] font-bold border-b-2 border-[#810100] pb-2 no-underline">Ice Hockey</a>
+            <a href="../winter_carnival/winter-carnival-canada.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Winter Carnival</a>
+            <a href="../ice_canoe/ice_canoe.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Ice Canoe Racing</a>
+        </div>
+    </div>
 
 	<section id="hero-section" class="w-full h-screen bg-glory-blue text-pure-white relative flex flex-col justify-center items-center overflow-hidden">
 		<div class="absolute inset-0 z-0 opacity-40">

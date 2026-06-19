@@ -11,42 +11,42 @@
 </head>
 <body>
 
-<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-4 transition-transform duration-300 bg-[#1B1717]/88 backdrop-blur-md border-bottom-custom select-none">
-    <a href="#" class="font-sans font-extrabold text-base tracking-tight text-[#EDEBDD] no-underline">
-        EXPLORE <span class="text-[#810100]">CANADA</span>
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 transition-transform duration-300 backdrop-blur-md border-b" style="background: rgba(27,27,27,0.85); border-color: rgba(247,232,200,0.08);">
+    <a href="#" class="flex items-center gap-2 text-sm font-extrabold tracking-wider text-[#EDEBDD] select-none no-underline">
+        EXPLORE <span style="color: #810100;">CANADA</span>
     </a>
 
-    <div class="hidden lg:flex items-center gap-6 xl:gap-8">
-        <a href="../bilingual/bilingual.html" class="font-sans text-[0.72rem] font-medium tracking-[0.18em] uppercase text-[#EDEBDD]/60 no-underline transition-colors duration-200 hover:text-[#EDEBDD] flex flex-column items-center relative group">
-            <span>Dwibahasa</span>
-			<span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#810100] opacity-60 transition-all duration-300 group-hover:w-4"></span>
-        </a>
-
-		<a href="#" class="font-sans text-[0.72rem] font-bold tracking-[0.18em] uppercase text-[#EDEBDD] no-underline flex flex-column items-center relative group">
-            <span>Maple Syrup</span>
-            <span class="absolute -bottom-1 left-0 w-4 h-[2px] bg-[#810100]"></span>
-        </a>
-
-        <a href="../iceHockey/ice-hockey.html" class="font-sans text-[0.72rem] font-medium tracking-[0.18em] uppercase text-[#EDEBDD]/60 no-underline transition-colors duration-200 hover:text-[#EDEBDD] flex flex-column items-center relative group">
-            <span>Ice Hockey</span>
-            <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#810100] opacity-60 transition-all duration-300 group-hover:w-4"></span>
-        </a>
-
-        <a href="../winter_carnival/winter-carnival-canada.html" class="font-sans text-[0.72rem] font-medium tracking-[0.18em] uppercase text-[#EDEBDD]/60 no-underline transition-colors duration-200 hover:text-[#EDEBDD] flex flex-column items-center relative group">
-            <span>Winter Carnival</span>
-            <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#810100] opacity-60 transition-all duration-300 group-hover:w-4"></span>
-        </a>
-
-        <a href="../ice_canoe/ice_canoe.html" class="font-sans text-[0.72rem] font-medium tracking-[0.18em] uppercase text-[#EDEBDD]/60 no-underline transition-colors duration-200 hover:text-[#EDEBDD] flex flex-column items-center relative group">
-            <span>Ice Canoe Racing</span>
-            <span class="absolute -bottom-1 left-0 w-0 h-[2px] bg-[#810100] opacity-60 transition-all duration-300 group-hover:w-4"></span>
+    <div class="hidden lg:flex items-center gap-8 text-[0.68rem] font-semibold tracking-[0.2em] uppercase">
+        <a href="../bilingual/bilingual.html" class="py-1 text-[#EDEBDD]/60 hover:text-[#EDEBDD] transition-colors duration-300 no-underline">Dwibahasa</a>
+        <a href="../maple/Maple-Syrup.html" class="py-1 text-[#EDEBDD]/60 hover:text-[#EDEBDD] transition-colors duration-300 no-underline">Maple Syrup</a>
+        <a href="../iceHockey/ice-hockey.html" class="py-1 text-[#EDEBDD]/60 hover:text-[#EDEBDD] transition-colors duration-300 no-underline">Ice Hockey</a>
+        <a href="../winter_carnival/winter-carnival-canada.html" class="py-1 text-[#EDEBDD]/60 hover:text-[#EDEBDD] transition-colors duration-300 no-underline">Winter Carnival</a>
+        <a href="#" class="relative py-1 text-[#EDEBDD] transition-colors duration-300 no-underline">
+            Ice Canoe Racing
+            <span class="absolute bottom-0 left-0 right-0 h-[2px]" style="background: #810100;"></span>
         </a>
     </div>
 
-    <a href="../../index.html" class="font-mono text-[0.62rem] tracking-[0.15em] uppercase text-[#EDEBDD]/60 hover:text-[#810100] no-underline transition-colors duration-200 flex items-center gap-2">
+    <a href="../../index.html" class="text-[0.62rem] font-mono tracking-[0.15em] uppercase transition-colors duration-200 no-underline" style="color: rgba(237,235,221,0.6);" onmouseover="this.style.color='#810100'" onmouseout="this.style.color='rgba(237,235,221,0.6)'">
         ← Beranda
     </a>
+	
+	<button id="hamburger-btn" class="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-[70]" aria-label="Toggle Menu">
+        <span class="w-6 h-0.5 bg-[#EDEBDD] transition-all duration-300 transform origin-center"></span>
+        <span class="w-6 h-0.5 bg-[#EDEBDD] transition-all duration-300 opacity-100"></span>
+        <span class="w-6 h-0.5 bg-[#EDEBDD] transition-all duration-300 transform origin-center"></span>
+    </button>
 </nav>
+
+<div id="mobile-menu" class="fixed inset-0 z-[60] bg-[rgba(13,13,13,0.88)] backdrop-blur-md flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-2">
+    <div class="flex flex-col items-center space-y-8 text-center text-xl md:text-2xl font-light uppercase tracking-[0.2em]">
+        <a href="../bilingual/bilingual.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Dwibahasa</a>
+        <a href="#" class="mobile-link text-[#EDEBDD] font-bold border-b-2 border-[#810100] pb-2 no-underline">Maple Syrup</a>
+        <a href="../iceHockey/ice-hockey.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Ice Hockey</a>
+        <a href="../winter_carnival/winter-carnival-canada.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Winter Carnival</a>
+		<a href="../ice_canoe/ice_canoe.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors no-underline">Ice Canoe Racing</a>    
+	</div>
+</div>
 
 <section class="page-hero">
 	<div class="hero-text">
@@ -213,6 +213,40 @@
 		entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 	}, { threshold: 0.12 });
 	els.forEach(el => io.observe(el));
+
+	document.addEventListener('DOMContentLoaded', () => {
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            const isOpen = mobileMenu.classList.contains('menu-active');
+            
+            if (!isOpen) {
+                // Buka Menu
+                mobileMenu.classList.add('menu-active');
+                hamburgerBtn.classList.add('open');
+                document.body.style.overflow = 'hidden';
+            } else {
+                // Tutup Menu
+                mobileMenu.classList.remove('menu-active');
+                hamburgerBtn.classList.remove('open');
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Event Listener klik tombol hamburger
+        hamburgerBtn.addEventListener('click', toggleMenu);
+
+        // Tutup menu otomatis jika salah satu link navigasi diklik
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('menu-active')) {
+                    toggleMenu();
+                }
+            });
+        });
+    });
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

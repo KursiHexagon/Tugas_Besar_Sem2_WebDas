@@ -22,13 +22,29 @@
 				<a href="../ice_canoe/ice_canoe.html" class="hover:text-[#810100] transition-colors">Ice Canoe Racing</a>
 			</div>
 			
-			<div>
+			<div class="flex items-center space-x-4">
 				<a href="../../index.html" class="px-5 py-2 rounded-full border border-[#EDEBDD]/30 text-[11px] uppercase tracking-wider text-[#EDEBDD] hover:bg-[#EDEBDD]/10 transition-all font-medium">
 					← Beranda
 				</a>
+                
+                <button id="hamburger-btn" class="lg:hidden flex flex-col justify-center items-center w-8 h-8 space-y-1.5 focus:outline-none z-[70]" aria-label="Toggle Menu">
+                    <span class="w-6 h-0.5 bg-[#EDEBDD] transition-all duration-300 transform origin-center"></span>
+                    <span class="w-6 h-0.5 bg-[#EDEBDD] transition-all duration-300 opacity-100"></span>
+                    <span class="w-6 h-0.5 bg-[#EDEBDD] transition-all duration-300 transform origin-center"></span>
+                </button>
 			</div>
 		</div>
 	</nav>
+
+    <div id="mobile-menu" class="fixed inset-0 z-[60] bg-[rgba(13,13,13,0.88)] backdrop-blur-md flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300 transform -translate-y-2">
+        <div class="flex flex-col items-center space-y-8 text-center text-xl md:text-2xl font-light uppercase tracking-[0.2em] font-['IBM_Plex_Sans_Devanagari',sans-serif]">
+            <a href="#" class="mobile-link text-[#EDEBDD] font-bold border-b-2 border-[#810100] pb-2">Dwibahasa</a>
+            <a href="../maple/Maple-Syrup.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors">Maple Syrup</a>
+            <a href="../iceHockey/ice-hockey.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors">Ice Hockey</a>
+            <a href="../winter_carnival/winter-carnival-canada.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors">Winter Carnival</a>
+            <a href="../ice_canoe/ice_canoe.html" class="mobile-link text-[#EDEBDD]/70 hover:text-[#810100] transition-colors">Ice Canoe Racing</a>
+        </div>
+    </div>
 
     <section class="min-h-screen w-full flex items-center relative px-6 md:px-12 pt-16 overflow-hidden bg-cover bg-center" style="background-image: linear-gradient(to right, rgba(27,23,23,0.92) 40%, rgba(27,23,23,0.75) 100%), url('https://images.unsplash.com/photo-1507992781348-310259076fe0?auto=format&fit=crop&w=1200&q=80');">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 w-full max-w-7xl mx-auto items-center relative z-10">
@@ -453,6 +469,47 @@
             }, { threshold: 0.10 });
 
             document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+            const hamburgerBtn = document.getElementById('hamburger-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                const isOpen = mobileMenu.classList.contains('menu-active');
+                
+                if (!isOpen) {
+                    // Buka Menu
+                    mobileMenu.classList.add('menu-active');
+                    hamburgerBtn.classList.add('open');
+                    document.body.style.overflow = 'hidden';
+                    mainNav.classList.remove('nav-hidden'); // Paksa nav tetap tampil
+                } else {
+                    // Tutup Menu
+                    mobileMenu.classList.remove('menu-active');
+                    hamburgerBtn.classList.remove('open');
+                    document.body.style.overflow = '';
+                }
+            }
+
+            // Event Listener klik tombol hamburger
+            hamburgerBtn.addEventListener('click', toggleMenu);
+
+            // Tutup menu otomatis jika salah satu link navigasi diklik
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('menu-active')) {
+                        toggleMenu();
+                    }
+                });
+            });
+
+            // Modifikasi interaksi dengan Auto-Hide Scroll Listener asli
+            window.addEventListener("scroll", function() {
+                // Jika menu sedang terbuka, cegah class 'nav-hidden' ditambahkan kembali
+                if (mobileMenu.classList.contains('menu-active')) {
+                    mainNav.classList.remove('nav-hidden');
+                }
+            });
 
         });
     </script>
