@@ -7,17 +7,41 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="../../asset/img/main/canada_flag.png" type="image/png">
+<script src="https://cdn.tailwindcss.com"></script>	
 </head>
 <body>
  
-<nav class="breadcrumb">
-<a class="bc-logo" href="#">Ice<span>Canoe</span></a>
-	<div class="bc-path">
-		<span>Pelajari</span>
-		<span class="sep">/</span>
-		<span class="current text-[#EDEBDD]">Ice Canoe Racing</span>
-	</div>
-	<a class="bc-back" href="../../index.html">← Kembali ke Beranda</a>
+<nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 transition-transform duration-300 backdrop-blur-md border-b" style="background: rgba(27,27,27,0.85); border-color: rgba(247,232,200,0.08);">
+    <a href="#" class="flex items-center gap-2 text-sm font-extrabold tracking-wider text-[#EDEBDD] select-none no-underline">
+        EXPLORE <span style="color: #810100;">CANADA</span>
+    </a>
+
+    <div class="hidden lg:flex items-center gap-8 text-[0.68rem] font-semibold tracking-[0.2em] uppercase">
+        <a href="../bilingual/bilingual.html" class="py-1 text-[#EDEBDD]/60 hover:text-[#EDEBDD] transition-colors duration-300 no-underline">
+            Dwibahasa
+        </a>
+        
+        <a href="../maple/Maple-Syrup.html" class="py-1 text-[#EDEBDD]/60 hover:text-[#EDEBDD] transition-colors duration-300 no-underline">
+            Maple Syrup
+        </a>
+        
+        <a href="../iceHockey/ice-hockey.html" class="py-1 text-[#EDEBDD]/60 hover:text-[#EDEBDD] transition-colors duration-300 no-underline">
+            Ice Hockey
+        </a>
+        
+        <a href="../winter_carnival/winter-carnival-canada.html" class="py-1 text-[#EDEBDD]/60 hover:text-[#EDEBDD] transition-colors duration-300 no-underline">
+            Winter Carnival
+        </a>
+        
+        <a href="#" class="relative py-1 text-[#EDEBDD] transition-colors duration-300 no-underline">
+            Ice Canoe Racing
+            <span class="absolute bottom-0 left-0 right-0 h-[2px]" style="background: #810100;"></span>
+        </a>
+    </div>
+
+    <a href="../../index.html" class="text-[0.62rem] font-mono tracking-[0.15em] uppercase transition-colors duration-200 no-underline" style="color: rgba(237,235,221,0.6);" onmouseover="this.style.color='#810100'" onmouseout="this.style.color='rgba(237,235,221,0.6)'">
+        ← Beranda
+    </a>
 </nav>
  
 <section class="page-hero">
